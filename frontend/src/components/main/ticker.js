@@ -5,6 +5,7 @@ class Ticker extends React.Component {
         super(props);
         this.ticker = null
     }
+    
 
     render() {
         const {ticker} = this.props;
