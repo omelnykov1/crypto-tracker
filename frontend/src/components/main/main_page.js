@@ -9,6 +9,7 @@ class MainPage extends React.Component {
         super(props);
         this.state = {tickers: []};
     }
+    
 
     getData = () => {
         axios.get("https://api.coingecko.com/api/v3/coins/list").then((data) => {
