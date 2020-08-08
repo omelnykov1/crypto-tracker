@@ -1,13 +1,36 @@
 import React from "react";
+import Ticker from './ticker';
+const keys = require("../../keys");
+const axios = require('axios');
+const CoinGecko = require("coingecko-api");
 
 class MainPage extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Crypto Tracker</h1>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {tickers: []};
+    }
+
+    getData = () => {
+        axios.get("https://api.coingecko.com/api/v3/coins/list").then((data) => {
+            this.setState({tickers: data.data.slice(750,760)})
+        });
+    };
+
+    render() {
+        const CoinGeckoClient = new CoinGecko();
+        this.getData();
+        // console.log(this.state.tickers)
+        return (
+          <div>
+            <h1>Crypto Tracker</h1>
+            <div>{
+                this.state.tickers.map((ticker, i) => (
+                    <Ticker ticker={ticker} key={i} />
+                ))}
+            </div>
+          </div>
+        );
+    }
 }
 
 export default MainPage;
