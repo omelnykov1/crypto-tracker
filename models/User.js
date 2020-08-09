@@ -14,14 +14,14 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  birthday: {
-    type: Date,
-    required: true,
-  },
+  // name: {
+  //   type: String,
+  //   required: true,
+  // },
+  // birthday: {
+  //   type: Date,
+  //   required: true,
+  // },
   date: {
     type: Date,
     default: Date.now,

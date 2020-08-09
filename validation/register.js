@@ -14,13 +14,13 @@ module.exports = function validateRegisterInput(data) {
     errors.email = "Email field is required";
   }
 
-  if (Validator.isEmpty(data.name)) {
-    errors.name = "Name field is required";
-  }
+  // if (Validator.isEmpty(data.name)) {
+  //   errors.name = "Name field is required";
+  // }
 
-  if (Validator.isEmpty(data.birthday)) {
-    errors.birthday = "Birthday field is required";
-  }
+  // if (Validator.isEmpty(data.birthday)) {
+  //   errors.birthday = "Birthday field is required";
+  // }
 
   if (data.birthday >= new Date()) {
     errors.birthday = "Birthday cannot be in the future";

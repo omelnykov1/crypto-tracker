@@ -8,7 +8,7 @@ const passport = require("passport");
 const login_validations = require("../../validation/login");
 const register_validations = require("../../validation/register");
 
-router.get("/current", passport.authenticate("jwt", { session: false }),(req, res) => {
+router.get('/current', passport.authenticate("jwt", { session: false }),(req, res) => {
     res.json({
       id: req.user.id,
       handle: req.user.handle,
@@ -17,7 +17,8 @@ router.get("/current", passport.authenticate("jwt", { session: false }),(req, re
   }
 );
 
-router.post("/register", (req, res) => {
+router.post('/register', (req, res) => {
+  debugger
   const { errors, isValid } = register_validations(req.body);
 
   if (!isValid) {
@@ -34,8 +35,8 @@ router.post("/register", (req, res) => {
         email: req.body.email.toLowerCase(),
         password: req.body.password,
         password2: req.body.password2,
-        name: req.body.name,
-        birthday: req.body.birthday,
+        // name: req.body.name,
+        // birthday: req.body.birthday,
       });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -44,7 +45,26 @@ router.post("/register", (req, res) => {
           newUser.password = hash;
           newUser
             .save()
-            .then((user) => res.json(user))
+            .then((user) => {
+              const payload = {
+                id: user.id,
+                email: user.email,
+                password: user.password,
+              };
+
+              jwt.sign(
+                payload,
+                keys.secretOrKey,
+                { expiresIn: 3600 },
+                (err, token) => {
+                  res.json({
+                    id: user.id,
+                    success: true,
+                    token: "Bearer " + token,
+                  });
+                }
+              );
+            })
             .catch((err) => console.log(err));
         });
       });
@@ -53,6 +73,7 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  debugger
   const { errors, isValid } = login_validations(req.body);
 
   if (!isValid) {

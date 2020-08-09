@@ -1,5 +1,7 @@
 import React from "react";
 import Ticker from './ticker';
+
+
 const keys = require("../../keys");
 const axios = require('axios');
 const CoinGecko = require("coingecko-api");
@@ -9,7 +11,7 @@ class MainPage extends React.Component {
         super(props);
         this.state = {tickers: []};
     }
-    
+
 
     getData = () => {
         axios.get("https://api.coingecko.com/api/v3/coins/list").then((data) => {
@@ -20,7 +22,6 @@ class MainPage extends React.Component {
     render() {
         const CoinGeckoClient = new CoinGecko();
         this.getData();
-        // console.log(this.state.tickers)
         return (
           <div>
             <h1>Crypto Tracker</h1>
