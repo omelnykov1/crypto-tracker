@@ -4,26 +4,30 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
-    "coingecko-api": "^1.0.10",
     "jwt-decode": "^2.2.0",
     "react": "^16.13.1",
+    "react-datepicker": "^3.0.0",
+    "react-day-picker": "^7.4.8",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "redux": "^4.0.5",
-    "redux-logger": "^3.0.6"
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "proxy": "http://localhost:5000"
+    "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },

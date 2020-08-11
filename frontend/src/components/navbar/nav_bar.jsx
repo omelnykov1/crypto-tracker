@@ -31,7 +31,9 @@ class NavBar extends React.Component {
     return (
       <header>
         <div className="navbar">
-          <div className="left-nav">Somelogo</div>
+          <div className="left-nav">
+            <div className="logo">Somelogo</div>
+          </div>
           <div>{loginToggle}</div>
         </div>
       </header>

@@ -3,8 +3,17 @@ const app = express();
 const mongoose = require("mongoose");
 const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
+const cryptos = require("./routes/api/cryptos");
 const passport = require("passport");
 const bodyParser = require("body-parser");
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend/build"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
+
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -17,6 +26,7 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 require("./config/passport")(passport);
 app.use("/api/users", users);
+app.use('/api/cryptos', cryptos);
 
 const port = process.env.PORT || 5000;
 

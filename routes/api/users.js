@@ -8,11 +8,7 @@ const passport = require("passport");
 const login_validations = require("../../validation/login");
 const register_validations = require("../../validation/register");
 
-// router.get("/", (req, res) => {
-//   User.find()
-//     .then((users) => res.json(users))
-//     .catch((err) => res.status(404).json({ notweetsfound: "No users found" }));
-// });
+
 
 router.get('/current', passport.authenticate("jwt", { session: false }),(req, res) => {
     res.json({
@@ -24,7 +20,6 @@ router.get('/current', passport.authenticate("jwt", { session: false }),(req, re
 );
 
 router.post('/register', (req, res) => {
-  debugger
   const { errors, isValid } = register_validations(req.body);
 
   if (!isValid) {
@@ -32,6 +27,7 @@ router.post('/register', (req, res) => {
   }
 
   User.findOne({ email: req.body.email.toLowerCase() }).then((user) => {
+    debugger
     if (user) {
       return res
         .status(400)
@@ -116,9 +112,6 @@ router.post("/login", (req, res) => {
     });
   });
 });
-
-
-
 
 
 module.exports = router;

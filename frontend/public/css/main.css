@@ -1,0 +1,30 @@
+.navbar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 21px;
+    width: 100%;
+    height: 8vh;
+}
+
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+};
+
+.left-nav, .right-nav {
+    margin-top: 25%;
+}
+
+.login, .logout, .signup, .profile {
+    margin: 15px;
+    margin-right: -450px;
+}
+.logo { 
+    margin: 15px;
+}
+
+.ticker-index-main {
+    background-color: #F0F8FF;
+    height: 87.7vh;
+}

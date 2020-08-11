@@ -24,10 +24,10 @@ class MainPage extends React.Component {
         // const CoinGeckoClient = new CoinGecko();
         // this.getData();
         return (
-          <div>
+          <div className="main">
             <h1>Crypto Tracker</h1>
             <div>
-                < TickerIndex />
+                {/* < TickerIndex /> */}
                 {/* {
                 this.state.tickers.map((ticker, i) => (
                     <Ticker ticker={ticker} key={i} />

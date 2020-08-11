@@ -14,7 +14,8 @@ const App = () => (
     <Modal />
     <NavBarContainer />
     <Switch>
-      <Route exact path="/" component={TickerIndexContainer} />
+      <Route exact path="/" component={MainPage} />
+      <Route path="/tickers" component={TickerIndexContainer} />
       {/* < Route path={`/cryptos/tickerId`} component={TickerContainer}/> */}
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
       {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}

@@ -13,20 +13,22 @@ class TickerIndex extends React.Component {
     }
 
     render() {
-        return (
-          <div>
+        debugger
+        
+        return this.props.tickers[0] ? (
+          <div className="ticker-index-main">
             <h1>All Tickers</h1>
             <div>
               <ul>
                 {
-                    this.props.tickers.map((ticker) => (
+                    this.props.tickers[0].map((ticker) => (
                     < TickerIndexItem ticker={ticker} key={ticker.id} />
                     ))
                 }
               </ul>
             </div>
           </div>
-        );
+        ) : null
     }
 }
 

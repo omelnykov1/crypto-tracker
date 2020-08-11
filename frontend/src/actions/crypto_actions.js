@@ -21,6 +21,6 @@ export const fetchTicker = tickerId => dispatch => (
 export const fetchTickers = () => (dispatch) =>
          APIUtil.fetchTickers().then((tickers) => {
              debugger
-             dispatch(receiveAllTickers(tickers.data.slice(750, 760)))
+             dispatch(receiveAllTickers(tickers))
          }
 );
