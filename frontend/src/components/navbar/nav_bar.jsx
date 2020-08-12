@@ -32,7 +32,7 @@ class NavBar extends React.Component {
       <header>
         <div className="navbar">
           <div className="left-nav">
-            <div className="logo">Somelogo</div>
+            <div className="logo">Cool Logo</div>
           </div>
           <div>{loginToggle}</div>
         </div>

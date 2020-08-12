@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const axios = require('axios');
+const CircularJSON = require('circular-json');
 
 router.get('/tickers', (req,res) => {
-    axios.get("https://api.coingecko.com/api/v3/coins/list")
-        .then(data => res.json(data.data.slice(750,760)))
-        .catch(err => console.log(err))
+    axios
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h"
+      )
+      .then((data) => res.send(CircularJSON.stringify(data.data)))
+      .catch((err) => console.log(err));
 })
 
 module.exports = router;
