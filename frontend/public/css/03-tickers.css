@@ -1,0 +1,53 @@
+.ticker-index-main {
+    background-color: #F0F8FF;
+    height: 100%;
+}
+
+.ticker-index, .ticker-index-labels {
+    font-size: 17px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.ticker-index {
+    border-top: 1px solid #445547;
+}
+
+
+.ticker-index-left, .ticker-index-right , .ticker-index-labels-right {
+    display: flex;
+    flex-direction: row; 
+}
+
+.ticker-index-labels-right {
+    margin: 1vh;
+}
+
+.ticker-index-labels-left {
+    margin: 1vh 1vh 1vh 5vh;
+}
+
+.ticker-index-right,  .ticker-index-labels-right {
+    justify-content: space-evenly;
+}
+
+.ticker-name {
+    margin-left: 10px;
+}
+
+.ticker-image img {
+    margin-left: 2vh;
+    width: 20px;
+    height: 20px;
+}
+
+.ticker-index-header {
+    margin-left: 33%;
+    display: flex;
+    align-items: center;
+    padding: 1vw;
+}
+
+.ticker-index-header h1 {
+    font-size: 35px;
+}

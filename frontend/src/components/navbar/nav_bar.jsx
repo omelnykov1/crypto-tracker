@@ -17,19 +17,25 @@ class NavBar extends React.Component {
     const { currentUser } = this.props;
     const loginToggle = currentUser ? (
       <div className="right-nav">
-        <div className="logout" onClick={() => this.props.logout()}>
-          <button className="navbar-button">Logout</button>
+        <div className="left-right-nav" onClick={() => this.props.logout()}>
+          <button className="logout">Logout</button>
         </div>
-        <div className="profile">Profile</div>
+        <div className="right-right-nav">
+          <div className="profile">Profile</div>
+        </div>
       </div>
     ) : (
       <div className="right-nav">
-        <Link to="/login">
-          <button className="navbar-button">Log In</button>
-        </Link>
-        <Link to="/signup">
-          <button className="navbar-button">Sign Up</button>
-        </Link>
+        <div className="left-right-nav">
+          <Link to="/login">
+            <button className="login">Log In</button>
+          </Link>
+        </div>
+        <div className="right-right-nav">
+          <Link to="/signup">
+            <button className="signup">Sign Up</button>
+          </Link>
+        </div>
       </div>
     );
     return (

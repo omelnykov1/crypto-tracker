@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Table = require("./Table").schema;
+const Ticker = require("./Ticker").schema;
 
 const UserSchema = new Schema({
   email: {
@@ -26,6 +28,8 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  table: [Table],
+  tickers: [Ticker]
 });
 
 module.exports = User = mongoose.model("users", UserSchema);
