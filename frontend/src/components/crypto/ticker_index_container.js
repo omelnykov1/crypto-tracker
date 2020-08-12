@@ -5,7 +5,7 @@ import { fetchTickers, fetchTicker } from '../../actions/crypto_actions';
 const mSTP = state => {
     debugger
    return {
-    tickers: Object.values(state.entities.cryptos),
+    tickers: state.entities.cryptos,
 }}
 
 const mDTP = dispatch => ({

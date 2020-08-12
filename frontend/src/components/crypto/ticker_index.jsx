@@ -21,7 +21,7 @@ class TickerIndex extends React.Component {
             <div>
               <ul>
                 {
-                    this.props.tickers[0].map((ticker) => (
+                    this.props.tickers.map((ticker) => (
                     < TickerIndexItem ticker={ticker} key={ticker.id} />
                     ))
                 }

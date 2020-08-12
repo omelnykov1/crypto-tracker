@@ -6,9 +6,9 @@ class Ticker extends React.Component {
         debugger
     }
 
-    // componentDidMount() {
-    //     this.props.fetchTicker(this.props.match.params.tickerId);
-    // }
+    componentDidMount() {
+        this.props.fetchTicker(this.props.match.params.tickerId);
+    }
 
     render() {
         return(

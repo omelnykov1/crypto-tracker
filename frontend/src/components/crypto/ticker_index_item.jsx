@@ -5,12 +5,18 @@ import { withRouter } from "react-router";
 class TickerIndexItem extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        debugger
+        this.props.history.push(`/tickers/${this.props.ticker.name}`);
     }
 
     render() {
-        const {name, current_price , image, market_cap, total_volume} = this.props.ticker;
+        const { name, current_price, image, market_cap, total_volume } = this.props.ticker;
         return (
-          <div className="ticker-index">
+          <div className="ticker-index" onClick={this.handleClick}>
             <div className="ticker-index-left">
               <div className="ticker-image">
                 <img src={image}></img>

@@ -10,6 +10,15 @@ router.get('/tickers', (req,res) => {
       )
       .then((data) => res.send(CircularJSON.stringify(data.data)))
       .catch((err) => console.log(err));
+});
+
+router.get(`/tickers/:tickerId`, (req,res) => {
+    console.log(req)
+    axios
+      .get(
+      `https://api.coingecko.com/api/v3/coins/${tickerId}?tickers=true&market_data=true`
+     )
+     .then(data => res.send(console.log(req)));
 })
 
 module.exports = router;
