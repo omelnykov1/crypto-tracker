@@ -8,22 +8,17 @@ class NavBar extends React.Component {
     this.handleMain = this.handleMain.bind(this);
   }
 
-  handleClick() {
-    this.props.logout().then(this.props.history.push("/"));
-  }
-
   handleMain() {
-    debugger
     this.props.history.push("/");
   }
 
   render() {
     debugger
-    const { currentUser, logout } = this.props;
+    const { currentUser } = this.props;
     const loginToggle = currentUser ? (
       <div className="right-nav">
-        <div className="logout" onClick={this.handleClick}>
-          Logout
+        <div className="logout" onClick={() => this.props.logout()}>
+          <button className="navbar-button">Logout</button>
         </div>
         <div className="profile">Profile</div>
       </div>
