@@ -1,16 +1,25 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.handleMain = this.handleMain.bind(this);
   }
 
   handleClick() {
     this.props.logout().then(this.props.history.push("/"));
   }
 
+  handleMain() {
+    debugger
+    this.props.history.push("/");
+  }
+
   render() {
-    const { currentUser, logout, openModal } = this.props;
+    debugger
+    const { currentUser, logout } = this.props;
     const loginToggle = currentUser ? (
       <div className="right-nav">
         <div className="logout" onClick={this.handleClick}>
@@ -20,19 +29,21 @@ class NavBar extends React.Component {
       </div>
     ) : (
       <div className="right-nav">
-        <div className="login" onClick={() => openModal("login")}>
-          Login
-        </div>
-        <div className="signup" onClick={() => openModal("signup")}>
-          Signup
-        </div>
+        <Link to="/login">
+          <button className="navbar-button">Log In</button>
+        </Link>
+        <Link to="/signup">
+          <button className="navbar-button">Sign Up</button>
+        </Link>
       </div>
     );
     return (
       <header>
         <div className="navbar">
           <div className="left-nav">
-            <div className="logo">Cool Logo</div>
+            <div className="logo" onClick={this.handleMain}>
+              Cool Logo
+            </div>
           </div>
           <div>{loginToggle}</div>
         </div>
@@ -42,4 +53,4 @@ class NavBar extends React.Component {
 }
 
 
-export default NavBar;
+export default withRouter(NavBar);

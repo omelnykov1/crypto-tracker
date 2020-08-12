@@ -14,13 +14,11 @@ export const receiveTicker = ticker => ({
 });
 
 export const fetchTicker = tickerId => dispatch => (
-    APIUtil.fetchTicker(tickerId).then(ticker => dispatch(receiveTicker(ticker))),
+    APIUtil.fetchTicker(tickerId).then(ticker => (
+        dispatch(receiveTicker(ticker.data)))),
     err => (console.log(err))
 );
 
 export const fetchTickers = () => (dispatch) =>
-         APIUtil.fetchTickers().then((tickers) => {
-             debugger
-             dispatch(receiveAllTickers(tickers.data))
-         }
+         APIUtil.fetchTickers().then((tickers) => dispatch(receiveAllTickers(tickers.data))
 );

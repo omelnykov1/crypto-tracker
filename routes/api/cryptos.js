@@ -13,12 +13,12 @@ router.get('/tickers', (req,res) => {
 });
 
 router.get(`/tickers/:tickerId`, (req,res) => {
-    console.log(req)
+    const tickerId = req.params.tickerId;
     axios
       .get(
-      `https://api.coingecko.com/api/v3/coins/${tickerId}?tickers=true&market_data=true`
-     )
-     .then(data => res.send(console.log(req)));
+        `https://api.coingecko.com/api/v3/coins/${tickerId}?tickers=true&market_data=true`
+      )
+      .then((data) => res.send(CircularJSON.stringify(data.data)));
 })
 
 module.exports = router;

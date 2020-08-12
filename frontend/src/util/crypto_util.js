@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const fetchTicker = tickerId => {
-    return axios.get(`api/cryptos/tickers/${tickerId}`);
+    debugger  
+    return axios.get(`api/cryptos/tickers/${tickerId}`, tickerId);
 };
 
 export const fetchTickers = () => {

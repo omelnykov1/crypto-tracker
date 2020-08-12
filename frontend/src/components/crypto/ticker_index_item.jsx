@@ -10,7 +10,7 @@ class TickerIndexItem extends React.Component {
 
     handleClick() {
         debugger
-        this.props.history.push(`/tickers/${this.props.ticker.name}`);
+        this.props.history.push(`/tickers/${this.props.ticker.id}`);
     }
 
     render() {
@@ -24,7 +24,7 @@ class TickerIndexItem extends React.Component {
               <div className="ticker-name">{name}</div>
             </div>
             <div className="ticker-index-right">
-              <div className="ticker-price">{current_price.toFixed(2)}</div>
+              <div className="ticker-price">${current_price.toFixed(2)}</div>
               <div className="ticker-volume">{total_volume}</div>
               <div className="ticker-market-cap">{market_cap}</div>
             </div>
