@@ -1,12 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-
-
-const keys = require("../../keys");
-const axios = require('axios');
-const CoinGecko = require("coingecko-api");
-
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -18,8 +12,6 @@ class MainPage extends React.Component {
   }
 
   render() {
-    // const CoinGeckoClient = new CoinGecko();
-    // this.getData();
     return (
       <div className="main">
         <div className="main-left">

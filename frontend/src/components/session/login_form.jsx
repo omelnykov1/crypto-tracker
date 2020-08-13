@@ -1,10 +1,10 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: "",
       password: "",
@@ -12,21 +12,30 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-        alert('Logged in')
-    }
+  handleDemo() {
+    this.props.login(this.props.demoUser);
+  }
 
-    this.setState({ errors: nextProps.errors });
+  componentDidMount() {
+    this.props.clearSessionErrors();
+    let eles = document.getElementsByClassName("login-yes-errors-input");
+
+    Array.from(eles).forEach(ele => {
+      ele.className = "login-no-errors-input";
+    })
+
   }
 
   update(field) {
-    return (e) => this.setState({ [field]: e.currentTarget.value});
-  };
-  
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -38,39 +47,60 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
-        ))}
-      </ul>
-    );
+  handleEmailErr() {
+    let field = document.getElementById("login-email");
+    if (field === null) return;
+
+    if (this.props.errors.email) {
+      field.className = "login-yes-errors-input1";
+      return this.props.errors.email;
+    } else {
+      field.className = "login-no-errors-input1";
+    }
+  }
+
+  handlePasswordErr() {
+    let field = document.getElementById("login-password");
+    if (field === null) return;
+
+
+    if (this.props.errors.password) {
+      field.className = "login-yes-errors-input1";
+      return this.props.errors.password;
+    } else {
+      field.className = "login-no-errors-input1";
+    }
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
+      <div className="login-form-container">
+        <div className="login-form1">
+          <h1>Welcome Back!</h1>
+          <form onSubmit={this.handleSubmit}>
             <input
+              id="login-email"
+              className="login-no-errors-input1"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
               placeholder="Email"
             />
-            <br />
+            <p className="signup-error">{this.handleEmailErr()}</p>
             <input
+              id="login-password"
               type="password"
+              className="login-no-errors-input1"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
             />
-            <br />
+            <p className="signup-error">{this.handlePasswordErr()}</p>
             <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+          </form>
+          <button className="demo-button" onClick={() => this.handleDemo()}>Demo</button>
+          <p className="link-to-other-form">Don’t have an account? <Link to="/signup">Sign up</Link></p>
+        </div>
       </div>
     );
   }
