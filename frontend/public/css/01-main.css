@@ -2,25 +2,42 @@
     display: grid;
     width: 100%;
     height: 92vh;
-    grid-template-columns: 50% 50%;
-    background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%);
+    grid-template-columns: 65% 35%;
+    /* background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%); */
+}
+
+.main img {
+    height: 100%;
 }
 
 .main-right img {
     border-radius: 10px;
-    margin-top: 7vh;
-    margin-left: 2vw;
-    width: 40vw;
-    height: 76vh;
+    margin-top: 10vh;
+    /* margin-left: 2vw; */
+    width: 90%;
+    height: 50%;
+    background-color: transparent;
+}
+
+.welcome-main {
+    text-align: center;
+    display: flex;
 }
 
 .main-left, .main-right {
     display: flex;
 }
 
+.main-right {
+    background-color: #f3f3f3;
+}
+
+/* .main-left {
+    background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%);
+} */
+
 .welcome-message {
-    /* background-color: #445547; */
-    color: #445547;
+    color: #0c6d70;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,10 +45,9 @@
     height: 55%;
     font-weight: 500;
     margin-top: 8vw;
-    margin-left: 5vw;
+    /* margin-left: 1vw; */
     padding: 20px;
     border-radius: 10px;
-    /* box-shadow: 0 5px 15px -5px #00000070; */
 }
 
 .welcome-message h1 {
@@ -39,6 +55,28 @@
     font-size: 34px;
     font-weight: 600;
     font-family: 'Noto Sans', sans-serif;
+    animation: typewriter 4s steps(24) 1s normal both,
+    blinkTextCursor 500ms steps(24) infinite normal;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes typewriter {
+    0% {
+        width:0ch;
+    }
+    100% {
+        width: 24ch;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: #09868b;
+    }
+    to {
+        border-right-color: transparent;
+    }
 }
 
 .welcome-message p {
@@ -69,14 +107,15 @@
     padding-right: 15px !important;
     height: 55px;
     width: 166px;
-    color: #c53211;
+    color: #3d3d3f;
     --accent-color :#c53211;
     margin-left: 72px;
 }
 
 .tickers-btn:hover {
     transition: 0.6s;
-    color: #fff;
+    color: #3d3d3f;
+    color: #ebf6f5;
 }
 
 .tickers-btn:focus {
@@ -94,6 +133,9 @@
     background-color:#c53211;
     transform: scaleX(0);
     transition: transform 300ms ease-in-out ;
+    /* background-image: linear-gradient(to top left, #bccbde 50%, #c2dde6 50%); */
+    background-color: transparent;
+    border: 2px solid #9191a5;
     border-radius: 10px;
 }
 

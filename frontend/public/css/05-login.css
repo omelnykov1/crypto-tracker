@@ -7,14 +7,6 @@
     background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%);
 }
 
-.signup-form-with-header {
-    min-height: 120vh;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    background: #34495e;
-}
-
 .link-to-other-form {
     font-size: 20px;
     color: #431c5d;

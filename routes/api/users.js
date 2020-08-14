@@ -37,8 +37,7 @@ router.post('/register', (req, res) => {
         email: req.body.email.toLowerCase(),
         password: req.body.password,
         password2: req.body.password2,
-        // name: req.body.name,
-        // birthday: req.body.birthday,
+        name: req.body.name,
       });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -52,6 +51,7 @@ router.post('/register', (req, res) => {
                 id: user.id,
                 email: user.email,
                 password: user.password,
+                name: user.name,
               };
 
               jwt.sign(
@@ -95,7 +95,6 @@ router.post("/login", (req, res) => {
           id: user.id,
           email: user.email,
           name: user.name,
-          birthday: user.birthday,
         };
 
         jwt.sign(

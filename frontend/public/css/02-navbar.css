@@ -1,8 +1,10 @@
 .navbar {
     display: grid;
     grid-template-columns: 50% 50%;
+    position: relative;
     align-items: center;
-    background-color: #c53211;
+    /* background-color: #ebf6f5; */
+    background-color: #09868b;
     box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2);
     font-size: 21px;
     width: 100%;
@@ -11,7 +13,7 @@
 
 .login, .logout, .signup {
     font-size: 17px;
-    background-color: #c53211;
+    background-color: #09868b;
 	border-radius: 5px;
     border: none;
     width: 100px;
@@ -25,9 +27,8 @@
 
 .login:hover, .signup:hover,.logout:hover {
     cursor: pointer;
-    color: #FFFFFF;
-    transition: 1.0s;
-    border-radius: 30px;
+    font-weight: bolder;
+    color: #ffffff;
 }
 
 .left-right-nav {
