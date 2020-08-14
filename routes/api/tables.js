@@ -27,7 +27,6 @@ router.get("/user/:userId", (req, res) => {
 router.post("/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    console.log(req)
     const { errors, isValid } = table_validation(req.body);
 
     if (!isValid) return res.status(400).json(errors);
@@ -37,8 +36,6 @@ router.post("/",
       tickers: req.body.tickers,
     });
 
-    console.log(newTable);
-
     newTable
       .save()
       .then((table) => res.json(table))
@@ -47,13 +44,15 @@ router.post("/",
 );
 
 router.patch("/", (req, res) => {
-  const notif = Table.findOneAndUpdate(
+  // console.log(req.params)
+  // console.log(req.body)
+  const table = Table.findOneAndUpdate(
     { _id: req.params.id },
     function (err, table) {
       if (err) {
         res.status(404).json(err);
       } else {
-        res.send(table);
+        res.json(table);
       }
     }
   );

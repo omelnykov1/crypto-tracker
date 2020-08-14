@@ -6,15 +6,7 @@ const TableSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users",
   },
-  tickers: [
-    {
-      tickerName: String
-    }
-  ],
-  date: {
-      type: Date,
-      required: true
-  }
+  tickers: [String],
 });
 
 module.exports = Table = mongoose.model(

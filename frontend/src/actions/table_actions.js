@@ -29,7 +29,10 @@ export const createTable = table => dispatch => {
 }
 
 export const fetchTable = userId => dispatch => {
-    return APIUtil.fetchTable(userId).then(table => dispatch(receiveTable(table)))
+    return APIUtil.fetchTable(userId).then(table => {
+        debugger
+        return
+        dispatch(receiveTable(table))})
         // (err) => dispatch(receiveTableErrors(err.responseJSON)))
 };
 

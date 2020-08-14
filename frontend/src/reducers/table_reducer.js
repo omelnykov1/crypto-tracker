@@ -5,7 +5,7 @@ const tableReducer = (state = {}, action) => {
     debugger
     switch(action.type) {
         case RECEIVE_TABLE: 
-            return Object.assign({}, {[action.table._id]: action.table});
+            return Object.assign({}, {[action.table._id]: action.table.data});
         case UPDATE_TABLE: 
             return Object.assign({}, state, {[action.table._id]: action.table });
         default:
