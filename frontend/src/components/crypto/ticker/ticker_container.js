@@ -6,6 +6,7 @@ const mSTP = (state, ownProps) => {
     debugger
     return {
     ticker: state.entities.cryptos[ownProps.match.params.tickerId],
+    currentUser: state.session.user,
 }};
 
 const mDTP = dispatch => ({

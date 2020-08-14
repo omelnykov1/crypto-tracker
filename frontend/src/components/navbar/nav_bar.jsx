@@ -21,7 +21,7 @@ class NavBar extends React.Component {
           <button className="logout">Logout</button>
         </div>
         <div className="right-right-nav">
-          <div className="profile">Profile</div>
+          <div className="profile"><i className="far fa-user"></i></div>
         </div>
       </div>
     ) : (

@@ -1,13 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+
 
 class Ticker extends React.Component {
     constructor(props) {
         super(props);
+        this.handleTable = this.handleTable.bind(this); 
     }
 
     componentDidMount() {
         debugger
         this.props.fetchTicker(this.props.match.params.tickerId);
+    }
+
+    handleTable() {
+      debugger
+      this.props.history.push(`/tables/user/${this.props.currentUser.id}`);
     }
 
     render() {
@@ -31,6 +39,7 @@ class Ticker extends React.Component {
                   <div>
                     <p>{this.props.ticker.description.en}</p>
                   </div>
+                  <button onClick={this.handleTable}>Tables</button>
                 </div>
               );
         } else {
@@ -39,4 +48,4 @@ class Ticker extends React.Component {
     }
 }
 
-export default Ticker;
+export default withRouter(Ticker);

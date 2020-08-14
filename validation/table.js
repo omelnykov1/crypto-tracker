@@ -4,7 +4,7 @@ const validText = require("./valid-text");
 module.exports = function validateTableInput(data) {
     let errors = {};
 
-    if (Validator.isEmpty(data.tickers)) {
+    if (isEmptyArr(data.tickers)) {
         errors.tickers = "Subscription must have at least one ticker";
     };
 
@@ -13,3 +13,5 @@ module.exports = function validateTableInput(data) {
       isValid: Object.keys(errors).length === 0,
     };
 }
+
+const isEmptyArr = arr => (!!arr.length)

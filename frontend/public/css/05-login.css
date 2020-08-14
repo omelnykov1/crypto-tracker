@@ -97,6 +97,7 @@
     font-size: 17px;
     border-radius: 24px;
     transition: 0.25s;
+    cursor: pointer;
 }
 .login-form1 input[type=submit]:hover,.demo-button:hover {
     color: #FFFFFF;

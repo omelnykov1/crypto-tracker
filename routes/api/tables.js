@@ -16,8 +16,8 @@ const table_validation = require("../../validation/table");
 //           );
 // });
 
-router.get("/", (req, res) => {
-  Table.find({ user: req.params.id })
+router.get("/user/:userId", (req, res) => {
+  Table.find({ user: req.params.userId })
     .then((tables) => res.json(tables))
     .catch((err) =>
       res.status(404).json({ notables: "No subscriptions found for this user" })
@@ -27,12 +27,13 @@ router.get("/", (req, res) => {
 router.post("/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    console.log(req)
     const { errors, isValid } = table_validation(req.body);
 
     if (!isValid) return res.status(400).json(errors);
 
     const newTable = new Table({
-      user: req.user.id,
+      user: req.body.user,
       tickers: req.body.tickers,
     });
 
@@ -46,15 +47,13 @@ router.post("/",
 );
 
 router.patch("/", (req, res) => {
-  const notif = Notification.findOneAndUpdate(
+  const notif = Table.findOneAndUpdate(
     { _id: req.params.id },
-    { type: "seen" },
-    { new: true },
-    function (err, notif) {
+    function (err, table) {
       if (err) {
         res.status(404).json(err);
       } else {
-        res.send(notif);
+        res.send(table);
       }
     }
   );

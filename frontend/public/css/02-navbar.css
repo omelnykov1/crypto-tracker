@@ -58,3 +58,9 @@
     cursor: pointer;
 }
 
+.profile i {
+    font-size: 30px;
+    color:  #3d3d3f;
+    margin-top: 5px;
+}
+

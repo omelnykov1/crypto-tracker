@@ -7,6 +7,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import NavBarContainer from './navbar/nav_bar_container';
 import TickerContainer from './crypto/ticker/ticker_container';
 import TickerIndexContainer from './crypto/ticker_index_container';
+import TableContainer from './table/table_container';
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path="/" component={MainPage} />
       <Route exact path="/tickers" component={TickerIndexContainer} />
       <Route path={`/tickers/:tickerId`} component={TickerContainer}/>
+      <ProtectedRoute path='/tables' component={TableContainer}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
