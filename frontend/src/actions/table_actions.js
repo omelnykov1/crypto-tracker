@@ -4,9 +4,15 @@ export const RECEIVE_TABLE = 'RECEIVE_TABLE';
 export const UPDATE_TABLE = 'UPDATE_TABLE';
 export const DELETE_TABLE = 'DELETE_TABLE';
 export const CLEAR_TABLE_ERRORS = 'CLEAR_TABLE_ERRORS';
+export const RECEIVE_TABLE_TICKERS = 'RECEIVE_TABLE_TICKERS';
 
 const receiveTable = table => ({
     type: RECEIVE_TABLE,
+    table
+});
+
+const receiveTableTickers = table => ({
+    type: RECEIVE_TABLE_TICKERS,
     table
 });
 
@@ -28,10 +34,18 @@ export const createTable = table => dispatch => {
     return APIUtil.createTable(table).then(table => dispatch(receiveTable(table.data)));
 };
 
+export const fetchTableTickers = tickers => dispatch => {
+    return APIUtil.fetchTableTickers(tickers).then(table => {
+        debugger
+        dispatch(receiveTableTickers(table.data))
+    })
+}
+
 export const fetchTable = userId => dispatch => {
     return APIUtil.fetchTable(userId).then(table => {
         debugger
         dispatch(receiveTable(table.data))})
+
 };
 
 export const changeTable = table => dispatch => {

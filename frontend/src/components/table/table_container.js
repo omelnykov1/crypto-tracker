@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import { fetchTable, changeTable, clearErrors, createTable, deleteTable } from '../../actions/table_actions';
+import { fetchTable, changeTable, clearErrors, createTable, deleteTable, fetchTableTickers } from '../../actions/table_actions';
 import { fetchTickers } from '../../actions/crypto_actions';
 import Table from './table';
 
-const mSTP = state => {
+
+const mSTP = (state, ownProps) => {
     debugger
     const newTable = {
         tickers: [],
@@ -11,7 +12,7 @@ const mSTP = state => {
     };
     return {
         currentUser: state.session.user,
-        table: Object.values(state.entities.table) ? Object.values(state.entities.table) : newTable,
+        table: state.entities.table[Object.keys(state.entities.table)[0]] ? state.entities.table[Object.keys(state.entities.table)[0]] : {},
         tickers: state.entities.cryptos,
 }}
 
@@ -21,7 +22,8 @@ const mDTP = dispatch => ({
     changeTable: table => dispatch(changeTable(table)),
     fetchTickers: () => dispatch(fetchTickers()),
     clearErrors: () => dispatch(clearErrors()),
-    deleteTable: tableId => dispatch(deleteTable(tableId))
+    deleteTable: tableId => dispatch(deleteTable(tableId)),
+    fetchTableTickers: tickers => dispatch(fetchTableTickers(tickers)),
 });
 
 export default connect(mSTP,mDTP)(Table);

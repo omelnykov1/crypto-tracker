@@ -1,4 +1,5 @@
 import React from 'react';
+import TableItem from './table_item';
 
 
 class Table extends React.Component {
@@ -8,13 +9,24 @@ class Table extends React.Component {
         this.handleAdd = this.handleAdd.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.destroyTable = this.destroyTable.bind(this);
+        this.getTickers = this.getTickers.bind(this);
+        this.state = {
+            user: this.props.currentUser.id,
+            tickers: []
+        }
     }
 
     componentDidMount() {
         debugger
-        this.props.fetchTable(this.props.currentUser.id);
+        this.props.fetchTable(this.props.currentUser.id)
         this.props.fetchTickers();
-        let btn = document.getElementById('btn')
+    }
+
+    getTickers(e) {
+        e.preventDefault();
+        if (this.props.table.tickers) {
+            this.props.fetchTableTickers(this.props.table);
+        };
     }
 
     handleAdd(e) {
@@ -27,20 +39,20 @@ class Table extends React.Component {
 
     handleUpdate(e) {
         e.preventDefault();
-        this.props.table[0].tickers.push('eos');
+        this.props.table.tickers.push('litecoin');
         debugger
         if (this.props.currentUser) {
-            this.props.changeTable(this.props.table[0]).then(this.props.fetchTable(this.props.currentUser.id));
+            this.props.changeTable(this.props.table).then(this.props.fetchTable(this.props.currentUser.id));
         };
     };
 
     addBtc() {
-        const tickers = ['bitcoin'];
+        const tickers = ['ripple'];
         this.setState({tickers});
     }
 
     destroyTable() {
-        this.props.deleteTable(this.props.table[0]._id)
+        this.props.deleteTable(this.props.table._id)
     }
 
     update(field) {
@@ -52,11 +64,11 @@ class Table extends React.Component {
         if (this.props.tickers.length) {
             const addBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleAdd}>Create Table</button>
             const changeBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleUpdate}>Add to your table</button>
-            const btn = !this.props.table.length ? addBtn : changeBtn;
+            const btn = (!this.props.table.tickers) ? addBtn : changeBtn;
             const deleteBtn = btn === addBtn ? null : <button id="delete-btn" className="delete-btn" type="submit" onClick={this.destroyTable}>delete table</button>
-            const tickers = !this.props.table.length ? null :
-                this.props.table[0].tickers.map(ticker => (
-                    ticker
+            const tickers = (!this.props.table.tickers) ? null :
+                this.props.table.tickers.map(ticker => (
+                    <TableItem ticker={ticker} key={ticker.id}/>
                 ));
             return (
                 <div>
@@ -65,6 +77,7 @@ class Table extends React.Component {
                 {tickers}
                 {btn}
                 {deleteBtn}
+                <button onClick={this.getTickers}>Get tickers</button>
                 </div>
             )
         } 
