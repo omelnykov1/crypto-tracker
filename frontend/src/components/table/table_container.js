@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchTable, changeTable, clearErrors, createTable } from '../../actions/table_actions';
+import { fetchTable, changeTable, clearErrors, createTable, deleteTable } from '../../actions/table_actions';
 import { fetchTickers } from '../../actions/crypto_actions';
 import Table from './table';
 
@@ -21,6 +21,7 @@ const mDTP = dispatch => ({
     changeTable: table => dispatch(changeTable(table)),
     fetchTickers: () => dispatch(fetchTickers()),
     clearErrors: () => dispatch(clearErrors()),
+    deleteTable: tableId => dispatch(deleteTable(tableId))
 });
 
 export default connect(mSTP,mDTP)(Table);

@@ -14,3 +14,9 @@ export const updateTable = table => {
     debugger
     return axios.patch("/api/tables/", table);
 }
+
+export const deleteTable = tableId => {
+  debugger
+  return axios.delete(`/api/tables/${tableId}`)
+}
+

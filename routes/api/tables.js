@@ -38,7 +38,8 @@ router.post("/",
 
     newTable
       .save()
-      .then((table) => res.json(table))
+      .then((table) => {
+        res.json(table)})
       .catch((err) => console.log(err));
   }
 );
@@ -54,6 +55,23 @@ router.patch("/", passport.authenticate("jwt", { session: false }), (req, res) =
     }
   );
 });
+
+router.delete('/:tableId', passport.authenticate("jwt", { session: false }), (req, res) => {
+  Table.findById(req.params.tableId, (err, table) => {
+    if (!table) {
+      return res.status(400).json("Table not found");
+    } else {
+      Table.findOneAndDelete({ _id: req.params.tableId }, function (err, table) {
+          if (err) {
+            return res.status(400).json(err);
+          } else {
+            res.send("Table has been deleted");
+          }
+        }
+      );
+    }
+  });
+})
 
 
 

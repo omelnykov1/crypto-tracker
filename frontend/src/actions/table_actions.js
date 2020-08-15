@@ -2,7 +2,7 @@ import * as APIUtil from '../util/table_util';
 
 export const RECEIVE_TABLE = 'RECEIVE_TABLE';
 export const UPDATE_TABLE = 'UPDATE_TABLE';
-export const RECEIVE_TABLE_ERRORS = 'RECEIVE_TABLE_ERRORS';
+export const DELETE_TABLE = 'DELETE_TABLE';
 export const CLEAR_TABLE_ERRORS = 'CLEAR_TABLE_ERRORS';
 
 const receiveTable = table => ({
@@ -15,9 +15,9 @@ const updateTable = table => ({
     table
 });
 
-const receiveTableErrors = errors => ({
-    type: RECEIVE_TABLE_ERRORS,
-    errors
+const destroyTable = tableId => ({
+    type: DELETE_TABLE,
+    tableId
 });
 
 export const clearErrors = () => ({
@@ -25,20 +25,21 @@ export const clearErrors = () => ({
 });
 
 export const createTable = table => dispatch => {
-    debugger
-    return APIUtil.createTable(table).then(table => (
-        dispatch(receiveTable(table.data))))
-}
+    return APIUtil.createTable(table).then(table => dispatch(receiveTable(table.data)));
+};
 
 export const fetchTable = userId => dispatch => {
-    return APIUtil.fetchTable(userId).then(table => (
-        dispatch(receiveTable(table.data)))),
-        (err) => dispatch(receiveTableErrors(err.response.data))
+    return APIUtil.fetchTable(userId).then(table => {
+        debugger
+        dispatch(receiveTable(table.data))})
 };
 
 export const changeTable = table => dispatch => {
     debugger
-    return APIUtil.updateTable(table).then(table => {
-        dispatch(updateTable(table.data))})
+    return APIUtil.updateTable(table).then(table => dispatch(updateTable(table.data)))
+};
+
+export const deleteTable = tableId => dispatch => {
+    return APIUtil.deleteTable(tableId).then(() => dispatch(destroyTable(tableId)))
 };
 

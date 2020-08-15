@@ -7,6 +7,7 @@ class Table extends React.Component {
         this.addBtc = this.addBtc.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.destroyTable = this.destroyTable.bind(this);
     }
 
     componentDidMount() {
@@ -38,6 +39,10 @@ class Table extends React.Component {
         this.setState({tickers});
     }
 
+    destroyTable() {
+        this.props.deleteTable(this.props.table[0]._id)
+    }
+
     update(field) {
         return e => this.setState({[field]: e.target.value});
     }
@@ -48,16 +53,18 @@ class Table extends React.Component {
             const addBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleAdd}>Create Table</button>
             const changeBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleUpdate}>Add to your table</button>
             const btn = !this.props.table.length ? addBtn : changeBtn;
+            const deleteBtn = btn === addBtn ? null : <button id="delete-btn" className="delete-btn" type="submit" onClick={this.destroyTable}>delete table</button>
+            const tickers = !this.props.table.length ? null :
+                this.props.table[0].tickers.map(ticker => (
+                    ticker
+                ));
             return (
                 <div>
                     <h1>Table</h1>
-                    {
-                        this.props.tickers.map(ticker => (
-                            ticker.name
-                        ))
-                    }
                     <button id="btn" onClick={this.addBtc}>add btc</button>
+                {tickers}
                 {btn}
+                {deleteBtn}
                 </div>
             )
         } 
