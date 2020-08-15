@@ -10,6 +10,7 @@ export const createTable = (table) => {
   return axios.post("/api/tables/", table);
 };
 
-export const updateTable = ticker => {
-    return axios.patch("/api/tables/", ticker);
+export const updateTable = table => {
+    debugger
+    return axios.patch("/api/tables/", table);
 }

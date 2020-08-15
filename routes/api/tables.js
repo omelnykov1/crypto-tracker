@@ -43,12 +43,9 @@ router.post("/",
   }
 );
 
-router.patch("/", (req, res) => {
-  // console.log(req.params)
-  // console.log(req.body)
+router.patch("/", passport.authenticate("jwt", { session: false }), (req, res) => {
   const table = Table.findOneAndUpdate(
-    { _id: req.params.id },
-    function (err, table) {
+    { _id: req.body._id }, { tickers: req.body.tickers }, { new: true }, (err, table) => {
       if (err) {
         res.status(404).json(err);
       } else {

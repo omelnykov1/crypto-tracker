@@ -11,7 +11,7 @@ const mSTP = state => {
     };
     return {
         currentUser: state.session.user,
-        // table: Object.values(state.entities.table) ? Object.values(state.table) : newTable,
+        table: Object.values(state.entities.table) ? Object.values(state.entities.table) : newTable,
         tickers: state.entities.cryptos,
 }}
 

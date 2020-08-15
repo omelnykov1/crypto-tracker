@@ -25,18 +25,20 @@ export const clearErrors = () => ({
 });
 
 export const createTable = table => dispatch => {
-    return APIUtil.createTable(table).then(table => dispatch(receiveTable(table)))
+    debugger
+    return APIUtil.createTable(table).then(table => (
+        dispatch(receiveTable(table.data))))
 }
 
 export const fetchTable = userId => dispatch => {
-    return APIUtil.fetchTable(userId).then(table => {
-        debugger
-        return
-        dispatch(receiveTable(table))})
-        // (err) => dispatch(receiveTableErrors(err.responseJSON)))
+    return APIUtil.fetchTable(userId).then(table => (
+        dispatch(receiveTable(table.data)))),
+        (err) => dispatch(receiveTableErrors(err.response.data))
 };
 
 export const changeTable = table => dispatch => {
-    return APIUtil.updateTable(table).then(table => dispatch(updateTable(table)))
+    debugger
+    return APIUtil.updateTable(table).then(table => {
+        dispatch(updateTable(table.data))})
 };
 
