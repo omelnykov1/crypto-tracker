@@ -22,6 +22,12 @@ class Table extends React.Component {
         this.props.fetchTickers();
     }
 
+    componentDidUpdate(prevProps,prevState, snapshot) {
+        console.log(prevProps);
+        console.log(prevState);
+        console.log(snapshot);
+    }
+
     getTickers(e) {
         e.preventDefault();
         if (this.props.table.tickers) {

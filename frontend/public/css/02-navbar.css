@@ -3,7 +3,7 @@
     grid-template-columns: 50% 50%;
     position: relative;
     align-items: center;
-    /* background-color: #ebf6f5; */
+    z-index: 99;
     background-color: #09868b;
     box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2);
     font-size: 21px;
