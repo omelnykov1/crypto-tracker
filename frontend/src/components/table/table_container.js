@@ -5,6 +5,12 @@ import Table from './table';
 
 
 const mSTP = (state, ownProps) => {
+    if (state.entities.cryptos.length && state.entities.table[Object.keys(state.entities.table)[0]]) {
+        const t = state.entities.table[Object.keys(state.entities.table)[0]].tickers.map(t => t.id);
+        const tickers = state.entities.cryptos.filter(ticker => {
+            return t.includes(ticker.id)
+        });
+    }
     debugger
     return {
         currentUser: state.session.user,

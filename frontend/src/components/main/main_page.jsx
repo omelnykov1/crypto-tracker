@@ -27,9 +27,6 @@ class MainPage extends React.Component {
             </div>
           </div>
         </div>
-        {/* <div className="main-right">
-          <img src={"/images/try.png"}></img>
-        </div> */}
       </div>
     );
   }

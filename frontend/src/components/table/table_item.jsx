@@ -14,7 +14,6 @@ class TableItem extends React.Component {
 
     render() {
         debugger
-        console.log(this.props.ticker.id)
         const {ath, current_price,name,image, market_cap_rank, atl_change_percentage} = this.props.ticker;
         return(
             <div className="table-item-container">

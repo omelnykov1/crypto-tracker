@@ -8,6 +8,7 @@ class Table extends React.Component {
         this.addBtc = this.addBtc.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleUp = this.handleUp.bind(this);
         this.destroyTable = this.destroyTable.bind(this);
         this.state = {
             user: this.props.currentUser.id,
@@ -20,13 +21,6 @@ class Table extends React.Component {
         this.props.fetchTable(this.props.currentUser.id)
         this.props.fetchTickers();
     }
-
-    componentDidUpdate(prevProps,prevState, snapshot) {
-        console.log(prevProps);
-        console.log(prevState);
-        console.log(snapshot);
-    }
-
 
     handleAdd(e) {
         e.preventDefault();
@@ -43,6 +37,18 @@ class Table extends React.Component {
             this.props.fetchTableTicker('algorand').then(t => {
                 this.props.table.tickers.push(t);
                 return this.props.changeTable(this.props.table); 
+            }).then(this.props.fetchTable(this.props.currentUser.id))
+        };
+    };
+
+
+    handleUp(e) {
+        e.preventDefault();
+        debugger
+        if (this.props.currentUser) {
+            this.props.fetchTableTicker('iota').then(t => {
+                this.props.table.tickers.push(t);
+                return this.props.changeTable(this.props.table);
             }).then(this.props.fetchTable(this.props.currentUser.id))
         };
     };
@@ -112,6 +118,7 @@ class Table extends React.Component {
                 {tickers}
                 {btn}
                 {deleteBtn}
+                <button type="submit" onClick={this.handleUp}>add iota</button>
                 </div>
             )
         } 
