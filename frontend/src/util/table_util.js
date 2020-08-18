@@ -1,4 +1,5 @@
 import axios from "axios";
+import ticker from "../components/crypto/ticker/ticker";
 
 export const fetchTable = (userId) => {
   debugger
@@ -21,7 +22,9 @@ export const deleteTable = tableId => {
 };
 
 
-export const fetchTableTickers = table => {
-  debugger
-  return axios.get('/api/tables/', {params: table})
-}
+// export const fetchTableTickers = table => {
+//   debugger
+//   return axios.get('/api/tables/', {params: table})
+// }
+
+

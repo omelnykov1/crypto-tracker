@@ -6,7 +6,7 @@ const TableSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users",
   },
-  tickers: [String],
+  tickers: [Object],
 });
 
 module.exports = Table = mongoose.model(

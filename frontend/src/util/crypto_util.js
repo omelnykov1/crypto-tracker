@@ -6,7 +6,9 @@ export const fetchTicker = tickerId => {
 };
 
 export const fetchTickers = () => {
-  // debugger
-  // return axios.get("https://api.coingecko.com/api/v3/coins/list");
   return axios.get("api/cryptos/tickers");
-}
+};
+
+export const fetchTableTicker = tickerId => {
+  return axios.get('/api/cryptos/', {params: tickerId})
+};

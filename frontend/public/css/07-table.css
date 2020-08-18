@@ -1,0 +1,32 @@
+.table-item-left, .table-item-right {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-item-right {
+    padding-top: 6px;
+    justify-content: space-evenly;
+}
+
+.table-item-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.table-item-left {
+    padding-left: 20px;
+    border-right: 1px solid black;
+}
+
+.table-item-left img{
+    width: 30px;
+}
+
+.table-item-left span{
+    margin-top: 6px;
+    margin-left: 14px;
+}
+

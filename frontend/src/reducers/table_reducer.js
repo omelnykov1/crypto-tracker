@@ -1,4 +1,4 @@
-import { RECEIVE_TABLE, UPDATE_TABLE, DELETE_TABLE, RECEIVE_TABLE_TICKERS } from '../actions/table_actions';
+import { RECEIVE_TABLE, UPDATE_TABLE, DELETE_TABLE } from '../actions/table_actions';
 
 const tableReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -7,8 +7,6 @@ const tableReducer = (state = {}, action) => {
         case RECEIVE_TABLE:
             const table = Object.values(action.table).length ? Object.assign({}, { [action.table._id]: action.table }) : {};
             return table;
-        case RECEIVE_TABLE_TICKERS:
-            return Object.assign({},state, {[action.table._id]: action.table});
         case UPDATE_TABLE: 
             return Object.assign({}, state, {[action.table._id]: action.table });
         case DELETE_TABLE:
