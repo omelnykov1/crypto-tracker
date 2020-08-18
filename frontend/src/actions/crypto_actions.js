@@ -13,7 +13,6 @@ export const receiveTicker = ticker => ({
     ticker
 });
 
-
 export const fetchTicker = tickerId => dispatch => (
     APIUtil.fetchTicker(tickerId).then(ticker => (
         dispatch(receiveTicker(ticker.data)))),
