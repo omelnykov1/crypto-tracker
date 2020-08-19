@@ -14,7 +14,6 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="main">
-        <img src={"/images/back.png"} alt=""/>
         <div className="main-left">
           <div className="welcome-message">
             <h1>Welcome to Crypto Tracker!</h1>
@@ -23,9 +22,14 @@ class MainPage extends React.Component {
               much more.
             </p>
             <div className="all-tickers">
-              <button className="tickers-btn" onClick={this.handleClick}>All Tickers</button>
+              <button className="tickers-btn" onClick={this.handleClick}>
+                All Tickers
+              </button>
             </div>
           </div>
+        </div>
+        <div className="main-right">
+          <img src={"/images/main.png"} alt="" />
         </div>
       </div>
     );

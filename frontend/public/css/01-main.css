@@ -3,7 +3,6 @@
     width: 100%;
     height: 92vh;
     grid-template-columns: 65% 35%;
-    /* background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%); */
 }
 
 .main img {
@@ -12,10 +11,9 @@
 
 .main-right img {
     border-radius: 10px;
-    margin-top: 10vh;
-    /* margin-left: 2vw; */
-    width: 90%;
-    height: 50%;
+    margin-top: 15vh;
+    width: 140%;
+    height: 65%;
     background-color: transparent;
 }
 
@@ -29,23 +27,19 @@
 }
 
 .main-right {
-    background-color: #f3f3f3;
+    margin-right: 5vw;
 }
 
-/* .main-left {
-    background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%);
-} */
 
 .welcome-message {
-    color: #0c6d70;
+    color: #5e57df;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
     height: 55%;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 8vw;
-    /* margin-left: 1vw; */
     padding: 20px;
     border-radius: 10px;
 }
@@ -59,6 +53,7 @@
     blinkTextCursor 500ms steps(24) infinite normal;
     overflow: hidden;
     white-space: nowrap;
+    height: 45px;
 }
 
 @keyframes typewriter {
@@ -107,15 +102,14 @@
     padding-right: 15px !important;
     height: 55px;
     width: 166px;
-    color: #3d3d3f;
+    color: #ff4b5d;
     --accent-color :#c53211;
     margin-left: 72px;
 }
 
 .tickers-btn:hover {
     transition: 0.6s;
-    color: #3d3d3f;
-    color: #ebf6f5;
+    color: #ffffff;
 }
 
 .tickers-btn:focus {
@@ -130,12 +124,10 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-color:#c53211;
     transform: scaleX(0);
     transition: transform 300ms ease-in-out ;
-    /* background-image: linear-gradient(to top left, #bccbde 50%, #c2dde6 50%); */
-    background-color: transparent;
-    border: 2px solid #9191a5;
+    background-color: #ff4b5d;
+    border: 2px solid #fd3b7c;
     border-radius: 10px;
 }
 
@@ -149,10 +141,7 @@
     z-index: 1;
 }
 
-.tickers-btn:hover::before,
-.tickers-btn:focus::before {
-    color: white;
-}
+
 
 
 

@@ -4,7 +4,7 @@
     position: relative;
     align-items: center;
     z-index: 99;
-    background-color: #09868b;
+    background-color: #FFFFFF;
     box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2);
     font-size: 21px;
     width: 100%;
@@ -12,13 +12,13 @@
 }
 
 .login, .logout, .signup {
-    font-size: 17px;
-    background-color: #09868b;
+    font-size: 21px;
+    background-color: transparent;
 	border-radius: 5px;
     border: none;
     width: 100px;
     height: 38px;
-    color:  #3d3d3f;
+    color:  #5e57df;
     outline: none;
     margin: 0 auto;
     text-align: center;
@@ -28,7 +28,8 @@
 .login:hover, .signup:hover,.logout:hover {
     cursor: pointer;
     font-weight: bolder;
-    color: #ffffff;
+    color: #5e57df;
+    border: 2px solid #5e57df;
 }
 
 .left-right-nav {
@@ -56,11 +57,20 @@
 .logo { 
     margin: 15px;
     cursor: pointer;
+    color: #5e57df;
+    font-size: 21px;
 }
 
 .profile i {
     font-size: 30px;
-    color:  #3d3d3f;
+    color:  #5e57df;
     margin-top: 5px;
+}
+
+.profile i:hover {
+    cursor: pointer;
+    color: #5e57df;
+    font-weight: bolder;
+    font-size: 32px;
 }
 
