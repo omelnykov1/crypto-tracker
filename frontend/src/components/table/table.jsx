@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TableItem from './table_item';
-
+import TableLoader from './table_loader'
 
 class Table extends React.Component {
     constructor(props) {
@@ -115,10 +115,11 @@ class Table extends React.Component {
                 <div>
                     <h1>Table</h1>
                     <button id="btn" onClick={this.addBtc}>add btc</button>
-                {tickers}
-                {btn}
-                {deleteBtn}
-                <button type="submit" onClick={this.handleUp}>add iota</button>
+                    {tickers}
+                    {btn}
+                    {deleteBtn}
+                    <button type="submit" onClick={this.handleUp}>add iota</button>
+                    < TableLoader />
                 </div>
             )
         } 
