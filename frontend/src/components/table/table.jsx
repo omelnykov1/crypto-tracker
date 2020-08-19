@@ -111,6 +111,7 @@ class Table extends React.Component {
                         changeTable={this.props.changeTable}
                     />
                 ));
+            const loadingOrNot = !this.props.table.tickers ? true : false;
             return (
                 <div>
                     <h1>Table</h1>
@@ -119,7 +120,7 @@ class Table extends React.Component {
                     {btn}
                     {deleteBtn}
                     <button type="submit" onClick={this.handleUp}>add iota</button>
-                    < TableLoader />
+                    < TableLoader loading={loadingOrNot}/>
                 </div>
             )
         } 

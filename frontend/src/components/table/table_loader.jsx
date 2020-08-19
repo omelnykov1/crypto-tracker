@@ -1,9 +1,12 @@
 import React from 'react';
 
 class TableLoader extends React.Component {
-    state = { };
+    constructor(props) {
+      super(props);
+    }
 
     render() {
+        if (!this.props.loading) return null;
         return (
           <div className="table-loader-container">
             <img

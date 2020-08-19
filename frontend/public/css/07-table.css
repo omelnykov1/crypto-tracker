@@ -40,7 +40,7 @@
 }
 
 .table-loader-container .table-loader {
-    top: 30%;
+    top: 40%;
     left: 48%;
     z-index: 100;
     position: absolute;
@@ -49,5 +49,6 @@
 .table-loader {
     background-color: transparent;
     color: transparent;
+    width: 6vw;
 }
 
