@@ -1,0 +1,76 @@
+.navbar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+    align-items: center;
+    z-index: 99;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2);
+    font-size: 21px;
+    width: 100%;
+    height: 8vh;
+}
+
+.login, .logout, .signup {
+    font-size: 21px;
+    background-color: transparent;
+	border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 38px;
+    color:  #5e57df;
+    outline: none;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.login:hover, .signup:hover,.logout:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    color: #5e57df;
+    border: 2px solid #5e57df;
+}
+
+.left-right-nav {
+    margin-left: 17vw;
+}
+
+.right-right-nav {
+    margin-left: 1vw;
+}
+
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+};
+
+.left-nav, .right-nav {
+    margin-top: 25%;
+}
+
+.login, .logout, .signup, .profile {
+    margin: 15px;
+    margin-right: -250px;
+}
+.logo { 
+    margin: 15px;
+    cursor: pointer;
+    color: #5e57df;
+    font-size: 21px;
+}
+
+.profile i {
+    font-size: 30px;
+    color:  #5e57df;
+    margin-top: 5px;
+}
+
+.profile i:hover {
+    cursor: pointer;
+    color: #5e57df;
+    font-weight: bolder;
+    font-size: 32px;
+}
+

@@ -4,30 +4,44 @@
     padding: 0;
     position: absolute;
     top: 0;
-    background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%);
+    /* background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%); */
 }
 
 .link-to-other-form {
     font-size: 20px;
-    color: #431c5d;
+    color: #ffffff;
+    font-size: bolder;
+}
+
+#tsparticles {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    opacity: 0.48;
+    position: fixed !important;
+    display: block;
+    z-index: -1;
 }
 
 .login-form1 {
+    overflow: hidden;
     font-family: 'Varela Round', sans-serif;
     width: 31vw;
-    height: 60vh;
+    height: 100vh;
     padding: 40px;
     left: 33%;
-    margin-top: 200px;
+    margin-top: 50px;
     margin-right: auto;
-    margin-left: auto;
     transform: translate(-50% -50%);
-    background: transparent;
+    background: #5a55aa;
     text-align: center;
     box-sizing: border-box;
     border-radius: 30px;
-    background-image: transparent;
+    opacity: 0.8;
     box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
+    z-index: 1;
 }
 
 .login-no-errors-input1 {
@@ -41,16 +55,17 @@
     padding: 14px 10px;
     width: 250px;
     outline: none;
-    color: darkslategray;
+    color: #ffffff;
     border-radius: 24px;
     transition: 0.25s;
      font-weight: bold;
     font-size: 17px;
 }
 
-.login-no-errors-input1::-webkit-input-placeholder {
+.login-no-errors-input1::-webkit-input-placeholder, .login-yes-errors-input1::-webkit-input-placeholder {
     font-weight: bold;
     font-size: 17px;
+    color: #ffffff;
 }
 
 .login-yes-errors-input1 {
@@ -75,10 +90,12 @@
 
 .login-form-container h1 {
     font-family: 'Varela Round', sans-serif;
-    color: #431c5d;
+    color: #ffffff;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: bolder;
+    font-size: 30px;
     padding-top: 30px;
+    margin-top: 120px;
 }
 
 .login-form1 input[type=submit],.demo-button {
@@ -89,10 +106,9 @@
     width: 240px;
     margin: 20px auto;
     text-align: center;
-    /* border: 2px solid #c53211; */
     padding: 14px 40px;
     outline: none;
-    color: #8e8e8e;
+    color: #ffffff;
      font-weight: bold;
     font-size: 17px;
     border-radius: 24px;
@@ -100,14 +116,14 @@
     cursor: pointer;
 }
 .login-form1 input[type=submit]:hover,.demo-button:hover {
-    color: #FFFFFF;
-    background: #39a0ca ;
+    color: #5e57df;
+    background: #ffffff ;
     width: 200px;
     transition: 0.25s;
     cursor: pointer;
 }
 .demo-button:hover {
-   background: #39a0ca; 
+   background: #ffffff; 
 }
 
 .login-form span select {
@@ -117,4 +133,5 @@
 
 .login-error {
     color: red;
+    font-size: bolder;
 }
