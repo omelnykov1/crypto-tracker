@@ -1,0 +1,173 @@
+.ticker-widget-wrapper {
+    margin-left: 30vw;
+    width: 30%;
+    height: 17vh;
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 4vw; 
+}
+
+.ticker-widget {
+    margin-left: 5vw;
+    margin-right: auto;
+    margin-top: 2vw;
+}
+
+/* top widget */
+
+.ticker-widget-top { 
+    display: grid;
+    grid-template-columns: 33% 67%;
+    border-bottom: 1px solid grey;
+}
+
+.ticker-widget-top-right-top {
+    padding-bottom: 3px;
+}
+
+.ticker-widget-top-left, .ticker-widget-top-right, .ticker-widget-top-right-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.ticker-widget-top-left {
+    margin-left: 40%;
+}
+
+.ticker-widget-top-right {
+    padding-top: 10px;
+    flex-direction: column;
+}
+
+.ticker-widget-top-right-bottom {
+    flex-direction: row;
+}
+
+.ticker-widget-top-right-bottom p {
+    margin-left: 4px;
+}
+
+/* bottom widget */
+
+.ticker-widget-bottom {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.ticker-widget-bottom-left,.ticker-widget-bottom-center {
+    border-right: 1px solid grey;
+}
+
+.ticker-widget-bottom-left, .ticker-widget-bottom-center, .ticker-widget-bottom-right {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.ticker-widget-bottom-right-top, .ticker-widget-bottom-center-top, .ticker-widget-bottom-left-top {
+    padding-bottom: 2px;
+}
+
+.ticker-widget-bottom-right-bottom, .ticker-widget-bottom-center-bottom {
+    text-transform: uppercase;
+}
+
+/* ticker info */
+
+.ticker-info {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.ticker-about {
+    width: 100%;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.ticker-about h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.ticker-about p a ,.ticker-statistics-table-right div a {
+    cursor: pointer;
+    color: #5e57df;
+}
+
+.ticker-about p {
+    width: 80%;
+    word-spacing: 2px;
+    line-break: auto;
+    text-indent: 10px;
+    overflow-wrap: normal;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+/* ticker statistics */
+
+.ticker-statistics {
+    width: 100%;
+}
+
+.ticker-statistics-wrapper {
+    width: 90%;
+    height: 48vh;
+    box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
+    border-radius: 10px;
+}
+
+.ticker-statistics-wrapper h1 {
+    font-size: 25px;
+    margin-left: 40%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.ticker-statistics-table {
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ticker-statistics-table-left, .ticker-statistics-table-right {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.ticker-statistics-table-left {
+    padding: 14px;
+    margin-top: -12px;
+}
+
+.ticker-statistics-table-left {
+    text-align: left;
+    line-height: 25px;
+}
+
+.ticker-statistics-table-right {
+    text-align: right;
+    line-height: 25px;
+}
+
+.ticker-statistics-table-left div i {
+    font-size: 25px;
+}
+
+#reddit {
+    color: rgb(255, 89, 0);
+}
+
+.reddit-link, .git-link {
+    margin-top: 2px;
+}

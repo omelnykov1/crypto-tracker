@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TableItem from './table_item';
 import TableLoader from './table_loader'
 

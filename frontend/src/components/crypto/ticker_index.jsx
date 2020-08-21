@@ -44,3 +44,6 @@ class TickerIndex extends React.Component {
 }
 
 export default TickerIndex;
+
+
+// https://api.coingecko.com/api/v3/search/trending - TRENDING!!!

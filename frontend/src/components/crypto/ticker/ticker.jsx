@@ -1,6 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Bar, Line } from "react-chartjs-2";
+import TickerWidget from './ticker_widget';
+import TickerStatistics from './ticker_statistics'
+import ReactHtmlParser from "react-html-parser";
 
 
 class Ticker extends React.Component {
@@ -71,26 +74,21 @@ class Ticker extends React.Component {
     render() {
         debugger
         if (this.props.ticker) {
-            const {
-              image,
-            //   market_data,
-            //   market_cap_rank,
-            //   contract_address,
-            //   links,
-              name,
-            } = this.props.ticker;
+              const ticker = this.props.ticker;
               return (
-                <div>
-                  <div>
-                    <h1>{name}</h1>
-                    <img src={image.thumb} alt="" />
-                    <div>
-                      ${this.props.ticker.market_data.current_price.usd}
-                    </div>
-                    < Line data={this.state.chartData} />
+                <div className="main-ticker-wrapper">
+                  <div className="ticker-widget">
+                    < TickerWidget ticker={ticker} />
+                    {/* < Line data={this.state.chartData} /> */}
                   </div>
-                  <div>
-                    <p>{this.props.ticker.description.en}</p>
+                  <div className="ticker-info">
+                    <div className="ticker-about">
+                      <h1>About {ticker.name}</h1>
+                      <p>{ReactHtmlParser(ticker.description.en)}</p>
+                    </div>
+                    <div className="ticker-statistics">
+                      < TickerStatistics ticker={ticker} />
+                    </div>
                   </div>
                   <button onClick={this.handleTable}>Tables</button>
                 </div>

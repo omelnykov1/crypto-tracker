@@ -16,7 +16,7 @@ class MainPage extends React.Component {
       <div className="main">
         <div className="main-left">
           <div className="welcome-message">
-            <h1>Welcome to Crypto Tracker!</h1>
+            <h1>Welcome to Crypto Tracker</h1>
             <p className="welcome-main">
               Platform where you can track your favorite blockchain projects and
               much more.

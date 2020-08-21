@@ -38,7 +38,6 @@
     background: #5a55aa;
     text-align: center;
     box-sizing: border-box;
-    border-radius: 30px;
     opacity: 0.8;
     box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
     z-index: 1;
@@ -51,7 +50,6 @@
     display: block;
     margin: 20px auto;
     text-align: center;
-    /* border: 2px solid #445547; */
     padding: 14px 10px;
     width: 250px;
     outline: none;
