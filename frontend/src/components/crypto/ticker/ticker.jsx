@@ -4,6 +4,7 @@ import { Bar, Line } from "react-chartjs-2";
 import TickerWidget from './ticker_widget';
 import TickerStatistics from './ticker_statistics'
 import ReactHtmlParser from "react-html-parser";
+import Particles from "react-tsparticles";
 
 
 class Ticker extends React.Component {
@@ -75,10 +76,96 @@ class Ticker extends React.Component {
         debugger
         if (this.props.ticker) {
               const ticker = this.props.ticker;
+              const {image} = this.props.ticker;
+              console.log(image.small)
               return (
                 <div className="main-ticker-wrapper">
+                  <Particles
+                    id="tsparticles"
+                    options={{
+                      background: {
+                        color: {
+                          value: "ffffff",
+                        },
+                      },
+                      fpsLimit: 60,
+                      interactivity: {
+                        detectsOn: "canvas",
+                        events: {
+                          onClick: {
+                            enable: true,
+                            mode: "push",
+                          },
+                          onHover: {
+                            enable: true,
+                            mode: "repulse",
+                          },
+                          resize: true,
+                        },
+                        modes: {
+                          bubble: {
+                            distance: 400,
+                            duration: 2,
+                            opacity: 0.8,
+                            size: 40,
+                          },
+                          push: {
+                            quantity: 4,
+                          },
+                          repulse: {
+                            distance: 200,
+                            duration: 0.4,
+                          },
+                        },
+                      },
+                      particles: {
+                        color: {
+                          value: "#ffffff",
+                        },
+                        links: {
+                          color: "#ffffff",
+                          distance: 150,
+                          enable: true,
+                          opacity: 0.5,
+                          width: 1,
+                        },
+                        collisions: {
+                          enable: true,
+                        },
+                        move: {
+                          direction: "none",
+                          enable: true,
+                          outMode: "bounce",
+                          random: false,
+                          speed: 3,
+                          straight: false,
+                        },
+                        number: {
+                          density: {
+                            enable: true,
+                            value_area: 800,
+                          },
+                          value: 20,
+                        },
+                        opacity: {
+                          value: 0.6,
+                        },
+                        shape: {
+                          type: "image",
+                          image: {
+                            src: `${image.small}`,
+                          },
+                        },
+                        size: {
+                          random: true,
+                          value: 25,
+                        },
+                      },
+                      detectRetina: true,
+                    }}
+                  />
                   <div className="ticker-widget">
-                    < TickerWidget ticker={ticker} />
+                    <TickerWidget ticker={ticker} />
                     {/* < Line data={this.state.chartData} /> */}
                   </div>
                   <div className="ticker-info">
@@ -87,7 +174,7 @@ class Ticker extends React.Component {
                       <p>{ReactHtmlParser(ticker.description.en)}</p>
                     </div>
                     <div className="ticker-statistics">
-                      < TickerStatistics ticker={ticker} />
+                      <TickerStatistics ticker={ticker} />
                     </div>
                   </div>
                   <button onClick={this.handleTable}>Tables</button>

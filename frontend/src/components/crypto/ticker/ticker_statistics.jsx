@@ -11,7 +11,6 @@ class TickerStatistics extends Component {
     }
 
     render() {
-        console.log(this.props.ticker)
         const {market_data, links, name, image} = this.props.ticker
         const athChangeColor = this.colorPicker(market_data.ath_change_percentage.usd.toFixed(2));
         const dayColor = this.colorPicker(market_data.price_change_percentage_24h.toFixed(2));
