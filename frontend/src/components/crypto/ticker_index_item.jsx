@@ -19,7 +19,7 @@ class TickerIndexItem extends React.Component {
           <div className="ticker-index" onClick={this.handleClick}>
             <div className="ticker-index-left">
               <div className="ticker-image">
-                <img src={image}></img>
+                <img src={image} alt=""></img>
               </div>
               <div className="ticker-name">{name}</div>
             </div>

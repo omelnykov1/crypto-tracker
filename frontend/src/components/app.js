@@ -10,7 +10,7 @@ import TickerIndexContainer from './crypto/ticker_index_container';
 import TableContainer from './table/table_container';
 
 const App = () => (
-  <div>
+  <div className="root-wrapper">
     <NavBarContainer />
     <Switch>
       <Route exact path="/" component={MainPage} />

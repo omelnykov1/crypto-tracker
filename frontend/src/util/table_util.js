@@ -1,30 +1,20 @@
 import axios from "axios";
-import ticker from "../components/crypto/ticker/ticker";
 
-export const fetchTable = (userId) => {
-  debugger
-    return axios.get(`/api/tables/user/${userId}`, userId);
-};
+export const fetchTable = (userId) => (
+  axios.get(`/api/tables/user/${userId}`, userId)
+);
 
-export const createTable = (table) => {
-  debugger
-  return axios.post("/api/tables/", table);
-};
+export const createTable = (table) => (
+  axios.post("/api/tables/", table)
+); 
 
-export const updateTable = table => {
-    debugger
-    return axios.patch("/api/tables/", table);
-};
+export const updateTable = table => (
+  axios.patch("/api/tables/", table)
+);
 
-export const deleteTable = tableId => {
-  debugger
-  return axios.delete(`/api/tables/${tableId}`)
-};
+export const deleteTable = tableId => (
+  axios.delete(`/api/tables/${tableId}`)
+);
 
-
-// export const fetchTableTickers = table => {
-//   debugger
-//   return axios.get('/api/tables/', {params: table})
-// }
 
 

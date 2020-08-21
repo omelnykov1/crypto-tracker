@@ -15,7 +15,7 @@ class TickerIndex extends React.Component {
     render() {
         debugger
         
-        return this.props.tickers[0] ? (
+        return this.props.tickers.length ? (
           <div className="ticker-index-main">
             <div className="ticker-index-header">
               <h1>Top 100 Coins by Market Capitalization</h1>

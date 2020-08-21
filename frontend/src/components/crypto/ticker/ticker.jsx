@@ -5,6 +5,7 @@ import TickerWidget from './ticker_widget';
 import TickerStatistics from './ticker_statistics'
 import ReactHtmlParser from "react-html-parser";
 import Particles from "react-tsparticles";
+import TickerLinks from './ticker_links';
 
 
 class Ticker extends React.Component {
@@ -171,10 +172,11 @@ class Ticker extends React.Component {
                   <div className="ticker-info">
                     <div className="ticker-about">
                       <h1>About {ticker.name}</h1>
-                      <p>{ReactHtmlParser(ticker.description.en)}</p>
+                      <p>{ ReactHtmlParser(ticker.description.en) }</p>
                     </div>
                     <div className="ticker-statistics">
-                      <TickerStatistics ticker={ticker} />
+                      < TickerStatistics ticker={ticker} />
+                      < TickerLinks ticker={ticker} />
                     </div>
                   </div>
                   <button onClick={this.handleTable}>Tables</button>

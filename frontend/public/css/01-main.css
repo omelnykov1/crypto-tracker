@@ -1,3 +1,7 @@
+.root-wrapper {
+    width: 100%;
+}
+
 .main {
     display: grid;
     width: 100%;
@@ -20,6 +24,7 @@
 .welcome-main {
     text-align: center;
     display: flex;
+    width: 75%;
 }
 
 .main-left, .main-right {
@@ -46,7 +51,7 @@
 
 .welcome-message h1 {
     margin-top: 7vw;
-    font-size: 34px;
+    font-size: 37px;
     font-weight: 600;
     font-family: 'Noto Sans', sans-serif;
     animation: typewriter 4s steps(24) 1s normal both,
@@ -76,7 +81,7 @@
 
 .welcome-message p {
    margin-top: 2vw;
-   font-size: 26px;
+   font-size: 31px;
    font-family: 'Noto Sans', sans-serif; 
 }
 .all-tickers {
@@ -98,7 +103,7 @@
     font-weight: 500 !important;
     padding-top: 7px !important;
     padding-bottom: 7px !important;
-    padding-left: 15px !important;
+    padding-left: 1px !important;
     padding-right: 15px !important;
     height: 55px;
     width: 166px;

@@ -18,8 +18,8 @@ class MainPage extends React.Component {
           <div className="welcome-message">
             <h1>Welcome to Crypto Tracker</h1>
             <p className="welcome-main">
-              Platform where you can track your favorite blockchain projects and
-              much more.
+              Platform which provides fast and reliable data about your favorite blockchain
+              projects.
             </p>
             <div className="all-tickers">
               <button className="tickers-btn" onClick={this.handleClick}>

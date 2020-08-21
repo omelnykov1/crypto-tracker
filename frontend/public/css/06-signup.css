@@ -70,9 +70,6 @@
     color:gray;
 }
 
-[name=selected] {
-    color:white;
-}
 
 .signup-yes-errors-input {
     border: 2px solid red;
