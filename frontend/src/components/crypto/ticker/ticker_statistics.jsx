@@ -23,9 +23,9 @@ const TickerStatistics = props => {
             <div>30 Day Price Change</div>
           </div>
           <div className="ticker-statistics-table-right">
-            <div>{market_data.current_price.usd.toFixed(2)}</div>
-            <div>{market_data.ath.usd.toFixed(2)}</div>
-            <div>{market_data.atl.usd.toFixed(2)}</div>
+            <div>${market_data.current_price.usd.toFixed(2)}</div>
+            <div>${market_data.ath.usd.toFixed(2)}</div>
+            <div>${market_data.atl.usd.toFixed(2)}</div>
             <div style={{ color: athChangeColor }}>
               {market_data.ath_change_percentage.usd.toFixed(2)}%
             </div>

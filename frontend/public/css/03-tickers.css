@@ -9,6 +9,10 @@
     grid-template-columns: 30% 70%;
 }
 
+.ticker-index-labels-right h1 {
+    cursor: pointer;
+}
+
 .ticker-index {
     border-top: 1px solid #445547;
 }
@@ -17,6 +21,10 @@
 .ticker-index-left, .ticker-index-right , .ticker-index-labels-right {
     display: flex;
     flex-direction: row; 
+}
+
+.ticker-market-cap,.ticker-volume {
+    text-transform: uppercase;
 }
 
 .ticker-index-labels-right {

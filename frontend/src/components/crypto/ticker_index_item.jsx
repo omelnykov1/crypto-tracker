@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+const numeral = require("numeral");
 
 
 class TickerIndexItem extends React.Component {
@@ -25,8 +26,12 @@ class TickerIndexItem extends React.Component {
             </div>
             <div className="ticker-index-right">
               <div className="ticker-price">${current_price.toFixed(2)}</div>
-              <div className="ticker-volume">{total_volume}</div>
-              <div className="ticker-market-cap">{market_cap}</div>
+              <div className="ticker-volume">
+                {numeral(total_volume).format("($ 0.00 a)")}
+              </div>
+              <div className="ticker-market-cap">
+                {numeral(market_cap).format("($ 0.00 a)")}
+              </div>
             </div>
           </div>
         );
