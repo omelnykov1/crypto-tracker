@@ -1,5 +1,6 @@
 .root-wrapper {
     width: 100%;
+    overflow: hidden;
 }
 
 .main {
