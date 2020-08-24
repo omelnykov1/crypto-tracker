@@ -85,19 +85,17 @@
 }
 
 .ticker-about {
+    height: 100%;
     width: 100%;
-    padding-left: 40px;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     background: #ffffff;
     opacity: 0.8;
-    
 }
 
 .ticker-about h1 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     font-size: 30px;
     font-weight: bolder;
 }
@@ -110,6 +108,8 @@
     overflow-wrap: normal;
     font-size: 18px;
     line-height: 22px;
+    margin-left: 10%;
+    padding-bottom: 50px;
 }
 
 /* ticker statistics */
@@ -234,8 +234,20 @@
 
 /* ticker chart */
 
-.ticker-chart {
-    margin-left: 11vw;
+.ticker-chart-wrapper {
+    height: 100%;
+    width: 100%;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: #ffffff;
+    opacity: 0.9;
 }
+
+.ticker-chart {
+    margin-top: 5vw;
+}
+
 
 

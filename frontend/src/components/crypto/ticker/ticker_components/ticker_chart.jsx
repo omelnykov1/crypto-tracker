@@ -26,6 +26,8 @@ const TickerChart = props => {
         {
           label: "7 Day Chart",
           data: p,
+          borderCapStyle: "butt",
+          lineTension: 0.1,
           borderColor: ["#bc5090"],
           backgroundColor: ["#58508d"],
           pointBackgroundColor: "transparent",
@@ -59,7 +61,7 @@ const TickerChart = props => {
       },
     };
     return (
-    <div className="ticker-chart" style={{height: "500px", width:"70%"}}>
+    <div className="ticker-chart" style={{height: "80vh", width:"100%"}}>
         <Line data={d} options={options} legend={legend}/>
     </div>
     );

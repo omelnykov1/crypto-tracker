@@ -6,10 +6,15 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleMain = this.handleMain.bind(this);
+    this.handleTable = this.handleTable.bind(this);
   }
 
   handleMain() {
     this.props.history.push("/");
+  }
+
+  handleTable() {
+    this.props.history.push(`/tables/user/${this.props.currentUser.id}`);
   }
 
   render() {
@@ -20,7 +25,9 @@ class NavBar extends React.Component {
           <button className="logout">Logout</button>
         </div>
         <div className="right-right-nav">
-          <div className="profile"><i className="far fa-user"></i></div>
+          <div className="profile">
+            <i className="far fa-user" onClick={() => this.handleTable()}></i>
+          </div>
         </div>
       </div>
     ) : (

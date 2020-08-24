@@ -33,9 +33,11 @@ const TickerStatistics = props => {
               {market_data.price_change_percentage_24h.toFixed(2)}%
             </div>
             <div style={{ color: sevenDayColor }}>
-                {market_data.price_change_percentage_7d.toFixed(2)}%
+              {market_data.price_change_percentage_7d.toFixed(2)}%
             </div>
-            <div style={{ color: thirtyDayColor }}>{market_data.price_change_percentage_30d.toFixed(2)}%</div>
+            <div style={{ color: thirtyDayColor }}>
+              {market_data.price_change_percentage_30d.toFixed(2)}%
+            </div>
           </div>
         </div>
       </div>
