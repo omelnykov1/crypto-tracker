@@ -9,16 +9,6 @@ const Table = require("../../models/Table");
 const passport = require("passport");
 const table_validation = require("../../validation/table");
 
-
-// router.get('/', passport.authenticate("jwt", { session: false }),
-//   (req,res) => {
-//   const tickersStr = Object.values(req.query.tickers).join('%2C');
-//   const user = req.query.user;
-//   const _id = req.query._id;
-//   axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${tickersStr}&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
-//     .then(data => res.json({user, _id, tickers: data.data}))
-//     .catch(err => console.log(err))
-// });
 router.get('/', passport.authenticate("jwt", { session: false }), (req,res) => {
   axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${req.body.tickerId}&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
     .then(data => res.json(data.data))
@@ -52,7 +42,6 @@ router.post("/",
     const { errors, isValid } = table_validation(req.body);
 
     if (!isValid) return res.status(400).json(errors);
-    console.log(req.body)
     const newTable = new Table({
       user: req.body.user,
       tickers: req.body.tickers,

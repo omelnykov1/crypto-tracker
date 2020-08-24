@@ -27,7 +27,6 @@ router.post('/register', (req, res) => {
   }
 
   User.findOne({ email: req.body.email.toLowerCase() }).then((user) => {
-    debugger
     if (user) {
       return res
         .status(400)
@@ -75,7 +74,6 @@ router.post('/register', (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  debugger
   const { errors, isValid } = login_validations(req.body);
 
   if (!isValid) {
