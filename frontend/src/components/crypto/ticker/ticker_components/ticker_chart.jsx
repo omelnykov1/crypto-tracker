@@ -10,6 +10,7 @@ const TickerChart = props => {
       const month = dateObject.toLocaleString("en-US", { month: "numeric" });
       const day = dateObject.toLocaleString("en-US", { day: "numeric" });
       return `${month}/${day}`;
+    //   return humanDateFormat;
     });
 
     const legend = {
