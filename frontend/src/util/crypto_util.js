@@ -11,3 +11,7 @@ export const fetchTickers = () => (
 export const fetchTableTicker = tickerId => (
   axios.get('/api/cryptos/', {params: tickerId})
 );
+
+export const fetchTickerChartData = tickerId => (
+  axios.get(`api/cryptos/tickers/chart/${tickerId}`, tickerId)
+);

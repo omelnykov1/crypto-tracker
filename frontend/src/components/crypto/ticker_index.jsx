@@ -1,11 +1,9 @@
 import React from 'react';
 import TickerIndexItem from './ticker_index_item';
-import TickerNavBar from './ticker_index_nav';
 
 class TickerIndex extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
           tickers: [],
           toggle: true,
@@ -31,7 +29,6 @@ class TickerIndex extends React.Component {
         const tickers = this.state.clicked ? this.state.tickers : this.props.tickers;
         return (
           <div className="ticker-index-main">
-            <TickerNavBar tickers={this.props.tickers} />
             <div className="ticker-index-header">
               <h1>Top 100 Coins by Market Capitalization</h1>
             </div>

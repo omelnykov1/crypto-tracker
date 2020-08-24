@@ -17,14 +17,12 @@ class Table extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchTable(this.props.currentUser.id)
         this.props.fetchTickers();
     }
 
     handleAdd(e) {
         e.preventDefault();
-        debugger
         if (this.props.currentUser) {
             this.props.createTable(this.state).then(this.props.fetchTable(this.props.currentUser.id));
         };
@@ -32,7 +30,6 @@ class Table extends React.Component {
 
     handleUpdate(e) {
         e.preventDefault();
-        debugger
         if (this.props.currentUser) {
             this.props.fetchTableTicker('algorand').then(t => {
                 this.props.table.tickers.push(t);
@@ -44,7 +41,6 @@ class Table extends React.Component {
 
     handleUp(e) {
         e.preventDefault();
-        debugger
         if (this.props.currentUser) {
             this.props.fetchTableTicker('iota').then(t => {
                 this.props.table.tickers.push(t);
@@ -96,7 +92,6 @@ class Table extends React.Component {
     }
 
     render() {
-        debugger
         if (this.props.tickers.length) {
             const addBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleAdd}>Create Table</button>
             const changeBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleUpdate}>Add to your table</button>

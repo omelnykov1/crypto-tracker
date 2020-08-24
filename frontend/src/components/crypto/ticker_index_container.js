@@ -2,11 +2,9 @@ import { connect } from 'react-redux';
 import TickerIndex from './ticker_index';
 import { fetchTickers, fetchTicker } from '../../actions/crypto_actions';
 
-const mSTP = state => {
-    debugger
-   return {
+const mSTP = state => ({
     tickers: state.entities.cryptos,
-}}
+})
 
 const mDTP = dispatch => ({
     fetchTickers: () => dispatch(fetchTickers()),

@@ -10,7 +10,6 @@ class TickerIndexItem extends React.Component {
     }
 
     handleClick() {
-        debugger
         this.props.history.push(`/tickers/${this.props.ticker.id}`);
     }
 

@@ -2,7 +2,6 @@ import { RECEIVE_TABLE, UPDATE_TABLE, DELETE_TABLE } from '../actions/table_acti
 
 const tableReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger
     switch(action.type) {
         case RECEIVE_TABLE:
             const table = Object.values(action.table).length ? Object.assign({}, { [action.table._id]: action.table }) : {};

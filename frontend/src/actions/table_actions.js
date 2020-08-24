@@ -35,21 +35,11 @@ export const createTable = table => dispatch => {
     return APIUtil.createTable(table).then(table => dispatch(receiveTable(table.data)));
 };
 
-// export const fetchTableTickers = tickers => dispatch => {
-//     return APIUtil.fetchTableTickers(tickers).then(table => {
-//         debugger
-//         dispatch(receiveTableTickers(table.data))
-//     })
-// }
-
 export const fetchTable = userId => dispatch => {
-    return APIUtil.fetchTable(userId).then(table => {
-        debugger
-        dispatch(receiveTable(table.data))})
+    return APIUtil.fetchTable(userId).then(table => dispatch(receiveTable(table.data)))
 };
 
 export const changeTable = table => dispatch => {
-    debugger
     return APIUtil.updateTable(table).then(table => dispatch(updateTable(table.data)))
 };
 

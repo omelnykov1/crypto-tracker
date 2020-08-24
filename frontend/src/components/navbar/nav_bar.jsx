@@ -13,7 +13,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-    debugger
     const { currentUser } = this.props;
     const loginToggle = currentUser ? (
       <div className="right-nav">
