@@ -23,21 +23,15 @@ router.get('/tickers', (req,res) => {
 
 router.get(`/tickers/:tickerId`, (req,res) => {
     const tickerId = req.params.tickerId;
-    axios
-      .get(
-        `https://api.coingecko.com/api/v3/coins/${tickerId}?market_data=true&sparkline=true`
-      )
+    axios.get(`https://api.coingecko.com/api/v3/coins/${tickerId}?market_data=true&sparkline=true`)
       .then((data) => res.send(CircularJSON.stringify(data.data)));
 })
 
 router.get(`/tickers/chart/:tickerId`, (req, res) => {
   const tickerId = req.params.tickerId;
   axios
-    .get(
-      `https://api.coingecko.com/api/v3/coins/${tickerId}/market_chart?vs_currency=usd&days=7`
-    )
-    .then((data) => res.send(data.data.prices)
-    );
+    .get(`https://api.coingecko.com/api/v3/coins/${tickerId}/market_chart?vs_currency=usd&days=7`)
+    .then((data) => res.send(data.data.prices));
 });
 
 module.exports = router;
