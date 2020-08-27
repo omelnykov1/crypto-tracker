@@ -4,12 +4,11 @@ import { fetchTickers, fetchTableTicker } from '../../actions/crypto_actions';
 import Table from './table';
 
 
-const mSTP = (state, ownProps) => {
-    return {
+const mSTP = (state, ownProps) => ({
         currentUser: state.session.user,
         table: state.entities.table[Object.keys(state.entities.table)[0]] ? state.entities.table[Object.keys(state.entities.table)[0]] : {},
         tickers: state.entities.cryptos,
-}}
+})
 
 const mDTP = dispatch => ({
     fetchTable: userId => dispatch(fetchTable(userId)),

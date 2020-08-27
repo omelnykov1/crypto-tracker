@@ -3,6 +3,11 @@
     flex-direction: row;
 }
 
+.table-item-left {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
 .table-item-right {
     padding-top: 6px;
     justify-content: space-evenly;
@@ -11,24 +16,30 @@
 .table-item-container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 20% 80%;
     width: 100%;
-    border: 1px solid black;
+    border-top: 1px solid black;
 }
 
 .table-item-left {
     padding-left: 20px;
     border-right: 1px solid black;
+    height: 5vh;
+
 }
 
 .table-item-left img{
-    width: 30px;
+    padding-top: 3px;
+    width: 15%;
+    height: 80%;
 }
 
 .table-item-left span{
-    margin-top: 6px;
+    margin-top: 10px;
     margin-left: 14px;
 }
+
+/* table loader */
 
 .table-loader-container {
     position: fixed;
@@ -50,5 +61,50 @@
     background-color: transparent;
     color: transparent;
     width: 6vw;
+}
+
+
+/* table index */
+.table-wrapper {
+    margin: 2vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
+}
+
+.table-wrapper h1{
+    font-size: 35px;
+    margin-left: 40%;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.table-current-price, .table-market-cap-rank, .table-ath, .table-roi {
+    margin-top: 5px;
+    text-align: right;
+    width: 15%;
+}
+
+.table-delete-btn {
+    cursor: pointer;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #8c94db;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    height: 90%;
+    margin-bottom: 14px;
+}
+
+.table-delete-btn:hover {
+   background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;   
 }
 

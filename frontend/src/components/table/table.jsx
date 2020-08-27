@@ -108,13 +108,9 @@ class Table extends React.Component {
                 ));
             const loadingOrNot = !this.props.table.tickers ? true : false;
             return (
-                <div>
-                    <h1>Table</h1>
-                    <button id="btn" onClick={this.addBtc}>add btc</button>
+                <div className="table-wrapper">
+                    <h1>Favorite Tickers</h1>
                     {tickers}
-                    {btn}
-                    {deleteBtn}
-                    <button type="submit" onClick={this.handleUp}>add iota</button>
                     < TableLoader loading={loadingOrNot}/>
                 </div>
             )
