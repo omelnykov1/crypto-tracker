@@ -1,5 +1,5 @@
 .ticker-index-main {
-    background-color: #F0F8FF;
+    background-color: #FFFFFF;
     height: 100%;
 }
 
@@ -14,7 +14,9 @@
 }
 
 .ticker-index {
-    border-top: 1px solid #445547;
+    border-top: 1px solid #000701;
+    display: grid;
+    grid-template-rows: 35% 65%;
 }
 
 
@@ -23,8 +25,17 @@
     flex-direction: row; 
 }
 
+.ticker-index-right {
+    width: 100%;
+    padding-right: 1vw;
+}
+
 .ticker-market-cap,.ticker-volume {
     text-transform: uppercase;
+}
+
+.ticker-market-cap {
+    margin-right: 30px;
 }
 
 .ticker-index-labels-right {
@@ -36,8 +47,9 @@
 }
 
 .ticker-index-right,  .ticker-index-labels-right {
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
+
 
 .ticker-name {
     margin-left: 10px;
@@ -58,4 +70,9 @@
 
 .ticker-index-header h1 {
     font-size: 35px;
+}
+
+.ticker-price,.ticker-volume {
+    width: 15%;
+    text-align: right;
 }

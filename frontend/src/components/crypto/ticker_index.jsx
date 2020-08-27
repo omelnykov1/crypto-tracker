@@ -47,7 +47,7 @@ class TickerIndex extends React.Component {
                   className="ticker-index-volume"
                   onClick={() => this.sort("total_volume")}
                 >
-                  Volume
+                  24h Volume
                 </h1>
                 <h1
                   className="ticker-index-market-cap"

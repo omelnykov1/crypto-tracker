@@ -10,11 +10,11 @@ class TickerIndexItem extends React.Component {
     }
 
     handleClick() {
-        this.props.history.push(`/tickers/${this.props.ticker.id}`);
+      this.props.history.push(`/tickers/${this.props.ticker.id}`);
     }
 
     render() {
-        const { name, current_price, image, market_cap, total_volume } = this.props.ticker;
+      const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h } = this.props.ticker;
         return (
           <div className="ticker-index" onClick={this.handleClick}>
             <div className="ticker-index-left">
