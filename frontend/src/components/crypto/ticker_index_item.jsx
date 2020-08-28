@@ -34,27 +34,22 @@ class TickerIndexItem extends React.Component {
           toggle = false
         }
       });
-      const button = toggle ? <i className="far fa-star" onClick={() => this.handleAddTicker()}></i> : <i className="fas fa-star" onClick={() => this.deleteTicker()}></i>  ;
-      const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h } = this.props.ticker;
+      const button = toggle ? <i className="far fa-star" onClick={() => this.handleAddTicker()}></i> : <i className="fas fa-star" onClick={() => this.deleteTicker()}></i>;
+      const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h, market_cap_rank, symbol, id } = this.props.ticker;
         return (
           <div className="ticker-index">
-            <div className="ticker-index-left" onClick={this.handleClick}>
-              <div className="ticker-image">
-                <img src={image} alt=""></img>
-              </div>
-              <div className="ticker-name">{name}</div>
+            <div className="ticker-index-left" >
+              <div className="ticker-index-btn-wrapper"> {button}</div>
+              <div className="ticker-index-market-cap-rank">{market_cap_rank}</div>
+              <div className="ticker-image"><img src={image} alt=""></img></div>
+              <div className="ticker-name" onClick={this.handleClick} >{name}</div>
+              <div className="ticker-symbol">{symbol}</div>
             </div>
             <div className="ticker-index-right">
-              <div className="ticker-price">${current_price.toFixed(2)}</div>
-              <div className="ticker-volume">
-                {numeral(total_volume).format("($ 0.00 a)")}
-              </div>
-              <div className="ticker-market-cap">
-                {numeral(market_cap).format("($ 0.00 a)")}
-              </div>
-              <div className="ticker-index-btn-wrapper">
-                {button}
-              </div>
+              <div className="ticker-price"> ${current_price.toFixed(2)} </div>
+              <div className="ticker-24h-price-change">{price_change_percentage_24h.toFixed(2)}%</div>
+              <div className="ticker-volume"> {numeral(total_volume).format("($ 0.00 a)")} </div>
+              <div className="ticker-market-cap"> {numeral(market_cap).format("($ 0.00 a)")} </div>
             </div>
           </div>
         );

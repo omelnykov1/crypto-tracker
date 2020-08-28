@@ -8,7 +8,7 @@ class TickerIndex extends React.Component {
           tickers: [],
           toggle: true,
           clicked: false,
-        }
+        };
         this.sort = this.sort.bind(this);
     }
 
@@ -22,7 +22,7 @@ class TickerIndex extends React.Component {
       const tickers = this.state.toggle
         ? this.state.tickers.sort((a, b) => b[input] - a[input])
         : this.state.tickers.sort((a, b) => a[input] - b[input]);
-      this.setState({tickers})
+      this.setState({tickers});
     } 
 
     render() { 
@@ -35,29 +35,14 @@ class TickerIndex extends React.Component {
               <h1>Top 100 Coins by Market Capitalization</h1>
             </div>
             <div className="ticker-index-labels">
-              <div className="ticker-index-labels-left">
+              {/* <div className="ticker-index-labels-left">
                 <h1>Coin</h1>
               </div>
               <div className="ticker-index-labels-right">
-                <h1
-                  className="ticker-index-price"
-                  onClick={() => this.sort("current_price")}
-                >
-                  Price
-                </h1>
-                <h1
-                  className="ticker-index-volume"
-                  onClick={() => this.sort("total_volume")}
-                >
-                  24h Volume
-                </h1>
-                <h1
-                  className="ticker-index-market-cap"
-                  onClick={() => this.sort("market_cap")}
-                >
-                  Mkt Cap
-                </h1>
-              </div>
+                <h1 className="ticker-index-price" onClick={() => this.sort("current_price")}>Price</h1>
+                <h1 className="ticker-index-volume" onClick={() => this.sort("total_volume")}>24h Volume</h1>
+                <h1 className="ticker-index-market-cap" onClick={() => this.sort("market_cap")}>Mkt Cap</h1>
+              </div> */}
             </div>
             <div className="tickers-list">
               <ol>
@@ -68,6 +53,7 @@ class TickerIndex extends React.Component {
                     changeTable={changeTable} 
                     table={table} 
                     fetchTickers={this.props.fetchTickers}
+                    fetchTickerData={this.props.fetchTickerData}
                   />
                 ))}
               </ol>

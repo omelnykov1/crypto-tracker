@@ -5,7 +5,7 @@ import Ticker from './ticker';
 const mSTP = (state, ownProps) => ({
     ticker: state.entities.cryptos[ownProps.match.params.tickerId],
     currentUser: state.session.user,
-    data: state.entities.cryptos.data
+    data: state.entities.chartData.data
 });
 
 const mDTP = dispatch => ({
