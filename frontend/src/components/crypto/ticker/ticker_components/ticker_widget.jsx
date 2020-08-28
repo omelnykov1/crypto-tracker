@@ -5,7 +5,7 @@ const TickerWidget = props => {
     const { image, symbol, name, market_cap_rank, market_data } = props.ticker;
     const change = numeral(market_data.price_change_percentage_24h).format("0.0a");
     const marketCap = numeral(+market_data.market_cap.usd).format("($ 0.00 a)");
-    const price = market_data.current_price.usd.toFixed(2);
+    const price = market_data.current_price.usd > 0.01 ? market_data.current_price.usd.toFixed(2) : market_data.current_price.usd.toFixed(4);
     const c = +change >= 0 ? "green" : "red";
     const totalVolume = numeral(+market_data.total_volume.usd).format("($ 0.00 a)");
     return(

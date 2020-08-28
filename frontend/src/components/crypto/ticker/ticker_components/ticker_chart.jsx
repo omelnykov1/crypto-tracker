@@ -1,8 +1,18 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
+const handlePrice = num => {
+  if (num > 1) {
+    return num.toFixed(2)
+  } else if (num > 0.1) {
+    return num.toFixed(3)
+  } else {
+    return num.toFixed(5)
+  }
+}
+
 const TickerChart = props => {
-    const p = props.data.map(arr => arr[1].toFixed(2));
+    const p = props.data.map(arr => handlePrice(arr[1]));
     const t = props.data.map((arr) => {
       const unixTimestamp = arr[0];
       const dateObject = new Date(unixTimestamp);
