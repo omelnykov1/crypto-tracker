@@ -20,12 +20,15 @@
 }
 
 
-.ticker-index-left, .ticker-index-right , .ticker-index-labels-right {
+.ticker-index-left , .ticker-index-labels-right {
     display: flex;
     flex-direction: row; 
 }
 
+
 .ticker-index-right {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
     width: 100%;
     padding-right: 1vw;
 }
@@ -72,7 +75,32 @@
     font-size: 35px;
 }
 
-.ticker-price,.ticker-volume {
-    width: 15%;
+.ticker-price,.ticker-volume, .ticker-market-cap {
+    width: 90%;
     text-align: right;
+}
+
+
+.add-ticker-table {
+    width: 50%;
+    cursor: pointer;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #9365e7;
+    border-radius: 5px;
+    /* display: inline-block; */
+    border: none;
+    transition: all 0.4s ease 0s;
+    height: 90%;
+    margin-bottom: 14px;
+}
+
+.add-ticker-table:hover {
+   background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;   
 }

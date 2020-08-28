@@ -7,6 +7,14 @@ class TickerIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleAddTicker = this.handleAddTicker.bind(this);
+    }
+
+  
+
+    handleAddTicker() {
+      this.props.table.tickers.push(this.props.ticker);
+      this.props.changeTable(this.props.table).then(this.props.fetchTickers());
     }
 
     handleClick() {
@@ -14,10 +22,19 @@ class TickerIndexItem extends React.Component {
     }
 
     render() {
+      const { table } = this.props
+      let toggle = true
+      table.tickers.forEach(ticker => {
+        if (ticker.id === this.props.ticker.id) {
+          toggle = false
+        }
+      });
+      console.log(toggle)
+      const button = toggle ? <button className="add-ticker-table" onClick={() => this.handleAddTicker()}>Add to favorites</button> : null;
       const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h } = this.props.ticker;
         return (
-          <div className="ticker-index" onClick={this.handleClick}>
-            <div className="ticker-index-left">
+          <div className="ticker-index">
+            <div className="ticker-index-left" onClick={this.handleClick}>
               <div className="ticker-image">
                 <img src={image} alt=""></img>
               </div>
@@ -31,6 +48,7 @@ class TickerIndexItem extends React.Component {
               <div className="ticker-market-cap">
                 {numeral(market_cap).format("($ 0.00 a)")}
               </div>
+              {button}
             </div>
           </div>
         );

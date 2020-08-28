@@ -14,6 +14,7 @@ class TickerIndex extends React.Component {
 
     componentDidMount() {
       this.props.fetchTickers().then(action => this.setState({tickers: action.tickers}));
+      this.props.fetchTable(this.props.currentUser.id);
     }
 
     sort(input) {
@@ -25,8 +26,9 @@ class TickerIndex extends React.Component {
     } 
 
     render() { 
-      if (this.props.tickers.length) {
+      if (this.props.tickers.length && Object.values(this.props.table).length) {
         const tickers = this.state.clicked ? this.state.tickers : this.props.tickers;
+        const {changeTable, table} = this.props
         return (
           <div className="ticker-index-main">
             <div className="ticker-index-header">
@@ -60,7 +62,7 @@ class TickerIndex extends React.Component {
             <div className="tickers-list">
               <ol>
                 {tickers.map((ticker) => (
-                  <TickerIndexItem ticker={ticker} key={ticker.id} />
+                  <TickerIndexItem ticker={ticker} key={ticker.id} changeTable={changeTable} table={table} fetchTickers={this.props.fetchTickers}/>
                 ))}
               </ol>
             </div>
