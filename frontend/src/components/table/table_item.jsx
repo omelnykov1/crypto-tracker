@@ -8,8 +8,8 @@ class TableItem extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    deleteTicker(tickerName) {
-        const filtered = this.props.table.tickers.filter(ticker => ticker.id !== tickerName)
+    deleteTicker() {
+        const filtered = this.props.table.tickers.filter(ticker => ticker.id !== this.props.ticker.id)
         this.props.table.tickers = filtered
         this.props.changeTable(this.props.table)
     }
@@ -29,9 +29,9 @@ class TableItem extends React.Component {
                 <div className="table-item-right">
                     <div className="table-current-price">${current_price}</div>
                     <div className="table-market-cap-rank">{market_cap_rank}</div>
-                    <div className="table-roi">{atl_change_percentage}%</div>
+                    <div className="table-roi">{atl_change_percentage.toFixed(2)}%</div>
                     <div className="table-ath">${ath}</div>
-                    <button className="table-delete-btn" onClick={() => this.deleteTicker(this.props.ticker.id)}>Delete Ticker</button>
+                    <button className="table-delete-btn" onClick={() => this.deleteTicker()}>Delete Ticker</button>
                 </div>
             </div>
         )

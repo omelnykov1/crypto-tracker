@@ -62,7 +62,13 @@ class TickerIndex extends React.Component {
             <div className="tickers-list">
               <ol>
                 {tickers.map((ticker) => (
-                  <TickerIndexItem ticker={ticker} key={ticker.id} changeTable={changeTable} table={table} fetchTickers={this.props.fetchTickers}/>
+                  < TickerIndexItem 
+                    ticker={ticker} 
+                    key={ticker.id} 
+                    changeTable={changeTable} 
+                    table={table} 
+                    fetchTickers={this.props.fetchTickers}
+                  />
                 ))}
               </ol>
             </div>
