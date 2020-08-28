@@ -1,5 +1,5 @@
 .signup-form-container {
-   min-height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     padding: 0;
     position: absolute;
@@ -28,8 +28,8 @@
 
 .signup-form {
     font-family: 'Varela Round', sans-serif;
-    width: 32vw;
-    height: 100vh;
+    width: 29%;
+    height: 94.8vh;
     min-height: fit-content;
     padding: 40px;
     margin-top: 50px;
@@ -97,7 +97,7 @@
     font-weight: bolder;
     font-size: 30px;
     text-transform: uppercase;
-    margin-top: 120px;
+    margin-top: 44%;
 }
 
 .signup-form-container1 h1 {

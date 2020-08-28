@@ -6,11 +6,9 @@ const TickerChart = props => {
     const t = props.data.map((arr) => {
       const unixTimestamp = arr[0];
       const dateObject = new Date(unixTimestamp);
-      const humanDateFormat = dateObject.toLocaleString();
       const month = dateObject.toLocaleString("en-US", { month: "numeric" });
       const day = dateObject.toLocaleString("en-US", { day: "numeric" });
       return `${month}/${day}`;
-    //   return humanDateFormat;
     });
 
     const legend = {
@@ -29,8 +27,8 @@ const TickerChart = props => {
           data: p,
           borderCapStyle: "butt",
           lineTension: 0.1,
-          borderColor: ["#bc5090"],
-          backgroundColor: ["#58508d"],
+          borderColor: ["transparent"],
+          backgroundColor: [props.color],
           pointBackgroundColor: "transparent",
           pointBorderColor: "transparent",
           easing: "easeOutBounce",
@@ -62,7 +60,7 @@ const TickerChart = props => {
       },
     };
     return (
-    <div className="ticker-chart" style={{height: "80vh", width:"100%"}}>
+    <div className="ticker-chart">
         <Line data={d} options={options} legend={legend}/>
     </div>
     );

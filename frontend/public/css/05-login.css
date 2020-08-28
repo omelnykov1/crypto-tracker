@@ -1,5 +1,5 @@
 .login-form-container{
-    min-height: 100vh;
+    min-height: 100%;
     width: 100vw;
     padding: 0;
     position: absolute;
@@ -32,8 +32,8 @@
 .login-form1 {
     overflow: hidden;
     font-family: 'Varela Round', sans-serif;
-    width: 31vw;
-    height: 100vh;
+    width: 29%;
+    height: 94.8vh;
     padding: 40px;
     left: 33%;
     margin-top: 50px;
@@ -98,7 +98,7 @@
     font-weight: bolder;
     font-size: 30px;
     padding-top: 30px;
-    margin-top: 120px;
+    margin-top: 44%;
 }
 
 .login-form1 input[type=submit],.demo-button {
