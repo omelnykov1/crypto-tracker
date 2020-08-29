@@ -1,15 +1,19 @@
 .ticker-index-main {
     background-color: #FFFFFF;
     height: 100%;
+    border: 1px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    border-radius: 7px;
 }
 
 .ticker-index, .ticker-index-labels {
     font-size: 17px;
     display: grid;
-    grid-template-columns: 30% 70%;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    grid-template-columns: 25% 10% 65%;
+    width: 100%;
 }
 
 .ticker-index-labels-right h1 {
@@ -17,7 +21,7 @@
 }
 
 .ticker-index {
-    border-top: 1px solid #000701;
+    border-top: 1px solid darkgray;
     display: grid;
     grid-template-rows: 35% 65%;
     height: 60px;
@@ -29,16 +33,17 @@
     flex-direction: row; 
 }
 
-
 .ticker-index-right {
     display: grid;
-    grid-template-columns: 30% 30% 30% 10%;
+    grid-template-columns: 25% 25% 25% 25%;
     width: 100%;
     padding-right: 1vw;
+    height: 60px;
 }
 
 .ticker-market-cap,.ticker-volume {
     text-transform: uppercase;
+    height: 100%;
 }
 
 .ticker-market-cap {
@@ -53,40 +58,48 @@
     margin: 1vh 1vh 1vh 5vh;
 }
 
-.ticker-index-right,  .ticker-index-labels-right {
-    justify-content: space-between;
-}
-
 .ticker-symbol {
+    display: flex;
     text-transform: uppercase;
     margin-left: 1vw;
     color: rgb(73, 70, 70);
+    margin-top: 1.3rem;
+    text-align: right;
+    width: 100%;
 }
 
 .ticker-name {
-    margin-left: 10px;
+    margin-left: 1rem;
+    margin-top: 1.3rem;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .ticker-image img {
+    margin-top: 1rem;
     margin-left: 2vh;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .ticker-index-header {
-    margin-left: 33%;
+    margin-left: 28%;
     display: flex;
     align-items: center;
-    padding: 1vw;
+    padding: 1.5vw;
 }
 
 .ticker-index-header h1 {
     font-size: 35px;
+    margin-right: 3rem;
 }
 
-.ticker-price,.ticker-volume, .ticker-market-cap {
+.ticker-price,.ticker-volume, .ticker-market-cap,.ticker-24h-price-change {
     width: 90%;
     text-align: right;
+    margin-right: 1vw;
+    margin-top: 1.3rem;
+    font-size: 17px;
 }
 
 
@@ -94,4 +107,12 @@
     font-size: 1.5rem;
     color: #9365e7;
     cursor: pointer;
+    margin-left: 2vw;
+    margin-top: 1rem;
+}
+
+.ticker-index-market-cap-rank {
+    margin-top: 1.3rem;
+    margin-left: 1vw;
+    font-size: 20px;
 }
