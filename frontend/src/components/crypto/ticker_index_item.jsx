@@ -9,6 +9,8 @@ class TickerIndexItem extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleAddTicker = this.handleAddTicker.bind(this);
         this.deleteTicker = this.deleteTicker.bind(this);
+        this.hideAddRemoveInfo = this.hideAddRemoveInfo.bind(this);
+        this.showAddRemoveInfo = this.showAddRemoveInfo.bind(this);
     }
 
     deleteTicker() {
@@ -26,6 +28,16 @@ class TickerIndexItem extends React.Component {
       this.props.history.push(`/tickers/${this.props.ticker.id}`);
     }
 
+    showAddRemoveInfo() {
+      let hiddenText = document.getElementsByClassName(`hidden-info ${this.props.ticker.name}`)[0];
+      hiddenText.className = 'hidden-info-show';
+    }
+
+    hideAddRemoveInfo() {
+      let hiddenText = document.getElementsByClassName('hidden-info-show')[0];
+      hiddenText.className = `hidden-info ${this.props.ticker.name}`;
+    }
+
     render() {
       const { table } = this.props
       let toggle = true
@@ -35,12 +47,21 @@ class TickerIndexItem extends React.Component {
         }
       });
       const button = toggle ? <i className="far fa-star" onClick={() => this.handleAddTicker()}></i> : <i className="fas fa-star" onClick={() => this.deleteTicker()}></i>;
+      const textInfo = toggle ? "Add to favorites" : "Remove from favorites"
       const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h, market_cap_rank, symbol, id } = this.props.ticker;
       const color = price_change_percentage_24h >= 0 ? "#1ABC9C" : "#E74C3C";
         return (
           <div className="ticker-index">
             <div className="ticker-index-left" >
-              <div className="ticker-index-btn-wrapper"> {button}</div>
+              <div className="ticker-index-btn-wrapper" 
+                onMouseEnter={this.showAddRemoveInfo}
+                onMouseLeave={this.hideAddRemoveInfo}
+              >
+                <div className={`hidden-info ${name}`}>
+                  <p id="info-text-btn">{textInfo}</p>
+                </div>
+                {button}
+              </div>
               <div className="ticker-index-market-cap-rank">{market_cap_rank}</div>
               <div className="ticker-image"><img src={image} alt=""></img></div>
               <div className="ticker-name" onClick={this.handleClick} >{name}</div>

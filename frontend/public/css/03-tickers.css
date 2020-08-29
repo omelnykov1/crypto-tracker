@@ -107,7 +107,7 @@
     font-size: 1.5rem;
     color: #9365e7;
     cursor: pointer;
-    margin-left: 2vw;
+    margin-left: 4vw;
     margin-top: 1rem;
 }
 
@@ -115,4 +115,21 @@
     margin-top: 1.3rem;
     margin-left: 1vw;
     font-size: 20px;
+}
+
+/* hover pop up info add/remove ticker */
+
+.hidden-info {
+    display: none;
+}
+
+.hidden-info-show {
+    position: absolute;
+    display: flex;
+    width: 3.6vw;
+    min-height: fit-content;
+    background-color: rgb(246, 246, 246);
+    font-size: 12px;
+    margin-top: 1rem;
+    text-align: center;
 }

@@ -134,8 +134,8 @@
 .ticker-statistics-wrapper h1 {
     font-size: 25px;
     margin-left: 36%;
-    padding-bottom: 34px;
-    padding-top: 20px;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 .ticker-statistics-table {
