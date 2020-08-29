@@ -1,5 +1,6 @@
 import React from 'react';
 import TickerIndexItem from './ticker_index_item';
+import TableLoader from '../table/table_loader';
 
 class TickerIndex extends React.Component {
     constructor(props) {
@@ -35,14 +36,16 @@ class TickerIndex extends React.Component {
               <h1>Top 100 Coins by Market Capitalization</h1>
             </div>
             <div className="ticker-index-labels">
-              {/* <div className="ticker-index-labels-left">
-                <h1>Coin</h1>
+              <div className="ticker-index-labels-left">
+                <h1 className="ticker-num">#</h1>
+                <h1 className="ticker-coin-index">Coin</h1>
               </div>
               <div className="ticker-index-labels-right">
                 <h1 className="ticker-index-price" onClick={() => this.sort("current_price")}>Price</h1>
                 <h1 className="ticker-index-volume" onClick={() => this.sort("total_volume")}>24h Volume</h1>
                 <h1 className="ticker-index-market-cap" onClick={() => this.sort("market_cap")}>Mkt Cap</h1>
-              </div> */}
+                <h1 className="ticker-index-label-chart">Last 7 days</h1>
+              </div>
             </div>
             <div className="tickers-list">
               <ol>
@@ -61,7 +64,7 @@ class TickerIndex extends React.Component {
           </div>
         );
       } else {
-        return null;
+        return <TableLoader />;
       }
     }
 }

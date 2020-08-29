@@ -9,11 +9,42 @@
     border-radius: 7px;
 }
 
-.ticker-index, .ticker-index-labels {
+.ticker-index {
     font-size: 17px;
     display: grid;
     grid-template-columns: 25% 10% 65%;
     width: 100%;
+}
+
+.ticker-index-labels {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    font-size: 18px;
+    padding-bottom: 1vw;
+}
+
+.ticker-index-labels-left {
+    display: flex;
+    flex-direction: row;
+}
+
+.ticker-index-labels-right {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: right;
+    margin-right: 1vw;
+}
+
+.ticker-num {
+    margin-left: 6.7vw;
+}
+
+.ticker-coin-index {
+    margin-left: 5vw;
+}
+
+.ticker-index-label-chart, .ticker-index-price {
+    margin-right: 2vw; 
 }
 
 .ticker-index-labels-right h1 {
@@ -28,7 +59,7 @@
 }
 
 
-.ticker-index-left , .ticker-index-labels-right {
+.ticker-index-left {
     display: flex;
     flex-direction: row; 
 }
@@ -48,14 +79,6 @@
 
 .ticker-market-cap {
     margin-right: 30px;
-}
-
-.ticker-index-labels-right {
-    margin: 1vh;
-}
-
-.ticker-index-labels-left {
-    margin: 1vh 1vh 1vh 5vh;
 }
 
 .ticker-symbol {
@@ -132,4 +155,8 @@
     font-size: 12px;
     margin-top: 1rem;
     text-align: center;
+}
+
+.ticker-index-item-chart canvas{
+    height: 60px !important;
 }

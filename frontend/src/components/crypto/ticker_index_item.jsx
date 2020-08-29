@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import TickerIndexItemChart from './ticker_inter_item_chart';
 const numeral = require("numeral");
 
 
@@ -48,7 +49,7 @@ class TickerIndexItem extends React.Component {
       });
       const button = toggle ? <i className="far fa-star" onClick={() => this.handleAddTicker()}></i> : <i className="fas fa-star" onClick={() => this.deleteTicker()}></i>;
       const textInfo = toggle ? "Add to favorites" : "Remove from favorites"
-      const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h, market_cap_rank, symbol, id } = this.props.ticker;
+      const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h, market_cap_rank, symbol, sparkline_in_7d } = this.props.ticker;
       const color = price_change_percentage_24h >= 0 ? "#1ABC9C" : "#E74C3C";
         return (
           <div className="ticker-index">
@@ -71,9 +72,12 @@ class TickerIndexItem extends React.Component {
             </div>
             <div className="ticker-index-right">
               <div className="ticker-price"> ${current_price.toFixed(2)} </div>
-              <div className="ticker-24h-price-change" style={{color}}>{price_change_percentage_24h.toFixed(2)}%</div>
+              {/* <div className="ticker-24h-price-change" style={{color}}>{price_change_percentage_24h.toFixed(2)}%</div> */}
               <div className="ticker-volume"> {numeral(total_volume).format("($ 0.00 a)")} </div>
               <div className="ticker-market-cap"> {numeral(market_cap).format("($ 0.00 a)")} </div>
+              <div className="ticker-index-chart-wrapper">
+                <TickerIndexItemChart data={sparkline_in_7d.price} color={color}/>
+              </div>
             </div>
           </div>
         );

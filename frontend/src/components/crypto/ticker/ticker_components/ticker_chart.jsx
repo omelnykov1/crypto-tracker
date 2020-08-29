@@ -11,9 +11,9 @@ const handlePrice = num => {
   }
 }
 
-const TickerChart = props => {
-    const p = props.data.map(arr => handlePrice(arr[1]));
-    const t = props.data.map((arr) => {
+const TickerChart = ({data , color}) => {
+    const p = data.map(arr => handlePrice(arr[1]));
+    const t = data.map((arr) => {
       const unixTimestamp = arr[0];
       const dateObject = new Date(unixTimestamp);
       const month = dateObject.toLocaleString("en-US", { month: "numeric" });
@@ -26,7 +26,7 @@ const TickerChart = props => {
         position: "top",
         labels: {
             fontColor: "#323130",
-            fontSize: 14
+            fontSize:  26
         }
     }
     const d = {
@@ -38,7 +38,7 @@ const TickerChart = props => {
           borderCapStyle: "butt",
           lineTension: 0.1,
           borderColor: ["transparent"],
-          backgroundColor: [props.color],
+          backgroundColor: [color],
           pointBackgroundColor: "transparent",
           pointBorderColor: "transparent",
           easing: "easeOutBounce",
@@ -62,6 +62,9 @@ const TickerChart = props => {
         ],
         xAxes: [
           {
+            ticks: {
+              display: false
+            },
             gridLines: {
               display: false,
             },
