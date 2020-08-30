@@ -27,6 +27,7 @@ class TickerIndex extends React.Component {
     } 
 
     render() { 
+      const isLoading = this.state.tickers.length ? true : false;
       if (this.props.tickers.length) {
         const tickers = this.state.clicked ? this.state.tickers : this.props.tickers;
         const {changeTable, table} = this.props
@@ -66,7 +67,7 @@ class TickerIndex extends React.Component {
           </div>
         );
       } else {
-        return <TableLoader />;
+        return < TableLoader loading={true}/>
       }
     }
 }

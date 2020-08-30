@@ -11,7 +11,7 @@ class TableItem extends React.Component {
     deleteTicker() {
         const filtered = this.props.table.tickers.filter(ticker => ticker.id !== this.props.ticker.id)
         this.props.table.tickers = filtered
-        this.props.changeTable(this.props.table)
+        filtered.length ? this.props.changeTable(this.props.table) : this.props.changeTable(this.props.table).then(this.props.history.push('/tickers'))
     }
 
     handleClick() {

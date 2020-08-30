@@ -68,7 +68,7 @@
 }
 
 .profile i:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     color: #5e57df;
     font-weight: bolder;
     font-size: 32px;

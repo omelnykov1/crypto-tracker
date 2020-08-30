@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from '../search/search_bar';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class MainPage extends React.Component {
         </div>
         <div className="main-right">
           <img src={"/images/main.png"} alt="" />
+          < SearchBar />
         </div>
       </div>
     );
