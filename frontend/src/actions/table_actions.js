@@ -12,11 +12,6 @@ const receiveTable = table => ({
     table
 });
 
-// const receiveTableTickers = table => ({
-//     type: RECEIVE_TABLE_TICKERS,
-//     table
-// });
-
 const updateTable = table => ({
     type: UPDATE_TABLE,
     table

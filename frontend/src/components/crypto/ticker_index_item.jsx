@@ -21,8 +21,19 @@ class TickerIndexItem extends React.Component {
     }
 
     handleAddTicker() {
-      this.props.table.tickers.push(this.props.ticker);
-      this.props.changeTable(this.props.table).then(this.props.fetchTickers());
+      if (this.props.user.id) {
+        if (this.props.table.user) {
+          this.props.table.tickers.push(this.props.ticker);
+          this.props.changeTable(this.props.table).then(this.props.fetchTickers());
+        } else {
+          this.props.table.tickers = [this.props.ticker];
+          this.props.table.user = this.props.user.id;
+          debugger
+          this.props.createTable(this.props.table).then(this.props.fetchTickers());
+        }
+      } else {
+        this.props.history.push('/login')
+      }
     }
 
     handleClick() {
@@ -40,13 +51,16 @@ class TickerIndexItem extends React.Component {
     }
 
     render() {
-      const { table } = this.props
+      
       let toggle = true
-      table.tickers.forEach(ticker => {
-        if (ticker.id === this.props.ticker.id) {
-          toggle = false
-        }
-      });
+      const { table } = this.props
+      if (Object.values(table).length) {
+        table.tickers.forEach(ticker => {
+          if (ticker.id === this.props.ticker.id && this.props.user) {
+            toggle = false
+          }
+        });
+      }
       const button = toggle ? <i className="far fa-star" onClick={() => this.handleAddTicker()}></i> : <i className="fas fa-star" onClick={() => this.deleteTicker()}></i>;
       const textInfo = toggle ? "Add to favorites" : "Remove from favorites"
       const { name, current_price, image, market_cap, total_volume, price_change_percentage_24h, market_cap_rank, symbol, sparkline_in_7d } = this.props.ticker;

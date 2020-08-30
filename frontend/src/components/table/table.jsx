@@ -1,36 +1,38 @@
 import React from 'react';
 import TableItem from './table_item';
-import TableLoader from './table_loader'
+import TableLoader from './table_loader';
+import { withRouter } from 'react-router-dom';
 
 class Table extends React.Component {
     constructor(props) {
         super(props)
-        this.destroyTable = this.destroyTable.bind(this);
         this.state = {
             user: this.props.currentUser.id,
             tickers: []
         }
+        this.handleTickers = this.handleTickers.bind(this);
+        this.destroyTable = this.destroyTable.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchTable(this.props.currentUser.id)
-        this.props.fetchTickers();
     }
 
     destroyTable() {
         this.props.deleteTable(this.props.table._id)
+            .then(this.handleTickers());
     }
 
     update(field) {
         return e => this.setState({[field]: e.target.value});
     }
 
+    handleTickers() {
+        this.props.history.push('/tickers');
+    }
+
     render() {
-        if (this.props.tickers.length) {
-            const addBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleAdd}>Create Table</button>
-            const changeBtn = <button id="add-update-btn" className="add-btn" type="submit" onClick={this.handleUpdate}>Add to your table</button>
-            const btn = (!this.props.table.tickers) ? addBtn : changeBtn;
-            const deleteBtn = btn === addBtn ? null : <button id="delete-btn" className="delete-btn" type="submit" onClick={this.destroyTable}>delete table</button>
+        if (this.props.table.tickers) {
             const tickers = (!this.props.table.tickers) ? null :
                 this.props.table.tickers.map(ticker => (
                     <TableItem 
@@ -41,16 +43,25 @@ class Table extends React.Component {
                     />
                 ));
             const loadingOrNot = !this.props.table.tickers ? true : false;
-            return (
+            const content = Object.values(this.props.table).length && this.props.table.tickers.length ? 
                 <div className="table-wrapper">
                     <h1>Favorite Tickers</h1>
-                    {tickers}
-                    < TableLoader loading={loadingOrNot}/>
+                    { tickers }
+                    < TableLoader loading={loadingOrNot} />
                 </div>
+                :
+                <div>
+                    <h1>No favorite tickers yet</h1>
+                    <button onClick={this.handleTickers}>All tickers</button>
+                </div>;
+            return (
+                <div>
+                {content}
+                </div >
             )
         } 
         return null;;
     }
 }
 
-export default Table;
+export default withRouter(Table);

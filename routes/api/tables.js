@@ -27,8 +27,9 @@ router.get("/user/:userId", (req, res) => {
         const tickersStr = table.tickers.map(ticker => ticker.id).join('%2C');
         const user = table.user;
         const _id = table._id;
+        
         axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${tickersStr}&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
-          .then(data => res.json({ user, _id, tickers: data.data }))
+          .then(data => res.json({ user, _id, tickers: table.tickers.length ? data.data : [] }))
       })
     .catch((err) =>
       res.status(404).json({ notables: "No subscriptions found for this user" })

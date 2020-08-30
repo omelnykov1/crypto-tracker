@@ -18,8 +18,8 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
-    const loginToggle = currentUser ? (
+    const { loggedIn, currentUser } = this.props;
+    const loginToggle = loggedIn ? (
       <div className="right-nav">
         <div className="left-right-nav" onClick={() => this.props.logout()}>
           <button className="logout">Logout</button>
