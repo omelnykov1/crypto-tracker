@@ -31,7 +31,7 @@ const TickerIndexItemChart = ({data, color}) => {
                 lineTension: 0.1,
                 borderColor: [color],
                 backgroundColor: ["transparent"],
-                borderWidth: 2,
+                borderWidth: 2.5,
                 pointBackgroundColor: "transparent",
                 pointBorderColor: "transparent",
                 easing: "easeOutBounce",

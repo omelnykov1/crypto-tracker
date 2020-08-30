@@ -14,11 +14,9 @@ const handlePrice = num => {
 const TickerChart = ({data , color}) => {
     const p = data.map(arr => handlePrice(arr[1]));
     const t = data.map((arr) => {
-      const unixTimestamp = arr[0];
-      const dateObject = new Date(unixTimestamp);
-      const month = dateObject.toLocaleString("en-US", { month: "numeric" });
-      const day = dateObject.toLocaleString("en-US", { day: "numeric" });
-      return `${month}/${day}`;
+      const dateObject = new Date(arr[0]);
+      const date = dateObject.toLocaleString("en-US")
+      return date
     });
 
     const legend = {
@@ -26,7 +24,7 @@ const TickerChart = ({data , color}) => {
         position: "top",
         labels: {
             fontColor: "#323130",
-            fontSize:  26
+            fontSize:  20
         }
     }
     const d = {
