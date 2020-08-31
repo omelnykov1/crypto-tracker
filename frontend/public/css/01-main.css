@@ -16,7 +16,7 @@
 
 .main-right img {
     border-radius: 10px;
-    margin-top: 15vh;
+    margin-top: 20vh;
     width: 140%;
     height: 65%;
     background-color: transparent;
@@ -38,7 +38,7 @@
 
 
 .welcome-message {
-    color: #5e57df;
+    color: #817cca;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,7 +87,7 @@
 }
 .all-tickers {
     margin-top: 4vw;
-    margin-right: 4vw;
+    margin-right: 5vw;
 }
 
 .tickers-btn {
@@ -104,7 +104,7 @@
     font-weight: 500 !important;
     padding-top: 7px !important;
     padding-bottom: 7px !important;
-    padding-left: 1px !important;
+    padding-left: 15px !important;
     padding-right: 15px !important;
     height: 55px;
     width: 166px;

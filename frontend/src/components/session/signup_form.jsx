@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Particles from "react-tsparticles";
-
+import PartcilesSession from './session_particles'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -18,8 +17,6 @@ class SignupForm extends React.Component {
     this.handleNameErr = this.handleNameErr.bind(this);
     this.handlePasswordErr = this.handlePasswordErr.bind(this);
     this.handlePassword2Err = this.handlePassword2Err.bind(this);
-    this.handleDropdown = this.handleDropdown.bind(this);
-    this.handleDropdownp = this.handleDropdownp.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
   }
@@ -34,14 +31,6 @@ class SignupForm extends React.Component {
         [field]: e.currentTarget.value,
       });
     }
-  }
-
-  handleDropdown(e) {
-    this.setState({ language: e.target.value });
-  }
-
-  handleDropdownp(e) {
-    this.setState({ pronouns: e.target.value });
   }
 
   handleSubmit(e) {
@@ -117,91 +106,10 @@ class SignupForm extends React.Component {
 
     return (
       <div className="signup-form-container">
-        <Particles
-          id="tsparticles"
-          options={{
-            background: {
-              color: {
-                value: "00008B",
-              },
-            },
-            fpsLimit: 60,
-            interactivity: {
-              detectsOn: "canvas",
-              events: {
-                onClick: {
-                  enable: true,
-                  mode: "push",
-                },
-                onHover: {
-                  enable: true,
-                  mode: "repulse",
-                },
-                resize: true,
-              },
-              modes: {
-                bubble: {
-                  distance: 400,
-                  duration: 2,
-                  opacity: 0.8,
-                  size: 40,
-                },
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
-                },
-              },
-            },
-            particles: {
-              color: {
-                value: "#ffffff",
-              },
-              links: {
-                color: "#ffffff",
-                distance: 150,
-                enable: true,
-                opacity: 0.5,
-                width: 1,
-              },
-              collisions: {
-                enable: true,
-              },
-              move: {
-                direction: "none",
-                enable: true,
-                outMode: "bounce",
-                random: false,
-                speed: 6,
-                straight: false,
-              },
-              number: {
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-                value: 80,
-              },
-              opacity: {
-                value: 0.5,
-              },
-              shape: {
-                type: "circle",
-              },
-              size: {
-                random: true,
-                value: 5,
-              },
-            },
-            detectRetina: true,
-          }}
-        />
+        < PartcilesSession />
         <form onSubmit={this.handleSubmit} className="signup-form-with-header">
           <div className="signup-form">
             <h1>Sign up for free</h1>
-
             <input
               className="signup-no-errors-input"
               type="text"

@@ -3,7 +3,7 @@
     top: 20%;  
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(182, 182, 182, 0.6);
+    background: rgba(201, 201, 201, 0.6);
     max-width: 60%;
     height: 4vw;
     width: 100%;
@@ -13,26 +13,29 @@
     justify-content: space-between;
 }
 
-.search-bar-wrapper input {
+.search-input-and-results {
     width: 75%;
-    padding: 15px 40px;
+    padding: 0;
+}
+
+.search-input-and-results input {
+    height: 1.9vw;
+    width: 100%;
+    padding: 15px 50px;
     border: none;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
     outline: none;
-    font-size: 19px;
+    font-size: 21px;
     color: rgb(82, 82, 82);
 }
 
 .search-bar-wrapper label {
-    background: white;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
     position: absolute;
     top: 40%;
     color: rgb(82, 82, 82);
     margin-left: 1vw;
-    font-size: 18px;
+    font-size: 21px;
 }
 
 .search-bar-wrapper input::-webkit-input-placeholder {
@@ -40,10 +43,10 @@
 }
 
 .search-btn {
-    margin-left: 1vw;
     width: 22%;
     background: #817cca;
-    border-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
     position: relative;
     cursor: pointer;
 }
@@ -53,8 +56,60 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 21px;
     color: white;
+}
+
+/*  search result */
+
+.hide-show-result {
+    display: none;
+}
+
+.show-search-result {
+    background-color: darkgray;
+    z-index: 9999;
+    opacity: 1;
+}
+
+.search-input-and-results {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticker-search-item {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 1.9vw;
+    width: 94.4%;
+    padding: 15px;
+    margin-left: 2vw;
+    border-top: 1px solid rgb(82, 82, 82);
+    outline: none;
+    font-size: 21px;
+    color: rgb(82, 82, 82);
+}
+
+.ticker-search-left,.ticker-search-right {
+    margin-top: 0.4vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.ticker-search-right {
+    justify-content: space-between;
+}
+
+.ticker-search-left img{
+    margin: 0;
+    margin-top: -0.3vw;
+    width: 30px;
+    height: 30px;
+}
+
+.ticker-search-market-cap {
+    margin-left: 1vw;
+    margin-right: 1.5vw;
 }
 
 

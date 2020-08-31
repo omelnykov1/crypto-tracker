@@ -1,7 +1,7 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch, Route } from "react-router-dom";
-import MainPage from "./main/main_page";
+import MainPageContainer from "./main/main_page_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import NavBarContainer from './navbar/nav_bar_container';
@@ -13,7 +13,7 @@ const App = () => (
   <div className="root-wrapper">
     <NavBarContainer />
     <Switch>
-      <Route exact path="/" component={MainPage} />
+      <Route exact path="/" component={MainPageContainer} />
       <Route exact path="/tickers" component={TickerIndexContainer} />
       <Route path={`/tickers/:tickerId`} component={TickerContainer}/>
       <ProtectedRoute path='/tables' component={TableContainer}/>

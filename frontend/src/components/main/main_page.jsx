@@ -7,6 +7,10 @@ class MainPage extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchTickers();
+  }
+
   handleClick() {
     this.props.history.push('/tickers');
   }
@@ -29,8 +33,8 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="main-right">
-          <img src={"/images/main.png"} alt="" />
-          < SearchBar />
+          <img src={"/images/not-main.png"} alt="" />
+          < SearchBar tickers={this.props.tickers}/>
         </div>
       </div>
     );

@@ -150,11 +150,13 @@
     position: absolute;
     display: flex;
     width: 3.6vw;
+    padding: 1px;
     min-height: fit-content;
-    background-color: rgb(246, 246, 246);
+    background-color: #c5c2f0;
     font-size: 12px;
     margin-top: 1rem;
     text-align: center;
+    border-radius: 3px;
 }
 
 .ticker-index-item-chart canvas{

@@ -4,7 +4,6 @@
     padding: 0;
     position: absolute;
     top: 0;
-    /* background-image: linear-gradient(to top right, #bccbde 50%, #c2dde6 50%); */
 }
 
 .link-to-other-form {
@@ -33,7 +32,7 @@
     overflow: hidden;
     font-family: 'Varela Round', sans-serif;
     width: 29%;
-    height: 94.8vh;
+    height: 93.7vh;
     padding: 40px;
     left: 33%;
     margin-top: 50px;
