@@ -144,7 +144,6 @@
 
 .tickers-btn {
     transition: transform 300ms ease-in-out;
-    z-index: 1;
 }
 
 

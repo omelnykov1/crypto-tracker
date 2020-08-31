@@ -13,8 +13,8 @@ class SearchBar extends React.Component {
         this.blur = this.blur.bind(this);
     }
 
-    update(field) {
-        return e => this.setState({ [field]: e.target.value })
+    update() {
+        return e => this.setState({ 'searchStr': e.target.value })
     }
 
     focus() {
@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
     render() {
         if (this.props.tickers.length) {
             const filt = this.props.tickers.filter(ticker => {
-                if (ticker.name.toLowerCase().includes(this.state.searchStr) && this.state.searchStr.length > 0) {
+                if ((ticker.name.toLowerCase().includes(this.state.searchStr) || ticker.name.toUpperCase().includes(this.state.searchStr) || ticker.name.includes(this.state.searchStr))&& this.state.searchStr.length > 0) {
                     return ticker
                 }
             });
@@ -38,18 +38,17 @@ class SearchBar extends React.Component {
                     < SearchItem ticker={ticker} />
                 </li>
             ))
-            console.log(!!this.state.searchStr.length)
             return (
-                <div className="search-bar-wrapper" onFocus={this.focus} onBlur={this.blur}>
+                <div className="search-bar-wrapper">
                     <label htmlFor="search-bar"><i className="fa fa-search"></i></label>
-                    <div className="search-input-and-results">
+                    <div className="search-input-and-results" onFocus={this.focus} onBlur={this.blur}>
                         <input 
                             type="text" 
                             id="search" 
                             name="search-bar" 
                             placeholder="Enter your favorite project" 
                             autoComplete="none" 
-                            onChange={this.update('searchStr')}
+                            onChange={this.update()}
                         />
                         <div className={showToggle}>
                             <ol>

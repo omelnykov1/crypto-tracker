@@ -19,7 +19,7 @@
 }
 
 .search-input-and-results input {
-    height: 1.9vw;
+    min-height: 48%;
     width: 100%;
     padding: 15px 50px;
     border: none;
@@ -44,6 +44,7 @@
 
 .search-btn {
     width: 22%;
+    min-height: 48%;
     background: #817cca;
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
@@ -66,10 +67,16 @@
     display: none;
 }
 
-.show-search-result {
-    background-color: darkgray;
-    z-index: 9999;
-    opacity: 1;
+.show-search-result ol{
+    background-color: rgb(255, 255, 255);
+    opacity: none;
+    margin-left: 2vw;
+    margin-top: 0.05vw;
+    width: 99.5%;
+    overflow-y: auto;
+    min-height: fit-content;
+    max-height: 400px;
+    position: relative;
 }
 
 .search-input-and-results {
@@ -81,13 +88,17 @@
     display: grid;
     grid-template-columns: 60% 40%;
     height: 1.9vw;
-    width: 94.4%;
+    width: 95.4%;
     padding: 15px;
-    margin-left: 2vw;
-    border-top: 1px solid rgb(82, 82, 82);
+    border-bottom: 0.5px solid rgba(201, 201, 201, 0.6);
     outline: none;
     font-size: 21px;
     color: rgb(82, 82, 82);
+    cursor: pointer;
+}
+
+.ticker-search-item:hover {
+    background-color: rgba(201, 201, 201, 0.6);
 }
 
 .ticker-search-left,.ticker-search-right {
