@@ -28,7 +28,6 @@ class TickerIndexItem extends React.Component {
         } else {
           this.props.table.tickers = [this.props.ticker];
           this.props.table.user = this.props.user.id;
-          debugger
           this.props.createTable(this.props.table).then(this.props.fetchTickers());
         }
       } else {

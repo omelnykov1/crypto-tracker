@@ -18,15 +18,20 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { loggedIn, currentUser } = this.props;
+    const { loggedIn,table } = this.props;
+    const profileClass = (table.tickers && table.tickers.length) ? "profile" : "no-profile";
+    const clickOrNoClick = profileClass === "profile" ? 
+      <i className="far fa-user" onClick={() => this.handleTable()}></i> 
+      :
+      <i className="far fa-user"></i>
     const loginToggle = loggedIn ? (
       <div className="right-nav">
         <div className="left-right-nav" onClick={() => this.props.logout()}>
           <button className="logout">Logout</button>
         </div>
         <div className="right-right-nav">
-          <div className="profile">
-            <i className="far fa-user" onClick={() => this.handleTable()}></i>
+          <div className={profileClass}>
+            {clickOrNoClick}
           </div>
         </div>
       </div>

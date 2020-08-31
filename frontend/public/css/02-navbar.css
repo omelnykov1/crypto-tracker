@@ -54,11 +54,29 @@
     margin: 15px;
     margin-right: -250px;
 }
+
 .logo { 
     margin: 15px;
     cursor: pointer;
     color: #5e57df;
     font-size: 21px;
+}
+
+.no-profile i {
+    font-size: 30px;
+    color:  #5e57df;
+    margin-top: 5px;
+    opacity: 0.6;
+    margin: 15px;
+}
+
+.no-profile i:hover {
+    margin: 15px;
+    cursor: not-allowed;
+    color: #5e57df;
+    font-weight: bolder;
+    opacity: 0.6;
+    font-size: 32px;
 }
 
 .profile i {
@@ -68,7 +86,6 @@
 }
 
 .profile i:hover {
-    cursor: not-allowed;
     color: #5e57df;
     font-weight: bolder;
     font-size: 32px;

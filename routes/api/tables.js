@@ -59,7 +59,7 @@ router.patch("/", passport.authenticate("jwt", { session: false }), (req, res) =
   const table = Table.findOneAndUpdate(
     { _id: req.body._id }, { tickers: req.body.tickers }, { new: true }, (err, table) => {
       if (err) {
-        console.log(err)
+        console.log(err, 'THIS IS ERROR')
         res.status(404).json(err);
       } else {
         res.json(table);

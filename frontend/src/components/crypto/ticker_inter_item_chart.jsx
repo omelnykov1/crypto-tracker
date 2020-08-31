@@ -3,17 +3,30 @@ import { Line } from 'react-chartjs-2';
 
 const handlePrice = num => {
     if (num >= 1) {
-        return num.toFixed(2)
+        return num.toFixed(2);
     } else if (num >= 0.1) {
-        return num.toFixed(4)
+        return num.toFixed(4);
     } else {
-        return num.toFixed(7)
+        return num.toFixed(7);
+    }
+}
+
+const handleStepSize = num => {
+    if (num > 4) {
+        return 1;
+    } else if (num > 1) {
+        return 0.3;
+    } else if (num > 0.1) {
+        return 0.05;
+    } else {
+        return 0.005;
     }
 }
 
 const TickerIndexItemChart = ({data, color}) => {
     const price = data.map(p => handlePrice(p));
-    const time = new Array (price.length)
+    const stepS = handleStepSize(data[0]);
+    const time = new Array (price.length);
     const legend = {
         display: false,
         position: "top",
@@ -50,7 +63,7 @@ const TickerIndexItemChart = ({data, color}) => {
                         display: false,
                         autoSkip: true,
                         maxTicksLimit: 11,
-                        stepSize: 0.1,
+                        stepSize: stepS,
                     },
                     gridLines: {
                         display: false,

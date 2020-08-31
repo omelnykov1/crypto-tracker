@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchTable, changeTable, clearErrors, createTable, deleteTable } from '../../actions/table_actions';
-import { fetchTickers, fetchTableTicker } from '../../actions/crypto_actions';
+import { fetchTableTicker } from '../../actions/crypto_actions';
 import Table from './table';
 
 

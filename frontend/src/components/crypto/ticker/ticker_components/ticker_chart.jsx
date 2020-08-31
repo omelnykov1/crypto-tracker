@@ -11,8 +11,19 @@ const handlePrice = num => {
   }
 }
 
+const handleStepSize = num => {
+  if (num > 1.5) {
+    return 1
+  } else if (num > 0.1) {
+    return 0.05
+  } else {
+    return 0.005
+  }
+}
+
 const TickerChart = ({data , color}) => {
     const p = data.map(arr => handlePrice(arr[1]));
+    const stepS = handleStepSize(data[0][1]);
     const t = data.map((arr) => {
       const dateObject = new Date(arr[0]);
       const date = dateObject.toLocaleString("en-US")
@@ -51,7 +62,7 @@ const TickerChart = ({data , color}) => {
             ticks: {
               autoSkip: true,
               maxTicksLimit: 11,
-              stepSize: 1,
+              stepSize: stepS,
             },
             gridLines: {
               display: false,
