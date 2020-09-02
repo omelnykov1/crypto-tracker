@@ -18,12 +18,12 @@
     display: grid;
     grid-template-columns: 20% 80%;
     width: 100%;
-    border-top: 1px solid black;
+    border-top: 0.5px solid rgba(201, 201, 201, 0.6);
 }
 
 .table-item-left {
     padding-left: 20px;
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(201, 201, 201, 0.6);
     height: 5vh;
 
 }
@@ -66,8 +66,12 @@
 
 /* table index */
 .table-wrapper {
-    margin: 2vw;
-    border: 1px solid black;
+    width: 70%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.5px solid rgba(201, 201, 201, 0.6);
     border-radius: 10px;
     box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
 }
@@ -85,27 +89,11 @@
     width: 15%;
 }
 
-.table-delete-btn {
+.table-item-right i{
+    font-size: 1.5rem;
+    color: #9365e7;
     cursor: pointer;
-    color: #fff !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #8c94db;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    transition: all 0.4s ease 0s;
-    height: 90%;
-    margin-bottom: 14px;
-}
-
-.table-delete-btn:hover {
-   background: #434343;
-    letter-spacing: 1px;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.4s ease 0s;   
+    margin-left: 4vw;
 }
 
 

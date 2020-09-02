@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
                             name="search-bar" 
                             placeholder="Enter your favorite project" 
                             autoComplete="none" 
-                            onChange={this.update()}
+                            onChange={this.update}
                         />
                         <div className={showToggle}>
                             <ol>
