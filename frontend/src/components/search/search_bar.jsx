@@ -51,7 +51,7 @@ class SearchBar extends React.Component {
                             onChange={this.update}
                         />
                         <div className={showToggle}>
-                            <ol>
+                            <ol className="search-list">
                                 {result}
                             </ol>
                         </div>
