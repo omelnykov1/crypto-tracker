@@ -1,7 +1,7 @@
 .ticker-index-main {
     background-color: #FFFFFF;
     height: 100%;
-    border: 1px solid black;
+    border: 1px solid rgb(224, 224, 224);
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2vw;
@@ -52,10 +52,14 @@
 }
 
 .ticker-index {
-    border-top: 1px solid darkgray;
+    border-top: 0.5px solid rgb(224, 224, 224);
     display: grid;
     grid-template-rows: 35% 65%;
     height: 60px;
+}
+
+.tickers-list ol:last-child {
+    border-bottom: 0.5px solid rgb(224, 224, 224);
 }
 
 
@@ -161,4 +165,13 @@
 
 .ticker-index-item-chart canvas{
     height: 60px !important;
+}
+
+.page-link {
+    cursor: pointer;
+}
+
+.page-num {
+    margin-left: 0.5vw;
+    font-size: 18px;
 }

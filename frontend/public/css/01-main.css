@@ -1,66 +1,66 @@
 .root-wrapper {
-    width: 100%;
-    overflow: hidden;
+    width: 100% !important;
+    overflow: hidden !important;
 }
 
 .main {
-    display: grid;
+    display: grid !important;
     width: 100%;
-    height: 92vh;
-    grid-template-columns: 65% 35%;
+    height: 92vh !important;
+    grid-template-columns: 65% 35% !important;
 }
 
 .main img {
-    height: 100%;
+    height: 100% !important;
 }
 
 .main-right img {
-    border-radius: 10px;
-    margin-top: 20vh;
-    width: 140%;
-    height: 65%;
-    background-color: transparent;
+    border-radius: 10px !important;
+    margin-top: 20vh !important;
+    width: 140% !important;
+    height: 65% !important;
+    background-color: transparent !important;
 }
 
 .welcome-main {
-    text-align: center;
-    display: flex;
-    width: 75%;
+    text-align: center !important;
+    display: flex !important;
+    width: 75% !important;
 }
 
 .main-left, .main-right {
-    display: flex;
+    display: flex !important;
 }
 
 .main-right {
-    margin-right: 5vw;
+    margin-right: 5vw !important;
 }
 
 
 .welcome-message {
-    color: #817cca;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    min-height: fit-content;
-    height: 55%;
-    font-weight: 600;
-    margin-top: 12vw;
-    padding: 20px;
-    border-radius: 10px;
+    color: #817cca !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 80% !important;
+    min-height: fit-content !important;
+    height: 55% !important;
+    font-weight: 600 !important;
+    margin-top: 12vw !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
 }
 
 .welcome-message h1 {
-    margin-top: 1vw;
-    font-size: 37px;
-    font-weight: 600;
-    font-family: 'Noto Sans', sans-serif;
+    margin-top: 1vw !important;
+    font-size: 37px !important;
+    font-weight: 600 !important;
+    font-family: 'Noto Sans', sans-serif !important;
     animation: typewriter 4s steps(24) 1s normal both,
-    blinkTextCursor 500ms steps(24) infinite normal;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 45px;
+    blinkTextCursor 500ms steps(24) infinite normal !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    height: 45px !important;
 }
 
 @keyframes typewriter {
@@ -74,28 +74,28 @@
 
 @keyframes blinkTextCursor {
     from {
-        border-right-color: #09868b;
+        border-right-color: #09868b !important;
     }
     to {
-        border-right-color: transparent;
+        border-right-color: transparent !important;
     }
 }
 
 .welcome-message p {
-   margin-top: 2vw;
-   font-size: 31px;
-   font-family: 'Noto Sans', sans-serif; 
+   margin-top: 2vw !important;
+   font-size: 31px !important;
+   font-family: 'Noto Sans', sans-serif !important; 
 }
 
 .all-tickers {
-    margin-top: 4vw;
-    margin-right: 5vw;
+    margin-top: 4vw !important;
+    margin-right: 5vw !important;
 }
 
 .tickers-btn {
-    border: transparent;
-    background: transparent;
-    justify-content: space-between;
+    border: transparent !important;
+    background: transparent !important;
+    justify-content: space-between !important;
     cursor: pointer !important;
     display: inline-block !important;
     position: relative !important;
@@ -108,44 +108,44 @@
     padding-bottom: 7px !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
-    height: 68px;
-    width: 176px;
-    color: #ff4b5d;
-    --accent-color :#c53211;
-    margin-left: 72px;
+    height: 68px !important;
+    width: 176px !important;
+    color: #ff4b5d !important;
+    --accent-color :#c53211 !important;
+    margin-left: 72px !important;
 }
 
 .tickers-btn:hover {
-    transition: 0.6s;
-    color: #ffffff;
+    transition: 0.6s !important;
+    color: #ffffff !important;
 }
 
 .tickers-btn:focus {
-    outline: 0;
+    outline: 0!important ;
 }
 
 .tickers-btn::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    transform: scaleX(0);
-    transition: transform 300ms ease-in-out ;
-    background-color: #ff4b5d;
-    border: 2px solid #fd3b7c;
-    border-radius: 10px;
+    content: ""!important;
+    position: absolute!important;
+    top: 0!important;
+    left: 0!important;
+    right: 0!important;
+    bottom: 0!important;
+    z-index: -1!important;
+    transform: scaleX(0)!important;
+    transition: transform 300ms ease-in-out !important;
+    background-color: #ff4b5d !important;
+    border: 2px solid #fd3b7c !important;
+    border-radius: 10px !important;
 }
 
 .tickers-btn:hover::before,
 .tickers-btn:focus::before {
-    transform: scaleX(1);
+    transform: scaleX(1) !important;
 }
 
 .tickers-btn {
-    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out !important;
 }
 
 
