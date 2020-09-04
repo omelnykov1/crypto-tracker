@@ -22,8 +22,10 @@ class MainPage extends React.Component {
           <div className="welcome-message">
             <h1>Welcome to Crypto Tracker</h1>
             <p className="welcome-main">
-              Platform which provides fast and reliable data about your favorite blockchain
-              projects.
+              Platform which provides fast and reliable data about your favorite
+              blockchain projects. The simplified overview of everything makes
+              it easy to quickly navigate to the coins you have an interest in
+              and is a great tool to have next to your exchange account.
             </p>
             <div className="all-tickers">
               <button className="tickers-btn" onClick={this.handleClick}>
@@ -34,7 +36,7 @@ class MainPage extends React.Component {
         </div>
         <div className="main-right">
           <img src={"/images/not-main.png"} alt="" />
-          < SearchBar tickers={this.props.tickers}/>
+          <SearchBar tickers={this.props.tickers} />
         </div>
       </div>
     );

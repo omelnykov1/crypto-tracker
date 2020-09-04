@@ -29,8 +29,11 @@
     border-bottom-left-radius: 7px;
     outline: none;
     font-size: 21px;
-    color: rgb(82, 82, 82);
-    
+    color: rgb(82, 82, 82); 
+}
+
+#search:focus {
+    min-height: 60%;
 }
 
 .search-bar-wrapper label {
@@ -47,6 +50,7 @@
 
 .search-btn {
     min-height: 28%;
+    height: 100%;
     width: 22%;
     background: #817cca;
     border-top-right-radius: 7px;
@@ -74,7 +78,7 @@
     background-color: rgb(255, 255, 255);
     opacity: none;
     margin-left: 2vw;
-    margin-top: 0.05vw;
+    margin-top: 0.02vw;
     width: 99.5%;
     overflow-y: auto;
     min-height: fit-content;

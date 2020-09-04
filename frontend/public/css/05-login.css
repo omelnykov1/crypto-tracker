@@ -32,10 +32,9 @@
     overflow: hidden;
     font-family: 'Varela Round', sans-serif;
     width: 29%;
-    height: 93.7vh;
+    height: 100vh;
     padding: 40px;
     left: 33%;
-    margin-top: 50px;
     margin-right: auto;
     transform: translate(-50% -50%);
     background: #5a55aa;
