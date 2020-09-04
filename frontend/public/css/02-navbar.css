@@ -1,14 +1,13 @@
 .navbar {
-    display: grid !important;;
-    grid-template-columns: 50% 50% !important;;
-    position: relative !important;;
-    align-items: center !important;;
-    z-index: 99 !important;;
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    z-index: 99 !important;
     background-color: #FFFFFF !important;;
-    box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2) !important;;
+    box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2) !important;
     font-size: 21px !important;;
-    width: 100% !important;;
-    height: 8vh !important;;
+    width: 100% !important;
+    height: 8vh !important;
 }
 
 .login, .logout, .signup, .profile {
@@ -23,10 +22,12 @@
     margin: 0 auto !important;
     text-align: center !important;
     cursor: pointer !important;
+    margin-top: 1vw !important;
 }
 
 .profile {
-    width: fit-content;
+    min-width: fit-content !important;
+    width: 100% !important;
 }
 
 .login:hover, .signup:hover,.logout:hover, .profile:hover {
@@ -37,33 +38,35 @@
 }
 
 .left-right-nav {
-    margin-left: 17vw !important; 
+    margin-left: 13vw !important; 
 }
 
 .right-right-nav {
     margin-left: 1vw !important; 
 }
 
-.right-nav {
-    display: flex !important; 
-    flex-direction: row !important; 
-    justify-content: space-evenly 
-};
-
-.left-nav, .right-nav {
-    margin-top: 25% !important; 
+.left-nav {
+   justify-content: left !important;
 }
 
+.right-nav, .left-nav {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important; 
+    flex-direction: row !important; 
+    justify-content: space-evenly; 
+};
+
 .login, .logout, .signup, .profile {
-    margin: 15px !important; 
     margin-right: -250px !important; 
 }
 
-.logo { 
-    margin: 15px !important;
+
+.logo-logo {
+    margin: 0;
+    width: 12vw !important;
+    /* height: 14vh !important; */
     cursor: pointer !important;
-    color: #5e57df !important;
-    font-size: 21px !important;
 }
 
 

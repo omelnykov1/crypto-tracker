@@ -24,8 +24,7 @@ class MainPage extends React.Component {
             <p className="welcome-main">
               Platform which provides fast and reliable data about your favorite
               blockchain projects. The simplified overview of everything makes
-              it easy to quickly navigate to the coins you have an interest in
-              and is a great tool to have next to your exchange account.
+              it easy to quickly navigate to the coins you have an interest in.
             </p>
             <div className="all-tickers">
               <button className="tickers-btn" onClick={this.handleClick}>

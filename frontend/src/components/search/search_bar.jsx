@@ -56,28 +56,34 @@ class SearchBar extends React.Component {
     render() {
         const showToggle = this.state.focus ? "show-search-result" : "hide-show-result"
         return (
-            <div className="search-bar-wrapper">
-                <label htmlFor="search-bar"><i className="fa fa-search"></i></label>
-                <div className="search-input-and-results" name="search-bar" onFocus={this.focus} onBlur={this.blur}>
-                    <input 
-                        type="text" 
-                        id="search" 
-                        name="search-bar" 
-                        placeholder="Enter your favorite project" 
-                        autoComplete="none" 
-                        onChange={this.update()}
-                    />
-                    <div className={showToggle}>
-                        <ol className="search-list">
-                            {this.renderSearchResult()}
-                        </ol>
-                    </div>
-                </div>
-                <div className="search-btn">
-                    <i className="search-b">Search</i>
-                </div>
+          <div className="search-bar-wrapper">
+            <label htmlFor="search-bar">
+              <i className="fa fa-search"></i>
+            </label>
+            <div
+              className="search-input-and-results"
+              name="search-bar"
+              onFocus={this.focus}
+              onBlur={this.blur}
+            >
+              <input
+                size="16"
+                type="text"
+                id="search"
+                name="search-bar"
+                placeholder="Enter your favorite project"
+                autoComplete="none"
+                onChange={this.update()}
+              />
+              <div className={showToggle}>
+                <ol className="search-list">{this.renderSearchResult()}</ol>
+              </div>
             </div>
-        )
+            <div className="search-btn">
+              <i className="search-b">Search</i>
+            </div>
+          </div>
+        );
     }
 }
 

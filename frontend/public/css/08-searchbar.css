@@ -1,145 +1,138 @@
 .search-bar-wrapper {
-    position: absolute;
-    top: 20%;  
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(201, 201, 201, 0.6);
-    max-width: 60%;
-    height: 4vw;
-    width: 100%;
-    padding: 15px;
-    border-radius: 7px;
-    display: flex;
-    justify-content: space-between;
+    position: absolute !important;
+    top: 20% !important;  
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: rgba(201, 201, 201, 0.6) !important;
+    max-width: 60% !important;
+    height: 4vw !important;
+    width: 100% !important;
+    padding: 15px !important;
+    border-radius: 7px !important;
+    display: flex !important;
+    justify-content: space-between !important;
 }
 
 .search-input-and-results {
-    width: 75%;
-    padding: 0;
-    height: 100%;
+    width: 75% !important;
+    padding: 0 !important;
+    height: 100% !important;
 }
 
 #search {
-    min-height: 28%;
-    height: 100%;
-    width: 100%;
-    padding: 15px 50px;
-    border: none;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-    outline: none;
-    font-size: 21px;
-    color: rgb(82, 82, 82); 
+    min-height: 28% !important;
+    height: 100% !important;
+    width: 100% !important;
+    padding: 15px 50px !important;
+    border: none !important;
+    border-top-left-radius: 7px !important;
+    border-bottom-left-radius: 7px !important;
+    outline: none !important;
+    font-size: 21px !important;
+    color: rgb(82, 82, 82) !important; 
 }
 
 #search:focus {
-    min-height: 60%;
+    min-height: 48% !important;
+    height: 100% !important;
 }
 
 .search-bar-wrapper label {
-    position: absolute;
-    top: 40%;
-    color: rgb(82, 82, 82);
-    margin-left: 1vw;
-    font-size: 21px;
+    position: absolute !important;
+    top: 40% !important;
+    color: rgb(82, 82, 82) !important;
+    margin-left: 1vw !important;
+    font-size: 21px !important;
 }
 
 .search-bar-wrapper input::-webkit-input-placeholder {
-    font-size: 18px;
+    font-size: 18px !important;
 }
 
 .search-btn {
-    min-height: 28%;
-    height: 100%;
-    width: 22%;
-    background: #817cca;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-    position: relative;
-    cursor: pointer;
+    min-height: 28% !important;
+    height: 100% !important;
+    width: 22% !important;
+    background: #817cca !important;
+    border-top-right-radius: 7px !important;
+    border-bottom-right-radius: 7px !important;
+    position: relative !important;
+    cursor: pointer !important;
 }
 
 .search-btn i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 21px;
-    color: white;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 21px !important;
+    color: white !important;
 }
 
 /*  search result */
 
 .hide-show-result {
-    display: none;
+    display: none !important;
 }
 
 .show-search-result ol{
-    background-color: rgb(255, 255, 255);
-    opacity: none;
-    margin-left: 2vw;
-    margin-top: 0.02vw;
-    width: 99.5%;
-    overflow-y: auto;
-    min-height: fit-content;
-    max-height: 400px;
-    position: relative;
+    background-color: rgb(255, 255, 255) !important;
+    opacity: none !important;
+    margin-left: 2vw !important;
+    margin-top: 1vw !important;
+    width: 99.5% !important;
+    overflow-y: auto !important;
+    min-height: fit-content !important;
+    max-height: 400px !important;
+    position: relative !important;
 }
 
 .search-input-and-results {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
-.ticker-search-item {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    height: 1.9vw;
-    width: 95.4%;
-    padding: 15px;
-    border-bottom: 0.5px solid rgba(201, 201, 201, 0.6);
-    outline: none;
-    font-size: 21px;
-    color: rgb(82, 82, 82);
+.ticker-search-item, .no-result {
+    display: grid !important;
+    grid-template-columns: 60% 40% !important;
+    height: 1.9vw !important;
+    width: 95.4% !important;
+    padding: 15px !important;
+    border-bottom: 0.5px solid rgba(201, 201, 201, 0.6) !important;
+    outline: none !important;
+    font-size: 21px !important;
+    color: rgb(82, 82, 82) !important;
     cursor: pointer;
 }
 
 .no-result {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    height: 1.9vw;
-    width: 95.4%;
-    padding: 15px;
-    border-bottom: 0.5px solid rgba(201, 201, 201, 0.6);
-    outline: none;
-    font-size: 21px;
-    color: rgb(82, 82, 82);
+    cursor: default;
 }
 
 .ticker-search-item:hover {
-    background-color: rgba(201, 201, 201, 0.6);
+    background-color: rgba(201, 201, 201, 0.6)!important;
 }
 
 .ticker-search-left,.ticker-search-right {
-    margin-top: 0.4vw;
-    display: flex;
-    flex-direction: row;
+    margin-top: 0.4vw !important;
+    display: flex !important;
+    flex-direction: row !important;
 }
 
 .ticker-search-right {
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .ticker-search-left img{
-    margin: 0;
-    margin-top: -0.3vw;
-    width: 30px;
-    height: 30px;
+    margin: 0 !important;
+    margin-top: -0.3vw !important;
+    width: 30px !important;
+    height: 30px !important;
 }
 
 .ticker-search-market-cap {
-    margin-left: 1vw;
-    margin-right: 1.5vw;
+    margin-left: 1vw !important;
+    margin-right: 1.5vw !important;
 }
 
 
