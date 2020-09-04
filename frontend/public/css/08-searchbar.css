@@ -16,10 +16,12 @@
 .search-input-and-results {
     width: 75%;
     padding: 0;
+    height: 100%;
 }
 
-.search-input-and-results input {
-    min-height: 48%;
+#search {
+    min-height: 28%;
+    height: 100%;
     width: 100%;
     padding: 15px 50px;
     border: none;
@@ -28,6 +30,7 @@
     outline: none;
     font-size: 21px;
     color: rgb(82, 82, 82);
+    
 }
 
 .search-bar-wrapper label {
@@ -43,8 +46,8 @@
 }
 
 .search-btn {
+    min-height: 28%;
     width: 22%;
-    min-height: 48%;
     background: #817cca;
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
@@ -95,6 +98,18 @@
     font-size: 21px;
     color: rgb(82, 82, 82);
     cursor: pointer;
+}
+
+.no-result {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 1.9vw;
+    width: 95.4%;
+    padding: 15px;
+    border-bottom: 0.5px solid rgba(201, 201, 201, 0.6);
+    outline: none;
+    font-size: 21px;
+    color: rgb(82, 82, 82);
 }
 
 .ticker-search-item:hover {
