@@ -5,7 +5,7 @@ const TableLoader = props => {
     (
       <div className="table-loader-container">
         <img
-          src={"images/loading.gif"}
+          src={"images/l.gif"}
           className="table-loader"
           alt=""
         />

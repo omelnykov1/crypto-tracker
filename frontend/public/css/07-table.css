@@ -1,42 +1,52 @@
-.table-item-left, .table-item-right {
+.table-item-left, .table-item-right, .table-labels-left, .table-labels-right {
     display: flex;
     flex-direction: row;
 }
 
-.table-item-left {
+.table-item-left, .table-labels-left {
     margin-left: 20px;
     cursor: pointer;
 }
 
-.table-item-right {
+.table-labels-left {
+    cursor: default;
+}
+
+.table-item-righ {
     padding-top: 6px;
     justify-content: space-evenly;
 }
 
-.table-item-container {
+.table-item-container,.table-labels {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 28% 80%;
+    min-width: fit-content !important;
     width: 100%;
     border-top: 0.5px solid rgba(201, 201, 201, 0.6);
 }
 
-.table-item-left {
+.table-item-left, .table-labels-left {
     padding-left: 20px;
     border-right: 0.5px solid rgba(201, 201, 201, 0.6);
     height: 5vh;
-
 }
 
 .table-item-left img{
     padding-top: 3px;
     width: 15%;
     height: 80%;
+    margin-left: 1vw;
 }
 
-.table-item-left span{
+.table-item-left span {
     margin-top: 4.5%;
-    margin-left: 14px;
+    margin-left: 3vw;
+}
+
+.table-labels-left span {
+    margin-top: 5px;
+    margin-left: 5vw;
 }
 
 /* table loader */
@@ -66,7 +76,8 @@
 
 /* table index */
 .table-wrapper {
-    width: 70%;
+    width: 60%;
+    min-width: fit-content;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -83,10 +94,10 @@
     margin-bottom: 1vw;
 }
 
-.table-current-price, .table-market-cap-rank, .table-ath, .table-roi {
+.table-current-price, .table-market-cap-rank, .table-ath, .table-roi, .table-labels-right span {
     margin-top: 5px;
     text-align: right;
-    width: 15%;
+    width: 18%;
 }
 
 .table-item-right i{

@@ -42,50 +42,57 @@ class Ticker extends React.Component {
     }
   }
 
+  handleButton() {
+    let toggle;
+    if (this.props.table.tickers && this.props.ticker) {
+      this.props.table.tickers.forEach((tick) => {
+        if (this.props.ticker.name === tick.name) toggle = true;
+      });
+    }
+
+    const button = toggle ? (
+      <div className="wrapper" onClick={this.deleteTicker}>
+        <button>
+          Remove from Favorites
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    ) : (
+      <div className="add-wrapper" onClick={this.handleAddTicker}>
+        <button>
+          Add to Favorites
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    );
+
+    return button;
+  }
+
+  colorHandler() {
+    return this.props.ticker.market_data.price_change_percentage_7d >= 0
+      ? "#1ABC9C"
+      : "#E74C3C";
+  }
+
   render() {
     if (this.props.ticker && this.props.data) {
-      const {table,ticker }= this.props;
-      const {image, market_data} = ticker;
-      const color = market_data.price_change_percentage_7d >= 0 ? "#1ABC9C" : "#E74C3C";
-
-      let toggle;
-      if (table.tickers) {
-        table.tickers.forEach(tick => {
-          if (ticker.name === tick.name) toggle = true;
-        })
-      };
-
-      const button = toggle ? (
-        <div className="wrapper" onClick={this.deleteTicker}>
-          <button>
-            Remove Ticker
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      ) : (
-        <div className="add-wrapper" onClick={this.handleAddTicker}>
-          <button>
-            Add Ticker
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      );
-
+      const { ticker }= this.props;
       return (
         <div className="main-ticker-wrapper">
-          < TickerParticles image={image} />
+          < TickerParticles image={ticker.image} />
           <div className="ticker-widget">
             <TickerWidget ticker={ticker} />
           </div>
           <div className="ticker-info">
             <div className="ticker-chart-wrapper">
-              <TickerChart data={this.props.data} color={color}/>
+              <TickerChart data={this.props.data} color={this.colorHandler()}/>
             </div>
             <div className="ticker-statistics">
               <TickerStatistics ticker={ticker} />
@@ -95,7 +102,7 @@ class Ticker extends React.Component {
           <div className="ticker-about">
             <h1>About {ticker.name}</h1>
             <p>{ReactHtmlParser(ticker.description.en)}</p>
-            {button}
+            {this.handleButton()}
           </div>
         </div>
       );

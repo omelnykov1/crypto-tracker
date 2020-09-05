@@ -48,6 +48,17 @@ class Table extends React.Component {
         return (
             <div className="table-wrapper">
                 <h1>Favorite Tickers</h1>
+                <div className="table-labels">
+                    <div className="table-labels-left">
+                        <span>Name</span>
+                    </div>
+                    <div className="table-labels-right">
+                        <span>Current Price</span>
+                        <span>#</span>
+                        <span>Total ROI</span>
+                        <span>All Time High</span>
+                    </div>
+                </div>
                 {this.renderTickers()}
                 < TableLoader loading={isLoading} />
             </div>

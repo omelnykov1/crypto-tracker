@@ -27,9 +27,18 @@
     margin-top: 1vw !important;
 }
 
+.login, .logout {
+    margin-left: 28vw !important;
+}
+
+.signup, .profile {
+    margin-left: 4vw !important;
+}
+
 .profile {
+    margin-right: 10vw !important;
     min-width: fit-content !important;
-    width: 100% !important;
+    width: 8vw !important;
 }
 
 .login:hover, .signup:hover,.logout:hover, .profile:hover {
@@ -38,37 +47,22 @@
     border: 2px solid #5e57df !important;
 }
 
-.left-right-nav {
-     z-index: 2;
-    margin-left: 13vw !important; 
-}
 
 .right-right-nav {
-    margin-left: 1vw !important; 
-}
-
-.left-nav {
-   justify-content: left !important;
+    margin-left: 2vw !important; 
 }
 
 .right-nav, .left-nav {
-    width: 100% !important;
+    width: 50% !important;
     height: 100% !important;
     display: flex !important; 
     flex-direction: row !important; 
-    justify-content: space-evenly; 
 };
 
-.login, .logout, .signup, .profile {
-    margin-right: -250px !important; 
-}
+.left-nav img {
+    width: 20%;
+   justify-content: left !important;
+} 
 
-
-.logo-logo {
-    margin: 0;
-    width: 12vw !important;
-    /* height: 14vh !important; */
-    cursor: pointer !important;
-}
 
 
