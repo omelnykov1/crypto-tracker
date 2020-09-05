@@ -48,52 +48,54 @@ class TickerIndex extends React.Component {
         const currentTickers = this.state.tickers.slice(indexOfFirstTicker,indexOfLastTicker);
         const {changeTable, table} = this.props
         return (
-          <div className="ticker-index-main">
-            <div className="ticker-index-header">
-              <h1>Top 100 Coins by Market Capitalization</h1>
-            </div>
-            <div className="ticker-index-labels">
-              <div className="ticker-index-labels-left">
-                <h1 className="ticker-num">#</h1>
-                <h1 className="ticker-coin-index">Coin</h1>
+          <div className="tickers-main-page-wrapper">
+            <div className="ticker-index-main">
+              <div className="ticker-index-header">
+                <h1>Top 100 Coins by Market Capitalization</h1>
               </div>
-              <div className="ticker-index-labels-right">
-                <h1
-                  className="ticker-index-price"
-                  onClick={() => this.sort("current_price")}
-                >
-                  Price
-                </h1>
-                <h1
-                  className="ticker-index-volume"
-                  onClick={() => this.sort("total_volume")}
-                >
-                  24h Volume
-                </h1>
-                <h1
-                  className="ticker-index-market-cap"
-                  onClick={() => this.sort("market_cap")}
-                >
-                  Mkt Cap
-                </h1>
-                <h1 className="ticker-index-label-chart">Last 7 days</h1>
+              <div className="ticker-index-labels">
+                <div className="ticker-index-labels-left">
+                  <h1 className="ticker-num">#</h1>
+                  <h1 className="ticker-coin-index">Coin</h1>
+                </div>
+                <div className="ticker-index-labels-right">
+                  <h1
+                    className="ticker-index-price"
+                    onClick={() => this.sort("current_price")}
+                  >
+                    Price
+                  </h1>
+                  <h1
+                    className="ticker-index-volume"
+                    onClick={() => this.sort("total_volume")}
+                  >
+                    24h Volume
+                  </h1>
+                  <h1
+                    className="ticker-index-market-cap"
+                    onClick={() => this.sort("market_cap")}
+                  >
+                    Mkt Cap
+                  </h1>
+                  <h1 className="ticker-index-label-chart">Last 7 days</h1>
+                </div>
               </div>
-            </div>
-            <div className="tickers-list">
-              <ol>
-                {currentTickers.map((ticker) => (
-                  <TickerIndexItem
-                    ticker={ticker}
-                    key={ticker.id}
-                    changeTable={changeTable}
-                    table={table}
-                    fetchTickers={this.props.fetchTickers}
-                    fetchTickerData={this.props.fetchTickerData}
-                    user={this.props.currentUser}
-                    createTable={this.props.createTable}
-                  />
-                ))}
-              </ol>
+              <div className="tickers-list">
+                <ol>
+                  {currentTickers.map((ticker) => (
+                    <TickerIndexItem
+                      ticker={ticker}
+                      key={ticker.id}
+                      changeTable={changeTable}
+                      table={table}
+                      fetchTickers={this.props.fetchTickers}
+                      fetchTickerData={this.props.fetchTickerData}
+                      user={this.props.currentUser}
+                      createTable={this.props.createTable}
+                    />
+                  ))}
+                </ol>
+              </div>
             </div>
             <div className="pagination">
               <Pagination

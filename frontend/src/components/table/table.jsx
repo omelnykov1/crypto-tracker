@@ -26,10 +26,10 @@ class Table extends React.Component {
         return e => this.setState({[field]: e.target.value});
     }
 
-
-    render() {
+    renderTickers() {
+        let tickers;
         if (this.props.table.tickers) {
-            const tickers = (!this.props.table.tickers) ? null :
+            tickers = (!this.props.table.tickers) ? null :
                 this.props.table.tickers.map(ticker => (
                     <TableItem 
                         ticker={ticker} 
@@ -37,17 +37,21 @@ class Table extends React.Component {
                         table={this.props.table}
                         changeTable={this.props.changeTable}
                     />
-                ));
-            const loadingOrNot = !this.props.table.tickers ? true : false;
-            return (
-                <div className="table-wrapper">
-                    <h1>Favorite Tickers</h1>
-                    {tickers}
-                    < TableLoader loading={loadingOrNot} />
-                </div>
-            )
-        } 
-        return null;;
+            ));
+        }
+        return tickers;
+    }
+
+
+    render() {
+        const isLoading = !this.props.table.tickers ? true : false;
+        return (
+            <div className="table-wrapper">
+                <h1>Favorite Tickers</h1>
+                {this.renderTickers()}
+                < TableLoader loading={isLoading} />
+            </div>
+        )
     }
 }
 

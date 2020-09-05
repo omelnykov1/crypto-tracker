@@ -4,6 +4,7 @@
     padding: 0;
     position: absolute;
     top: 0;
+    z-index: 2;
 }
 
 .link-to-other-form {
@@ -25,7 +26,7 @@
     opacity: 0.48;
     position: fixed !important;
     display: block;
-    z-index: -1;
+    z-index: 0;
 }
 
 .login-form1 {
@@ -42,7 +43,7 @@
     box-sizing: border-box;
     opacity: 0.8;
     box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
-    z-index: 1;
+    z-index: 2;
 }
 
 .login-no-errors-input1 {

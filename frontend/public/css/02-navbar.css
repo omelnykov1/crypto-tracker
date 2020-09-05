@@ -1,4 +1,5 @@
 .navbar {
+    position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center !important;
@@ -11,6 +12,7 @@
 }
 
 .login, .logout, .signup, .profile {
+    min-width: fit-content !important;
     font-size: 21px !important;
     background-color: transparent !important;
 	border-radius: 5px !important;
@@ -32,12 +34,12 @@
 
 .login:hover, .signup:hover,.logout:hover, .profile:hover {
     cursor: pointer !important;
-    font-weight: bolder !important;
     color: #5e57df !important;
     border: 2px solid #5e57df !important;
 }
 
 .left-right-nav {
+     z-index: 2;
     margin-left: 13vw !important; 
 }
 

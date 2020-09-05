@@ -16,8 +16,7 @@
 
 .main-right img {
     border-radius: 10px !important;
-    margin-top: 20vh !important;
-    width: 140% !important;
+    margin-top: 32vh !important;
     height: 65% !important;
     background-color: transparent !important;
 }
@@ -36,6 +35,10 @@
 
 .main-right {
     margin-right: 5vw !important;
+}
+
+.main-left {
+    margin-top: 12vh;
 }
 
 

@@ -22,12 +22,8 @@ class LoginForm extends React.Component {
 
   componentDidMount() {
     this.props.clearSessionErrors();
-    let eles = document.getElementsByClassName("login-yes-errors-input");
-
-    Array.from(eles).forEach(ele => {
-      ele.className = "login-no-errors-input";
-    })
-
+    const eles = document.getElementsByClassName("login-yes-errors-input");
+    Array.from(eles).forEach(ele => ele.className = "login-no-errors-input")
   }
 
   update(field) {
@@ -40,7 +36,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let user = {
+    const user = {
       email: this.state.email,
       password: this.state.password,
     };
@@ -50,7 +46,7 @@ class LoginForm extends React.Component {
 
   handleEmailErr() {
     let field = document.getElementById("login-email");
-    if (field === null) return;
+    if (!field) return;
 
     if (this.props.errors.email) {
       field.className = "login-yes-errors-input1";

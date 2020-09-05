@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../../models/User");
-const bcrypt = require("bcryptjs");
 const axios = require('axios');
 const keys = require("../../config/keys");
-const jwt = require("jsonwebtoken");
 const Table = require("../../models/Table");
 const passport = require("passport");
 const table_validation = require("../../validation/table");
@@ -59,7 +56,6 @@ router.patch("/", passport.authenticate("jwt", { session: false }), (req, res) =
   const table = Table.findOneAndUpdate(
     { _id: req.body._id }, { tickers: req.body.tickers }, { new: true }, (err, table) => {
       if (err) {
-        console.log(err, 'THIS IS ERROR')
         res.status(404).json(err);
       } else {
         res.json(table);
@@ -73,7 +69,7 @@ router.delete('/:tableId', passport.authenticate("jwt", { session: false }), (re
     if (!table) {
       return res.status(400).json("Table not found");
     } else {
-      Table.findOneAndDelete({ _id: req.params.tableId }, function (err, table) {
+      Table.remove({ _id: req.params.tableId }, function (err, table) {
           if (err) {
             return res.status(400).json(err);
           } else {

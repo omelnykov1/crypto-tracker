@@ -21,7 +21,7 @@ const ParticlesSession = () => {
                         },
                         onHover: {
                             enable: true,
-                            mode: "repulse",
+                            mode: "trail",
                         },
                         resize: true,
                     },
@@ -39,6 +39,9 @@ const ParticlesSession = () => {
                             distance: 200,
                             duration: 0.4,
                         },
+                        trail: {
+                            delay: 1,
+                        }
                     },
                 },
                 particles: {
