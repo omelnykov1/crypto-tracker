@@ -48,7 +48,7 @@ class TickerIndex extends React.Component {
         const currentTickers = this.state.tickers.slice(indexOfFirstTicker,indexOfLastTicker);
         const {changeTable, table} = this.props
         return (
-          <div className="tickers-main-page-wrapper">
+          <div className="tickers-main-page-wrapper" style={{marginTop: "6vw"}}>
             <div className="ticker-index-main">
               <div className="ticker-index-header">
                 <h1>Top 100 Coins by Market Capitalization</h1>
