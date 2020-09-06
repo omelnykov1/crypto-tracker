@@ -30,7 +30,6 @@ class Ticker extends React.Component {
     if (this.props.currentUser.id) {
       if (this.props.table.user) {
         this.props.table.tickers.push(this.props.ticker);
-        debugger
         this.props.changeTable(this.props.table).then(this.props.fetchTable(this.props.currentUser.id));
       } else {
         this.props.table.tickers = [this.props.ticker];
