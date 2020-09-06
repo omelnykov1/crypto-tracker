@@ -45,9 +45,9 @@ class Table extends React.Component {
 
 
     render() {
-        setTimeout(() => {
-            this.setState({loading: false})
-        }, 1700)
+        // setTimeout(() => {
+        //     this.setState({loading: false})
+        // }, 1700)
 
         return this.state.loading ? < Loader loading={this.state.loading} /> : (
             <div className="table-wrapper">
