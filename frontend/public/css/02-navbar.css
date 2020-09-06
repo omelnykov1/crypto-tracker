@@ -31,14 +31,16 @@
     margin-left: 28vw !important;
 }
 
-.signup, .profile {
+.signup {
     margin-left: 4vw !important;
 }
+
 
 .profile {
     margin-right: 10vw !important;
     min-width: fit-content !important;
-    width: 8vw !important;
+    width: 10vw !important;
+    margin-left: 2vw !important;
 }
 
 .login:hover, .signup:hover,.logout:hover, .profile:hover {

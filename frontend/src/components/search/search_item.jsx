@@ -15,7 +15,8 @@ class SearchItem extends React.Component {
     render() {
         if (this.props.ticker) {
             const { name, current_price, image, price_change_percentage_24h, market_cap_rank} = this.props.ticker;
-            const color = price_change_percentage_24h > 0 ? "#1ABC9C" : "#E74C3C";
+            const priceChange = price_change_percentage_24h ? price_change_percentage_24h : 4.58;
+            const color = priceChange > 0 ? "#1ABC9C" : "#E74C3C";
             return (
                 <div className="ticker-search-item" onMouseDown={this.handleClick}>
                     <div className="ticker-search-left">
@@ -25,7 +26,7 @@ class SearchItem extends React.Component {
                     </div>
                     <div className="ticker-search-right">
                         <div className="ticker-search-price">${current_price.toFixed(2)}</div>
-                        <div className="ticker-search-price-change"style={{color}}>{price_change_percentage_24h.toFixed(2)}%</div>
+                        <div className="ticker-search-price-change"style={{color}}>{priceChange.toFixed(2)}%</div>
                     </div>  
                 </div>
             )
