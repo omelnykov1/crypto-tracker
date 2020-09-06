@@ -7,6 +7,7 @@ const cryptos = require("./routes/api/cryptos");
 const tables = require("./routes/api/tables");
 const passport = require("passport");
 const bodyParser = require("body-parser");
+const path = require('path');
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));

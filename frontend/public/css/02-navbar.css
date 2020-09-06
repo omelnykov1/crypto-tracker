@@ -64,5 +64,9 @@
    justify-content: left !important;
 } 
 
+#logo-logo {
+    cursor: pointer;
+}
+
 
 

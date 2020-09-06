@@ -47,8 +47,8 @@ class NavBar extends React.Component {
         <div className="navbar">
           <div className="left-nav">
               <img 
-                style={{width: "43%", height: "120%", marginLeft: "-5vw", marginTop: "-0.9vw"}}
-                src={"/images/facebook_cover_photo_2.png"} 
+                style={{width: "13%", height: "120%", marginLeft: "1vw", marginTop: "-0.3vw"}}
+                src={"/images/logo_transparent.png"} 
                 alt="" 
                 id="logo-logo" 
                 onClick={this.handleMain}

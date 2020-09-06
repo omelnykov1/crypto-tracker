@@ -35,6 +35,7 @@
 #search:focus {
     min-height: 48% !important;
     height: 100% !important;
+    outline-offset: -2vw !important;
 }
 
 .search-bar-wrapper label {
