@@ -1,14 +1,15 @@
 import React from 'react';
 import TableItem from './table_item';
-import TableLoader from './table_loader';
 import { withRouter } from 'react-router-dom';
+import { Loader } from '../util/loader';
 
 class Table extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             user: this.props.currentUser.id,
-            tickers: []
+            tickers: [],
+            loading: true
         }
         this.destroyTable = this.destroyTable.bind(this);
     }
@@ -38,14 +39,17 @@ class Table extends React.Component {
                         changeTable={this.props.changeTable}
                     />
             ));
-        }
+        } 
         return tickers;
     }
 
 
     render() {
-        const isLoading = !this.props.table.tickers ? true : false;
-        return (
+        setTimeout(() => {
+            this.setState({loading: false})
+        }, 1700)
+
+        return this.state.loading ? < Loader loading={this.state.loading} /> : (
             <div className="table-wrapper">
                 <h1>Favorite Tickers</h1>
                 <div className="table-labels">
@@ -60,7 +64,6 @@ class Table extends React.Component {
                     </div>
                 </div>
                 {this.renderTickers()}
-                < TableLoader loading={isLoading} />
             </div>
         )
     }

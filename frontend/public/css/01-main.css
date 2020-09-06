@@ -1,5 +1,7 @@
 .root-wrapper {
     width: 100% !important;
+    height: 100vh !important;
+    min-height: fit-content !important;
     overflow: hidden !important;
 }
 

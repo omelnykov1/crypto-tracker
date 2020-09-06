@@ -1,7 +1,7 @@
 import React from 'react';
 import TickerIndexItem from './ticker_index_item';
-import TableLoader from '../table/table_loader';
 import Pagination from "./pagination";
+import { Loader } from '../util/loader';
 
 class TickerIndex extends React.Component {
     constructor(props) {
@@ -107,7 +107,7 @@ class TickerIndex extends React.Component {
           </div>
         );
       } else {
-        return < TableLoader loading={isLoading} />
+        return < Loader loading={isLoading} />
       }
     }
 }
