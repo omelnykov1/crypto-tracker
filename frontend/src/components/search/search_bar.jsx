@@ -33,16 +33,15 @@ class SearchBar extends React.Component {
           if ( 
             (ticker.name.toLowerCase().includes(this.state.searchStr) || 
             ticker.name.toUpperCase().includes(this.state.searchStr) || 
-            ticker.name.includes(this.state.searchStr)) || 
+            ticker.name.includes(this.state.searchStr) || 
             ticker.symbol.toLowerCase().includes(this.state.searchStr) ||
             ticker.symbol.toUpperCase().includes(this.state.searchStr) ||
-            ticker.symbol.includes(this.state.searchStr)&&
+            ticker.symbol.includes(this.state.searchStr)) &&
             this.state.searchStr.length > 0
           ) {
             return ticker;
           }
         });
-        debugger
         result = !filt.length && this.state.searchStr.length ? 
           (<li className="no-result">No result found</li>) 
             : 
