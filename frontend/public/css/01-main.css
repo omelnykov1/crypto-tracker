@@ -43,7 +43,6 @@
     margin-top: 12vh;
 }
 
-
 .welcome-message {
     color: #817cca !important;
     display: flex !important;
@@ -56,6 +55,7 @@
     margin-top: 12vw !important;
     padding: 20px !important;
     border-radius: 10px !important;
+    line-height: 2.4vw !important;
 }
 
 .welcome-message h1 {
