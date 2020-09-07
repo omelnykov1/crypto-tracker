@@ -21,7 +21,7 @@ const TickerParticles = props => {
                         },
                         onHover: {
                             enable: true,
-                            mode: "repulse",
+                            mode: "trail",
                         },
                         resize: true,
                     },
