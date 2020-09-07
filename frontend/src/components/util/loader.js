@@ -9,5 +9,5 @@ export const Loader = props => {
             <div className="cssload-cube cssload-c4"></div>
             <div className="cssload-cube cssload-c3"></div>
         </div>
-        ) : null;
+    ) : null;
 }

@@ -43,9 +43,6 @@ class Table extends React.Component {
         return tickers;
     }
 
-
-
-
     render() {
         setTimeout(() => this.setState({loading: false}), 1700)
 

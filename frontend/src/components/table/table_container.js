@@ -3,7 +3,6 @@ import { fetchTable, changeTable, clearErrors, createTable, deleteTable } from '
 import { fetchTableTicker } from '../../actions/crypto_actions';
 import Table from './table';
 
-
 const mSTP = state => ({
     currentUser: state.session.user,
     table: state.entities.table[Object.keys(state.entities.table)[0]] ? state.entities.table[Object.keys(state.entities.table)[0]] : {},
