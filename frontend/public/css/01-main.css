@@ -19,7 +19,8 @@
 .main-right img {
     border-radius: 10px !important;
     margin-top: 32vh !important;
-    height: 65% !important;
+    height: 30vw !important;
+    width: 38vw;
     background-color: transparent !important;
 }
 
