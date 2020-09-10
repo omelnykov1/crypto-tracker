@@ -7,20 +7,16 @@ import {
 import SignupForm from "./signup_form";
 import { withRouter } from "react-router-dom";
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
     signedIn: state.session.isSignedIn,
     errors: state.errors.session,
-  };
-};
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
+const mapDispatchToProps = (dispatch) => ({
     signup: (user) => dispatch(signup(user)),
     login: (user) => dispatch(login(user)),
     clearSessionErrors: () => dispatch(clearSessionErrors()),
-  };
-};
+});
 
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(SignupForm)

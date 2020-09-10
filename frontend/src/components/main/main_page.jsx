@@ -34,7 +34,7 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="main-right">
-          <img src={"/images/not-main.png"} alt="" />
+          <img src={ "/images/not-main.png" } alt="" />
           <SearchBar tickers={this.props.tickers} />
         </div>
       </div>
