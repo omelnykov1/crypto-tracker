@@ -82,7 +82,7 @@ hr {
 .pagination {
   display: flex;
   padding-left: 0;
-  margin: 20px 0;
+  margin-bottom: 1.8vw;
   border-radius: 4px;
   position: absolute;
   left: 50%;
