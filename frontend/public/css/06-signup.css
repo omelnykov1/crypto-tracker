@@ -241,22 +241,22 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .signup-form input[type=submit] {
-        font-family: 'Varela Round', sans-serif;
-        border: 0;
-        background: none;
-        display: block;
-        margin: 20px auto;
-        text-align: center;
-        padding: 14px 40px;
-        margin-left: -6vw;
-        outline: none;
-        font-weight: bold;
-        font-size: 17px;
-        border-radius: 24px;
-        transition: 0.5s;
-        width: 35vw;
-        color: #5e57df;
-        background: #ffffff;
+        font-family: 'Varela Round', sans-serif !important;
+        border: 0 !important;
+        background: none !important;
+        display: block !important;
+        margin: 20px auto !important;
+        text-align: center !important;
+        padding: 14px 40px !important;
+        margin-left: -6vw !important;
+        outline: none !important;
+        font-weight: bold !important;
+        font-size: 17px !important;
+        border-radius: 24px !important;
+        transition: 0.5s !important;
+        width: 35vw !important;
+        color: #5e57df !important;
+        background: #ffffff !important;
     }
 
 

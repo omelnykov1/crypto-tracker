@@ -158,8 +158,10 @@ and (-webkit-device-pixel-ratio : 3) {
 
     .root-wrapper {
         width: 100% !important;
-        max-height: 100vh !important;
         overflow: hidden !important;
+        display: block;
+        height: 812px;
+        min-height: 812px;
     }
 
     .main {

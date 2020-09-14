@@ -225,7 +225,8 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .show-search-result {
-        max-height: 200px;
+        max-height: 200px !important;
+        overflow-y: auto!important;
     }
 
     .show-search-result ol{
