@@ -176,7 +176,7 @@ and (-webkit-device-pixel-ratio : 3) {
 
     .main-right img {
         border-radius: 10px !important;
-        margin-top: 40vh !important;
+        margin-top: 35vh !important;
         height: 50vw !important;
         width: 44vw;
         background-color: transparent !important;
@@ -198,7 +198,7 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .main-left {
-        margin-top: 12vh;
+        margin-top: 7vh;
     }
 
     .welcome-message {
@@ -257,7 +257,7 @@ and (-webkit-device-pixel-ratio : 3) {
         justify-content: space-between !important;
         cursor: pointer !important;
         display: inline-block !important;
-        position: relative !important;
+        position: fixed !important;
         text-align: center !important;
         font-family: 'Montserrat' !important;
         font-size: 18px !important;
@@ -271,7 +271,7 @@ and (-webkit-device-pixel-ratio : 3) {
         width: 45vw !important;
         color: #ffffff !important;
         --accent-color :#c53211 !important;
-        margin-left: 43vw !important;
+        margin-left: 0vw !important;
         border-radius: 10px !important;
     }
     

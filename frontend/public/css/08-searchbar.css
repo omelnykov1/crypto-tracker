@@ -184,7 +184,7 @@ and (-webkit-device-pixel-ratio : 3) {
 
     .search-bar-wrapper label {
         position: relative !important;
-        margin-top: -1.4vw;
+        margin-top: -1.7vw;
         color: rgb(82, 82, 82) !important;
         margin-left: 2.3vw !important;
         font-size: 18px !important;
