@@ -137,3 +137,120 @@
     color: red;
     font-size: bolder;
 }
+
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+
+    .link-to-other-form {
+        font-size: 14px;
+        color: #ffffff;
+        font-size: bolder;
+    }
+
+    .link-to-other-form a {
+        color: rgb(238, 52, 52);
+    }
+
+    .login-form1 {
+        overflow: hidden;
+        font-family: 'Varela Round', sans-serif;
+        width: 44%;
+        height: 100vh;
+        padding: 40px;
+        left: 33%;
+        margin-right: auto;
+        transform: translate(-50% -50%);
+        background: #5a55aa;
+        text-align: center;
+        box-sizing: border-box;
+        opacity: 0.8;
+        box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
+        z-index: 2;
+    }
+
+    .login-no-errors-input1 {
+        font-family: 'Varela Round', sans-serif;
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        margin-left: -9vw;
+        text-align: center;
+        padding: 14px 10px;
+        width: 35vw;
+        outline: none;
+        color: #ffffff;
+        border-radius: 24px;
+        transition: 0.25s;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .login-no-errors-input1::-webkit-input-placeholder, .login-yes-errors-input1::-webkit-input-placeholder {
+        font-weight: bold;
+        font-size: 14px;
+        color: #ffffff;
+    }
+
+
+    .login-yes-errors-input1 {
+        border: 2px solid red;
+        font-family: 'Varela Round', sans-serif;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        margin-left: -9vw;
+        text-align: center;
+        padding: 14px 10px;
+        width: 35vw;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+    }
+
+    .login-no-errors-input1:focus {
+        width: 35vw;
+    }
+
+    .login-form-container h1 {
+        font-family: 'Varela Round', sans-serif;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 17px;
+        padding-top: 30px;
+        margin-top: 100%;
+    }
+
+    .login-form1 input[type=submit],.demo-button {
+        font-family: 'Varela Round', sans-serif;
+        border: 0;
+        display: block;
+        margin: 20px auto;
+        margin-left: -7vw;
+        text-align: center;
+        padding: 14px 40px;
+        outline: none;
+        font-weight: bold;
+        font-size: 17px;
+        border-radius: 24px;
+        transition: 0.25s;
+        color: #5e57df;
+        background: #ffffff ;
+        width: 35vw !important;
+    }
+
+    .login-form span select {
+        margin-left: 10px;
+        border-radius: 7px;
+    }
+
+    .login-error {
+        color: red;
+        font-size: bolder;
+    }
+}
