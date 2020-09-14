@@ -161,7 +161,7 @@ and (-webkit-device-pixel-ratio : 3) {
         overflow: hidden !important;
         display: block !important;
         height: 812px;
-        min-height: 812px;
+        min-height: calc(812px - 9vh);
     }
 
     .main {
@@ -245,8 +245,7 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .all-tickers {
-        margin-top: 97vw !important;
-        position: fixed;
+        margin-top: 9vw !important;
     }
 
     .tickers-btn {
