@@ -168,8 +168,8 @@ and (-webkit-device-pixel-ratio : 3) {
         overflow: hidden !important;
         display: grid !important;
         width: 100% !important;
-        height: calc(812px - 9vh);
-        min-height: calc(812px - 9vh);
+        height: 500px !important;
+        min-height: 500px !important;
         grid-template-columns: 60% 40% !important;
     } 
 

@@ -411,8 +411,8 @@ and (min-device-width : 375px)
 and (max-device-width : 812px)
 and (-webkit-device-pixel-ratio : 3) {
 	.cssload-thecube {
-		width: 70px;
-		height: 70px;
+		width: 80px;
+		height: 80px;
 		margin: 0 auto;
 		position: relative;
 		transform: rotateZ(45deg);
@@ -421,7 +421,7 @@ and (-webkit-device-pixel-ratio : 3) {
 			-webkit-transform: rotateZ(45deg);
 		-moz-transform: rotateZ(45deg);
 		background: #f8f8f8ad;
-		margin-top: 70vw;
+		margin-top: 80vw;
 	}
 	.cssload-thecube .cssload-cube {
 		position: relative;
