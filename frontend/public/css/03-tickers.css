@@ -298,7 +298,7 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .ticker-index-header {
-        margin-left: 11%;
+        margin-left: 12.5%;
         display: flex;
         text-align: center;
         padding: 1.5vw;

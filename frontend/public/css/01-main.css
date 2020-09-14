@@ -160,16 +160,16 @@ and (-webkit-device-pixel-ratio : 3) {
         width: 100% !important;
         overflow: hidden !important;
         display: block !important;
-        height: 812px;
-        min-height: calc(812px - 9vh);
+        height: calc(812px - 9vh);
+        min-height: 700px;
     }
 
     .main {
         overflow: hidden !important;
         display: grid !important;
         width: 100% !important;
-        height: 500px !important;
-        min-height: 500px !important;
+        height: calc(812px - 9vh);
+        min-height: calc(812px - 9vh);
         grid-template-columns: 60% 40% !important;
     } 
 
