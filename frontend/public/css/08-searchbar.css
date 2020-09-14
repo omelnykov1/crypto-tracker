@@ -224,6 +224,10 @@ and (-webkit-device-pixel-ratio : 3) {
         display: none !important;
     }
 
+    .show-search-result {
+        max-height: 200px;
+    }
+
     .show-search-result ol{
         background-color: rgb(255, 255, 255) !important;
         opacity: none !important;

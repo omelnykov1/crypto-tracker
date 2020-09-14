@@ -145,6 +145,8 @@ and (max-device-width : 812px)
 and (-webkit-device-pixel-ratio : 3) {
 
     .login-form-container{
+        overflow: hidden !important;
+        display: block;
         min-height: 80vh;
         width: 100vw;
         padding: 0;

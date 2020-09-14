@@ -163,6 +163,7 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .main {
+        overflow: hidden !important;
         display: grid !important;
         width: 100% !important;
         height: calc(812px - 9vh);
