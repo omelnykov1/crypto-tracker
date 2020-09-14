@@ -34,14 +34,11 @@
 
 .main-left, .main-right {
     display: flex !important;
+    margin: 0 !important;
 }
 
 .main-right {
     margin-right: 5vw !important;
-}
-
-.main-left {
-    margin-top: 12vh;
 }
 
 .welcome-message {
@@ -53,14 +50,14 @@
     min-height: fit-content !important;
     height: 100% !important;
     font-weight: 600 !important;
-    margin-top: 12vw !important;
+    margin-top: 70% !important;
     padding: 20px !important;
     border-radius: 10px !important;
     line-height: 2.4vw !important;
 }
 
 .welcome-message h1 {
-    margin-top: 2vw !important;
+    margin-top: 12vw !important;
     font-size: 37px !important;
     font-weight: 600 !important;
     font-family: 'Noto Sans', sans-serif !important;
@@ -165,8 +162,8 @@ and (-webkit-device-pixel-ratio : 3) {
     .main {
         display: grid !important;
         width: 100% !important;
-        height: 65% !important;
-        min-height: 65%;
+        height: 812px;
+        min-height: 812px;
         grid-template-columns: 60% 40% !important;
     } 
 

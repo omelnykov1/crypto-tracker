@@ -181,7 +181,7 @@ and (-webkit-device-pixel-ratio : 3) {
     .signup-form {
         font-family: 'Varela Round', sans-serif;
         width: 44%;
-        height: 100vh;
+        height: 812px;
         min-height: fit-content;
         padding: 40px;
         margin-left: auto;
