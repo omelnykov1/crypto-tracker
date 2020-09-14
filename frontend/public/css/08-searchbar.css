@@ -230,7 +230,7 @@ and (-webkit-device-pixel-ratio : 3) {
         margin-left: 0vw !important;
         margin-top: 0.07vw !important;
         width: 90.7% !important;
-        overflow-y: auto hidden !important;
+        overflow-y: auto!important;
         overflow-x: hidden;
         min-height: fit-content !important;
         max-height: 200px !important;

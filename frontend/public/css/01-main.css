@@ -158,32 +158,27 @@ and (-webkit-device-pixel-ratio : 3) {
 
     .root-wrapper {
         width: 100% !important;
-        height: 150% !important;
-        min-height: 100vh !important;
+        max-height: 100vh !important;
         overflow: hidden !important;
     }
 
     .main {
         display: grid !important;
-        width: 100%;
+        width: 100% !important;
         height: 82vh !important;
         grid-template-columns: 60% 40% !important;
-    }
-
-    .main img {
-        height: 100% !important;
-    }
+    } 
 
     .main-right img {
         border-radius: 10px !important;
         margin-top: 35vh !important;
         height: 50vw !important;
-        width: 44vw;
+        width: 44vw !important;
         background-color: transparent !important;
     }
 
     .welcome-main {
-        text-align: left !important;
+        text-align: center !important;
         display: flex !important;
         width: 100% !important;
         margin-top: 4vw;
