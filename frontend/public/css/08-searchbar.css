@@ -137,3 +137,150 @@
 }
 
 
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+    .search-bar-wrapper {
+        position: absolute !important;
+        top: 15% !important;  
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        background: rgba(201, 201, 201, 0.6) !important;
+        max-width: 80% !important;
+        height: 6vw !important;
+        width: 100% !important;
+        padding: 15px !important;
+        border-radius: 7px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    .search-input-and-results {
+        width: 75% !important;
+        height: 70% !important;
+        position: absolute;
+        margin-top: -1.8vw;
+    }
+
+    #search {
+        min-height: 10% !important;
+        height: 100% !important;
+        width: 70% !important;
+        padding: 15px 35px !important;
+        border: none !important;
+        border-top-left-radius: 7px !important;
+        border-bottom-left-radius: 7px !important;
+        outline: none !important;
+        font-size: 15px !important;
+        color: rgb(82, 82, 82) !important; 
+    }
+
+    #search:focus {
+        min-height: 13% !important;
+        height: 100% !important;
+        outline-offset: -2vw !important;
+    }
+
+    .search-bar-wrapper label {
+        position: relative !important;
+        margin-top: -1.4vw;
+        color: rgb(82, 82, 82) !important;
+        margin-left: 2.3vw !important;
+        font-size: 18px !important;
+        z-index: 1;
+    }
+
+    .search-bar-wrapper input::-webkit-input-placeholder {
+        font-size: 14px !important;
+    }
+
+    .search-btn {
+        min-height: 70% !important;
+        height: 70% !important;
+        width: 22% !important;
+        background: #817cca !important;
+        border-top-right-radius: 7px !important;
+        border-bottom-right-radius: 7px !important;
+        position: absolute !important;
+        cursor: pointer !important;
+        margin-left: 60vw;
+        margin-top: -1.8vw;
+    }
+
+    .search-btn i {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        font-size: 15px !important;
+        color: white !important;
+    }
+
+    /*  search result */
+
+    .hide-show-result {
+        display: none !important;
+    }
+
+    .show-search-result ol{
+        background-color: rgb(255, 255, 255) !important;
+        opacity: none !important;
+        margin-left: 2vw !important;
+        margin-top: 0.07vw !important;
+        width: 99.5% !important;
+        overflow-y: auto !important;
+        min-height: fit-content !important;
+        max-height: 400px !important;
+        position: relative !important;
+    }
+
+    .search-input-and-results {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .ticker-search-item, .no-result {
+        display: grid !important;
+        grid-template-columns: 60% 40% !important;
+        height: 1.9vw !important;
+        width: 95.4% !important;
+        padding: 15px !important;
+        border-bottom: 0.5px solid rgba(201, 201, 201, 0.6) !important;
+        outline: none !important;
+        font-size: 21px !important;
+        color: rgb(82, 82, 82) !important;
+        cursor: pointer;
+    }
+
+    .no-result {
+        cursor: default;
+    }
+
+    .ticker-search-item:hover {
+        background-color: rgba(201, 201, 201, 0.6)!important;
+    }
+
+    .ticker-search-left,.ticker-search-right {
+        margin-top: 0.4vw !important;
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .ticker-search-right {
+        justify-content: space-between !important;
+    }
+
+    .ticker-search-left img{
+        margin: 0 !important;
+        margin-top: -0.3vw !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .ticker-search-market-cap {
+        margin-left: 1vw !important;
+        margin-right: 1.5vw !important;
+    }
+}
+

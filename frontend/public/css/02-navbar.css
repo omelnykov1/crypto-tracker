@@ -71,4 +71,78 @@
 }
 
 
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+    .navbar {
+        position: fixed;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        align-items: center !important;
+        z-index: 99 !important;
+        background-color: #FFFFFF !important;;
+        box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2) !important;
+        font-size: 15px !important;;
+        width: 100% !important;
+        height: 7vh !important;
+    }
+
+    .login, .logout, .signup, .profile {
+        min-width: fit-content !important;
+        font-size: 14px !important;
+        background-color: transparent !important;
+        border-radius: 5px !important;
+        width: 50% !important;
+        height: 38px !important;
+        color:  #5e57df !important;
+        outline: none !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        margin-top: 3vw !important;
+        color: #5e57df !important;
+        border: 1px solid #5e57df !important;
+    }
+
+    .profile {
+        margin-right: 10vw !important;
+        min-width: fit-content !important;
+        width: 10vw !important;
+        margin-left: 2vw !important;
+    }
+
+
+    .login, .logout {
+        margin-left: 23vw !important;
+    }
+
+    .signup {
+        margin-left: 6vw !important;
+    }
+
+
+    .right-right-nav {
+        margin-left: 2vw !important; 
+    }
+
+    .right-nav, .left-nav {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important; 
+        flex-direction: row !important; 
+    };
+
+    .left-nav img {
+        width: 100% !important;
+        justify-content: left !important;
+    } 
+
+    #logo-logo {
+        margin-top: -1.8vw !important;
+        width: 50% !important;
+    }
+}
+
+
 
