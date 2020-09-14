@@ -147,7 +147,8 @@ and (-webkit-device-pixel-ratio : 3) {
     .login-form-container{
         overflow: hidden !important;
         display: block;
-        min-height: 80vh;
+        height: calc(812px - 7vh);
+        min-height: calc(812px - 7vh);
         width: 100vw;
         padding: 0;
         position: absolute;
@@ -170,7 +171,7 @@ and (-webkit-device-pixel-ratio : 3) {
         overflow: hidden;
         font-family: 'Varela Round', sans-serif;
         width: 44%;
-        height: 812px;
+        height: 100%;
         padding: 40px;
         left: 33%;
         margin-right: auto;
@@ -238,7 +239,7 @@ and (-webkit-device-pixel-ratio : 3) {
         margin-top: 100%;
     }
 
-    .submit, .demo-button {
+    .login-form1 input[type=submit], .demo-button {
         font-family: 'Varela Round', sans-serif;
         border: 0;
         display: block;

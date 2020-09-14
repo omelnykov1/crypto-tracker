@@ -154,37 +154,24 @@ and (-webkit-device-pixel-ratio : 3) {
     .signup-form-container {
         overflow: hidden !important;
         display: block;
-        min-height: 80vh;
+        height: calc(812px - 7vh);
+        min-height: calc(812px - 7vh);
         width: 100vw;
         padding: 0;
         position: absolute;
         top: 0;
+        z-index: 2;
     }
 
-    .signup-form-container1 label{
-        color: #ccc;
-        font-size: 12px;
-        font-weight: 700;
+    .signup-form-container form {
+        height: 100%;
     }
-
-    .signup-nav {
-        width: auto;
-        height: 60px;
-        background-color: #053049;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
 
     .signup-form {
+        overflow: hidden;
         font-family: 'Varela Round', sans-serif;
         width: 44%;
-        height: 812px;
-        min-height: fit-content;
+        height: 100%;
         padding: 40px;
         margin-left: auto;
         transform: translate(-50% -50%);
