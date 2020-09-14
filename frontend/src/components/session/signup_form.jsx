@@ -151,7 +151,7 @@ class SignupForm extends React.Component {
               id="signup-password-2"
             />
             <p className="signup-error">{this.handlePassword2Err()}</p>
-            <input type="submit" value="Submit" />
+            <input className="submit" type="submit" value="Submit" />
             <p className="link-to-other-form">
               Already have an account? <Link to="/login">Log in</Link>
             </p>

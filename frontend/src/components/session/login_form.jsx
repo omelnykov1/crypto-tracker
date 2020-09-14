@@ -94,7 +94,7 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             <p className="signup-error">{this.handlePasswordErr()}</p>
-            <input type="submit" value="Submit" />
+            <input className="submit" type="submit" value="Submit" />
           </form>
           <button className="demo-button" onClick={() => this.handleDemo()}>
             Demo

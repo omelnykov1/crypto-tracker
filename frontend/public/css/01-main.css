@@ -165,7 +165,8 @@ and (-webkit-device-pixel-ratio : 3) {
     .main {
         display: grid !important;
         width: 100% !important;
-        height: 82vh !important;
+        height: 65% !important;
+        min-height: 65%;
         grid-template-columns: 60% 40% !important;
     } 
 

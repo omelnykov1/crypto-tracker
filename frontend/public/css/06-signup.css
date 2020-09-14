@@ -152,7 +152,7 @@ and (min-device-width : 375px)
 and (max-device-width : 812px)
 and (-webkit-device-pixel-ratio : 3) {
     .signup-form-container {
-        min-height: 100vh;
+        min-height: 80vh;
         width: 100vw;
         padding: 0;
         position: absolute;
@@ -200,7 +200,7 @@ and (-webkit-device-pixel-ratio : 3) {
         background: none;
         display: block;
         margin: 12px auto;
-        margin-left: -9vw;
+        margin-left: -7vw;
         text-align: center;
         padding: 14px 10px;
         width: 35vw;

@@ -144,6 +144,16 @@ and (min-device-width : 375px)
 and (max-device-width : 812px)
 and (-webkit-device-pixel-ratio : 3) {
 
+    .login-form-container{
+        min-height: 80vh;
+        width: 100vw;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+    }
+
+
     .link-to-other-form {
         font-size: 14px;
         color: #ffffff;
@@ -226,7 +236,7 @@ and (-webkit-device-pixel-ratio : 3) {
         margin-top: 100%;
     }
 
-    .login-form1 input[type=submit],.demo-button {
+    .submit, .demo-button {
         font-family: 'Varela Round', sans-serif;
         border: 0;
         display: block;
