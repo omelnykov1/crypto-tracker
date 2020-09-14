@@ -7,6 +7,8 @@ class NavBar extends React.Component {
     super(props);
     this.handleMain = this.handleMain.bind(this);
     this.handleTable = this.handleTable.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSignup = this.handleSignup.bind(this);
   }
 
   handleMain() {
@@ -15,6 +17,14 @@ class NavBar extends React.Component {
 
   handleTable() {
     this.props.history.push(`/tables/user/${this.props.currentUser.id}`);
+  }
+
+  handleLogin() {
+    this.props.history.push('/login')
+  }
+
+  handleSignup() {
+    this.props.history.push('/signup')
   }
 
   render() {
@@ -31,14 +41,10 @@ class NavBar extends React.Component {
     ) : (
       <div className="right-nav">
         <div className="left-right-nav">
-          <Link to="/login">
-            <button className="login">Log In</button>
-          </Link>
+            <button className="login" onClick={() => this.handleLogin()}>Log In</button>
         </div>
         <div className="right-right-nav">
-          <Link to="/signup">
-            <button className="signup">Sign Up</button>
-          </Link>
+            <button className="signup" onClick={() => this.handleSignup()}>Sign Up</button>
         </div>
       </div>
     );

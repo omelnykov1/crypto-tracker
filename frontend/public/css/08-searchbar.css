@@ -141,9 +141,10 @@
 and (min-device-width : 375px) 
 and (max-device-width : 812px)
 and (-webkit-device-pixel-ratio : 3) {
+
     .search-bar-wrapper {
         position: absolute !important;
-        top: 15% !important;  
+        top: 20% !important;  
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
         background: rgba(201, 201, 201, 0.6) !important;
@@ -232,7 +233,7 @@ and (-webkit-device-pixel-ratio : 3) {
         overflow-y: auto hidden !important;
         overflow-x: hidden;
         min-height: fit-content !important;
-        max-height: 40vw !important;
+        max-height: 200px !important;
         position: relative !important;
     }
 

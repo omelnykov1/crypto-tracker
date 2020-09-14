@@ -110,20 +110,23 @@ and (-webkit-device-pixel-ratio : 3) {
         min-width: fit-content !important;
         width: 10vw !important;
         margin-left: 2vw !important;
+        margin-right: 1vw;
     }
 
 
     .login, .logout {
-        margin-left: 21vw !important;
+        margin-left: 18vw !important;
     }
 
     .signup {
         margin-left: 6vw !important;
+        margin-right: 1vw !important;
     }
 
 
     .right-right-nav {
         margin-left: 2vw !important; 
+        margin-right: 1vw !important;
     }
 
     .right-nav, .left-nav {
@@ -132,6 +135,10 @@ and (-webkit-device-pixel-ratio : 3) {
         display: flex !important; 
         flex-direction: row !important; 
     };
+
+    .right-nav {
+        border: 1px solid red !important;
+    }
 
     .left-nav img {
         width: 100% !important;
