@@ -178,14 +178,14 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     #search:focus {
-        min-height: 13% !important;
+        min-height: 15% !important;
         height: 100% !important;
         outline-offset: -2vw !important;
     }
 
     .search-bar-wrapper label {
         position: relative !important;
-        margin-top: -1.7vw;
+        margin-top: -2.1vw;
         color: rgb(82, 82, 82) !important;
         margin-left: 2.3vw !important;
         font-size: 18px !important;
@@ -226,7 +226,6 @@ and (-webkit-device-pixel-ratio : 3) {
 
     .show-search-result {
         max-height: 200px !important;
-        overflow-y: auto!important;
     }
 
     .show-search-result ol{

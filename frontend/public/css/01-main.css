@@ -159,7 +159,7 @@ and (-webkit-device-pixel-ratio : 3) {
     .root-wrapper {
         width: 100% !important;
         overflow: hidden !important;
-        display: block;
+        display: block !important;
         height: 812px;
         min-height: 812px;
     }
@@ -193,7 +193,8 @@ and (-webkit-device-pixel-ratio : 3) {
 
     .main-left, .main-right {
         display: flex !important;
-        min-height: 100% !important;
+        height: 60% !important;
+        min-height: 60% !important;
         margin: 0 !important;
     }
 
@@ -253,7 +254,6 @@ and (-webkit-device-pixel-ratio : 3) {
         background-color: #ff4b5d !important;
         justify-content: space-between !important;
         display: inline-block !important;
-        position: fixed !important;
         text-align: center !important;
         font-family: 'Montserrat' !important;
         font-size: 18px !important;
@@ -267,7 +267,7 @@ and (-webkit-device-pixel-ratio : 3) {
         width: 45vw !important;
         color: #ffffff !important;
         --accent-color :#c53211 !important;
-        margin-left: 0vw !important;
+        margin-left: 42vw !important;
         border-radius: 10px !important;
     }
     
