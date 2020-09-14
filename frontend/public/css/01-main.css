@@ -34,11 +34,14 @@
 
 .main-left, .main-right {
     display: flex !important;
-    margin: 0 !important;
 }
 
 .main-right {
     margin-right: 5vw !important;
+}
+
+.main-left {
+    margin-top: 12vh;
 }
 
 .welcome-message {
@@ -50,14 +53,14 @@
     min-height: fit-content !important;
     height: 100% !important;
     font-weight: 600 !important;
-    margin-top: 70% !important;
+    margin-top: 12vw !important;
     padding: 20px !important;
     border-radius: 10px !important;
     line-height: 2.4vw !important;
 }
 
 .welcome-message h1 {
-    margin-top: 12vw !important;
+    margin-top: 2vw !important;
     font-size: 37px !important;
     font-weight: 600 !important;
     font-family: 'Noto Sans', sans-serif !important;
@@ -162,8 +165,8 @@ and (-webkit-device-pixel-ratio : 3) {
     .main {
         display: grid !important;
         width: 100% !important;
-        height: 812px;
-        min-height: 812px;
+        height: calc(812px - 9vh);
+        min-height: calc(812px - 9vh);
         grid-template-columns: 60% 40% !important;
     } 
 
@@ -188,10 +191,7 @@ and (-webkit-device-pixel-ratio : 3) {
     .main-left, .main-right {
         display: flex !important;
         min-height: 100% !important;
-    }
-
-    .main-left {
-        margin-top: 7vh;
+        margin: 0 !important;
     }
 
     .welcome-message {
@@ -203,7 +203,7 @@ and (-webkit-device-pixel-ratio : 3) {
         min-height: fit-content !important;
         height: 100% !important;
         font-weight: 600 !important;
-        margin-top: 20vw !important;
+        margin-top: 36vw !important;
         padding: 20px !important;
         border-radius: 10px !important;
         line-height: 5.4vw !important;
