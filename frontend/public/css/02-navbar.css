@@ -114,7 +114,7 @@ and (-webkit-device-pixel-ratio : 3) {
 
 
     .login, .logout {
-        margin-left: 23vw !important;
+        margin-left: 21vw !important;
     }
 
     .signup {
