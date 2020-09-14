@@ -248,14 +248,14 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .all-tickers {
-        margin-top: 0vw !important;
+        margin-top: 90vw !important;
+        position: fixed;
     }
 
     .tickers-btn {
         border: transparent !important;
         background-color: #ff4b5d !important;
         justify-content: space-between !important;
-        cursor: pointer !important;
         display: inline-block !important;
         position: fixed !important;
         text-align: center !important;

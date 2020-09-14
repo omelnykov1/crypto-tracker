@@ -226,12 +226,13 @@ and (-webkit-device-pixel-ratio : 3) {
     .show-search-result ol{
         background-color: rgb(255, 255, 255) !important;
         opacity: none !important;
-        margin-left: 2vw !important;
+        margin-left: 0vw !important;
         margin-top: 0.07vw !important;
-        width: 99.5% !important;
-        overflow-y: auto !important;
+        width: 90.7% !important;
+        overflow-y: auto hidden !important;
+        overflow-x: hidden;
         min-height: fit-content !important;
-        max-height: 400px !important;
+        max-height: 40vw !important;
         position: relative !important;
     }
 
@@ -244,11 +245,11 @@ and (-webkit-device-pixel-ratio : 3) {
         display: grid !important;
         grid-template-columns: 60% 40% !important;
         height: 1.9vw !important;
-        width: 95.4% !important;
+        width: 88% !important;
         padding: 15px !important;
         border-bottom: 0.5px solid rgba(201, 201, 201, 0.6) !important;
         outline: none !important;
-        font-size: 21px !important;
+        font-size: 9px !important;
         color: rgb(82, 82, 82) !important;
         cursor: pointer;
     }
@@ -257,9 +258,6 @@ and (-webkit-device-pixel-ratio : 3) {
         cursor: default;
     }
 
-    .ticker-search-item:hover {
-        background-color: rgba(201, 201, 201, 0.6)!important;
-    }
 
     .ticker-search-left,.ticker-search-right {
         margin-top: 0.4vw !important;
@@ -274,8 +272,8 @@ and (-webkit-device-pixel-ratio : 3) {
     .ticker-search-left img{
         margin: 0 !important;
         margin-top: -0.3vw !important;
-        width: 30px !important;
-        height: 30px !important;
+        width: 15px !important;
+        height: 15px !important;
     }
 
     .ticker-search-market-cap {
