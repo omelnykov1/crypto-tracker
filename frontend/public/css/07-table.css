@@ -111,4 +111,151 @@
     margin-top: 0.8vw;
 }
 
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+
+    .table-item-left, .table-labels-left, .table-labels-right {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .table-item-right{
+        display: grid;
+        grid-template-columns: 35% 9% 28% 21% 7%;
+    }
+
+    .table-labels-left {
+        margin-left: 5px;
+    }
+
+    .table-item-left {
+        font-size: 8px;
+    }
+
+    .table-labels-left {
+        font-size: 13px;
+        margin-top: 3.3vw;
+    }
+
+    .table-labels-left {
+        cursor: default;
+    }
+
+    .table-item-right {
+        padding-top: 6px;
+    }
+
+    .table-item-container,.table-labels {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 32% 68%;
+        min-width: fit-content !important;
+        width: 100% !important;
+        border-top: 0.5px solid rgba(201, 201, 201, 0.6);
+        height: 4vh;
+    }
+
+    .table-labels {
+        height: 3vh;
+    }
+
+    .table-item-left, .table-labels-left {
+        padding: 0vw;
+        border-right: 0.5px solid rgba(201, 201, 201, 0.6) !important;
+        height: 100%;
+    }
+
+    .table-labels-left {
+        margin: 0vw;
+    }
+
+    .table-item-left img{
+        padding-top: 2.4vw;
+        width: 15px;
+        height: 15px;
+        margin-left: -2vw;
+    }
+
+    .table-item-left span {
+        padding-top: 2.4vw;
+        margin-left: 3vw;
+    }
+
+    .table-labels-left span {
+        margin-left: 11vw;
+        font-size: 8px;
+        margin-top: 2vw;
+    }
+
+
+    /* table index */
+    .table-wrapper {
+        width: 85vw;
+        min-width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 0.5px solid rgba(201, 201, 201, 0.6);
+        border-radius: 10px;
+        box-shadow: 5px 7px 20px -5px  rgba(0.4,0.4,0,0.4);
+    }
+
+    .table-wrapper h1{
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        font-size: 15px;
+        margin-left: 35%;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+
+    .table-current-price, .table-market-cap-rank, .table-ath, .table-roi, .table-labels-right span {
+        margin-top: 1.3vw;
+        text-align: right !important;
+        width: 19%;
+        font-size: 8px;
+    }
+
+    .table-current-price {
+        margin-left: 2vw;
+    }
+
+    .table-market-cap-rank {
+        margin-left: -4vw;
+    }
+
+    .table-item-right i{
+        font-size: 9px;
+        color: #9365e7;
+        cursor: pointer;
+        margin-left: 0vw;
+        margin-right: 4vw;
+        margin-top: 1.4vw;
+    }
+
+
+    .table-labels-right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .table-labels-right span:nth-child(2) {
+        margin-right: 11vw;
+    }
+
+    .table-labels-right span:nth-child(3) {
+        margin-left: -15vw !important;
+    }
+
+    .table-labels-right span {
+        margin-top: 2.4vw;
+        font-size: 6px;
+        text-align: center;
+        display: flex;
+    }
+}
+
 

@@ -20,6 +20,7 @@ class TableItem extends React.Component {
 
     render() {
         const {ath, current_price,name,image, market_cap_rank, atl_change_percentage} = this.props.ticker;
+        const price = current_price < 0.01 ? current_price.toFixed(3) : current_price.toFixed(2)
         return (
           <div className="table-item-container">
             <div className="table-item-left" onClick={this.handleClick}>
@@ -27,12 +28,12 @@ class TableItem extends React.Component {
               <span>{name}</span>
             </div>
             <div className="table-item-right">
-              <div className="table-current-price">${current_price}</div>
+              <div className="table-current-price">${price}</div>
               <div className="table-market-cap-rank">{market_cap_rank}</div>
               <div className="table-roi">
                 {atl_change_percentage.toFixed(2)}%
               </div>
-              <div className="table-ath">${ath}</div>
+              <div className="table-ath">${ath.toFixed(2)}</div>
               <i
                 onClick={() => this.deleteTicker()}
                 className="fas fa-star"

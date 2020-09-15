@@ -2,6 +2,7 @@ import React from 'react';
 import TableItem from './table_item';
 import { withRouter } from 'react-router-dom';
 import { Loader } from '../util/loader';
+import TableParticles from './table_particles';
 
 class Table extends React.Component {
     constructor(props) {
@@ -43,24 +44,33 @@ class Table extends React.Component {
         return tickers;
     }
 
+    getIcons() {
+        if (this.props.table.tickers) {
+            return this.props.table.tickers.map(ticker => ticker.image)
+        }
+    }
+
     render() {
         setTimeout(() => this.setState({loading: false}), 1700)
 
         return this.state.loading ? < Loader loading={this.state.loading} /> : (
-            <div className="table-wrapper">
-                <h1>Favorite Tickers</h1>
-                <div className="table-labels">
-                    <div className="table-labels-left">
-                        <span>Name</span>
+            <div className="table-container">
+                < TableParticles images={this.getIcons()}/>
+                <div className="table-wrapper">
+                    <h1>Favorite Tickers</h1>
+                    <div className="table-labels">
+                        <div className="table-labels-left">
+                            <span>Name</span>
+                        </div>
+                        <div className="table-labels-right">
+                            <span>Current Price</span>
+                            <span>#</span>
+                            <span>Total ROI</span>
+                            <span>All Time High</span>
+                        </div>
                     </div>
-                    <div className="table-labels-right">
-                        <span>Current Price</span>
-                        <span>#</span>
-                        <span>Total ROI</span>
-                        <span>All Time High</span>
-                    </div>
+                    {this.renderTickers()}
                 </div>
-                {this.renderTickers()}
             </div>
         )
     }
