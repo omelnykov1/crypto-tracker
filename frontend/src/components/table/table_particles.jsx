@@ -2,7 +2,6 @@ import React from 'react';
 import Particles from "react-tsparticles";
 
 const TableParticles = props => {
-    console.log(props.images)
     return (
         <Particles
             id="tsparticles"
@@ -77,7 +76,7 @@ const TableParticles = props => {
                     shape: {
                         type: "image",
                         image: {
-                            src: `${props.images}`,
+                            src: `${props.image}`,
                         },
                     },
                     size: {

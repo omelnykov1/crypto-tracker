@@ -10,13 +10,15 @@ class Table extends React.Component {
         this.state = {
             user: this.props.currentUser.id,
             tickers: [],
-            loading: true
+            loading: true,
+            onPage: true
         }
         this.destroyTable = this.destroyTable.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchTable(this.props.currentUser.id)
+        this.getIcons()
     }
 
     destroyTable() {
@@ -46,16 +48,17 @@ class Table extends React.Component {
 
     getIcons() {
         if (this.props.table.tickers) {
-            return this.props.table.tickers.map(ticker => ticker.image)
+            const images = this.props.table.tickers.map(ticker => ticker.image)
+            return images[Math.floor(Math.random() * images.length)];
         }
     }
 
+
     render() {
         setTimeout(() => this.setState({loading: false}), 1700)
-
         return this.state.loading ? < Loader loading={this.state.loading} /> : (
             <div className="table-container">
-                < TableParticles images={this.getIcons()}/>
+                < TableParticles image={this.getIcons} />
                 <div className="table-wrapper">
                     <h1>Favorite Tickers</h1>
                     <div className="table-labels">
