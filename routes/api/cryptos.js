@@ -34,4 +34,5 @@ router.get(`/tickers/chart/:tickerId`, (req, res) => {
     .then((data) => res.send(data.data.prices));
 });
 
+
 module.exports = router;
