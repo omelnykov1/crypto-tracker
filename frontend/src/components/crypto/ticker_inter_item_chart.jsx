@@ -2,25 +2,16 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 
 const handlePrice = num => {
-    if (num >= 1) {
-        return num.toFixed(2);
-    } else if (num >= 0.1) {
-        return num.toFixed(4);
-    } else {
-        return num.toFixed(7);
-    }
+    if (num >= 1) return num.toFixed(2);
+    else if (num >= 0.1) return num.toFixed(4);
+    else return num.toFixed(7);
 }
 
 const handleStepSize = num => {
-    if (num > 4) {
-        return 1;
-    } else if (num > 1) {
-        return 0.3;
-    } else if (num > 0.1) {
-        return 0.05;
-    } else {
-        return 0.005;
-    }
+    if (num > 4) return 1;
+    else if (num > 1) return 0.3;
+    else if (num > 0.1) return 0.05;
+    else return 0.005;
 }
 
 const TickerIndexItemChart = ({data, color}) => {

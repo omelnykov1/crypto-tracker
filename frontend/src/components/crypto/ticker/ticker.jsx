@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router';
 import TickerWidget from './ticker_components/ticker_widget';
 import TickerStatistics from './ticker_components/ticker_statistics';
@@ -7,50 +7,54 @@ import TickerChart from './ticker_components/ticker_chart';
 import ReactHtmlParser from "react-html-parser";
 import TickerParticles from './ticker_components/ticker_particles';
 
-class Ticker extends React.Component {
-  constructor(props) {
-    super(props);
-    this.deleteTicker = this.deleteTicker.bind(this);
-    this.handleAddTicker = this.handleAddTicker.bind(this);
+const Ticker = props => {
+  const { 
+    fetchTicker, 
+    fetchTickerData, 
+    createTable,
+    fetchTable, 
+    changeTable, 
+    table, 
+    currentUser, 
+    ticker, 
+    data 
+  } = props;
+
+  useEffect(() => {
+    fetchTicker(props.match.params.tickerId);
+    fetchTickerData(props.match.params.tickerId);
+    if (currentUser.id) fetchTable(currentUser.id);
+  }, []);
+
+  const deleteTicker = () => {
+    const filtered = table.tickers.filter(tick => tick.id !== ticker.id)
+    table.tickers = filtered
+    changeTable(table)
   }
 
-  componentDidMount() {
-    this.props.fetchTicker(this.props.match.params.tickerId);
-    this.props.fetchTickerData(this.props.match.params.tickerId);
-    if (this.props.currentUser.id) this.props.fetchTable(this.props.currentUser.id);
-  }
-
-  deleteTicker() {
-    const filtered = this.props.table.tickers.filter(ticker => ticker.id !== this.props.ticker.id)
-    this.props.table.tickers = filtered
-    this.props.changeTable(this.props.table)
-  }
-
-  handleAddTicker() {
-    if (this.props.currentUser.id) {
-      if (this.props.table.user) {
-        this.props.table.tickers.push(this.props.ticker);
-        this.props.changeTable(this.props.table).then(this.props.fetchTable(this.props.currentUser.id));
+  const handleAddTicker = () => {
+    if (currentUser.id) {
+      if (table.user) {
+        table.tickers.push(ticker);
+        changeTable(table).then(fetchTable(currentUser.id));
       } else {
-        this.props.table.tickers = [this.props.ticker];
-        this.props.table.user = this.props.currentUser.id;
-        this.props.createTable(this.props.table)
+        table.tickers = [ticker];
+        table.user = currentUser.id;
+        createTable(table)
       }
-    } else {
-      this.props.history.push('/login')
-    }
+    } else props.history.push('/login')
   }
 
-  handleButton() {
+  const handleButton = () => {
     let toggle;
-    if (this.props.table.tickers && this.props.ticker) {
-      this.props.table.tickers.forEach((tick) => {
-        if (this.props.ticker.name === tick.name) toggle = true;
+    if (table.tickers && ticker) {
+      table.tickers.forEach((tick) => {
+        if (ticker.name === tick.name) toggle = true;
       });
     }
 
     const button = toggle ? (
-      <div className="wrapper" onClick={this.deleteTicker}>
+      <div className="wrapper" onClick={e => deleteTicker()}>
         <button>
           Remove from Favorites
           <span></span>
@@ -60,7 +64,7 @@ class Ticker extends React.Component {
         </button>
       </div>
     ) : (
-      <div className="add-wrapper" onClick={this.handleAddTicker}>
+      <div className="add-wrapper" onClick={e => handleAddTicker()}>
         <button>
           Add to Favorites
           <span></span>
@@ -74,41 +78,32 @@ class Ticker extends React.Component {
     return button;
   }
 
-  colorHandler() {
-    return this.props.ticker.market_data.price_change_percentage_7d >= 0
-      ? "#1ABC9C"
-      : "#E74C3C";
-  }
+  const colorHandler = () => ticker.market_data.price_change_percentage_7d >= 0 ? "#1ABC9C" : "#E74C3C";
 
-  render() {
-    if (this.props.ticker && this.props.data) {
-      const { ticker }= this.props;
-      return (
-        <div className="main-ticker-wrapper">
-          < TickerParticles image={ticker.image} />
-          <div className="ticker-widget">
-            <TickerWidget ticker={ticker} />
+  if (ticker && data) {
+    return (
+      <div className="main-ticker-wrapper">
+        < TickerParticles image={ticker.image} />
+        <div className="ticker-widget">
+          <TickerWidget ticker={ticker} />
+        </div>
+        <div className="ticker-info">
+          <div className="ticker-chart-wrapper">
+            <TickerChart data={data} color={colorHandler()}/>
           </div>
-          <div className="ticker-info">
-            <div className="ticker-chart-wrapper">
-              <TickerChart data={this.props.data} color={this.colorHandler()}/>
-            </div>
-            <div className="ticker-statistics">
-              <TickerStatistics ticker={ticker} />
-              <TickerLinks ticker={ticker} />
-            </div>
-          </div>
-          <div className="ticker-about">
-            <h1>About {ticker.name}</h1>
-            <p>{ReactHtmlParser(ticker.description.en)}</p>
-            {this.handleButton()}
+          <div className="ticker-statistics">
+            <TickerStatistics ticker={ticker} />
+            <TickerLinks ticker={ticker} />
           </div>
         </div>
-      );
-    } else {
-        return null;
-    }
-  }
+        <div className="ticker-about">
+          <h1>About {ticker.name}</h1>
+          <p>{ReactHtmlParser(ticker.description.en)}</p>
+          {handleButton()}
+        </div>
+      </div>
+    );
+  } else return null;
 }
 
 export default withRouter(Ticker);
