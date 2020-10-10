@@ -28,7 +28,7 @@ const Ticker = ({
   useEffect(() => {
     fetchTicker(match.params.tickerId);
     fetchTickerData(match.params.tickerId);
-    if (currentUser.id) fetchTable(currentUser.id);
+    if (currentUser && currentUser.id) fetchTable(currentUser.id);
   }, []);
 
   const deleteTicker = () => {
@@ -38,7 +38,7 @@ const Ticker = ({
   }
 
   const handleAddTicker = () => {
-    if (currentUser.id) {
+    if (currentUser && currentUser.id) {
       if (table.user) {
         table.tickers.push(ticker);
         changeTable(table).then(fetchTable(currentUser.id));
@@ -89,8 +89,9 @@ const Ticker = ({
   const thirtyDayColor = ticker ? getPriceColor(ticker.market_data.price_change_percentage_30d) : null;
 
   const colors = { oneDayColor, sevenDayColor, thirtyDayColor};
-
   if (ticker && data) {
+      console.log(data, "FSDLFSFS");
+  console.log(ticker)
     return (
       <div className="main-ticker-wrapper">
         < TickerParticles image={ticker.image} />

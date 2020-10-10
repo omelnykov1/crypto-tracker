@@ -25,7 +25,7 @@ const TickerIndex = ({
       setTickers(tickers);
     };
     getTickers();
-    if (currentUser.id) fetchTable(currentUser.id);
+    if (currentUser && currentUser.id) fetchTable(currentUser.id);
   }, [])
 
   const sort = (input) => {

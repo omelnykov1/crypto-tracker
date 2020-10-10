@@ -1020,11 +1020,11 @@ and (-webkit-device-pixel-ratio : 3) {
   left: 30%;
   display: flex;
   position: absolute;
-  max-width: 10%;
+  max-width: 15%;
 }
 
 .dd-button {
-font-size: 20px;
+  font-size: 20px;
   display: inline-block;
   border: 1px solid gray;
   border-radius: 4px;
@@ -1039,7 +1039,7 @@ font-size: 20px;
   content: '';
   position: absolute;
   top: 50%;
-  right: 15px;
+  right: 8px;
   transform: translateY(-50%);
   width: 0; 
   height: 0; 
@@ -1068,6 +1068,7 @@ font-size: 20px;
   background-color: #ffffff;
   list-style-type: none;
   font-size: 20px;
+  width: 100%;
 }
 
 .dd-input + .dd-menu {
@@ -1083,6 +1084,7 @@ font-size: 20px;
   cursor: pointer;
   white-space: nowrap;
   font-size: 17px;
+  width: 75%;
 }
 
 .dd-menu li:hover {
