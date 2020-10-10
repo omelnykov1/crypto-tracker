@@ -90,8 +90,6 @@ const Ticker = ({
 
   const colors = { oneDayColor, sevenDayColor, thirtyDayColor};
   if (ticker && data) {
-      console.log(data, "FSDLFSFS");
-  console.log(ticker)
     return (
       <div className="main-ticker-wrapper">
         < TickerParticles image={ticker.image} />
