@@ -1,7 +1,7 @@
 import React from 'react';
 import Particles from "react-tsparticles";
 
-const TickerParticles = props => {
+const TickerParticles = ({ image }) => {
     return (
         <Particles
             id="tsparticles"
@@ -76,7 +76,7 @@ const TickerParticles = props => {
                     shape: {
                         type: "image",
                         image: {
-                            src: `${props.image.small}`,
+                            src: `${image.small}`,
                         },
                     },
                     size: {

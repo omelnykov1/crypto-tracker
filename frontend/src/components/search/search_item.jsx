@@ -1,13 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-const SearchItem = props => {
-  const handleClick = () => props.history.push(`/tickers/${this.props.ticker.id}`);
+const SearchItem = ({ ticker, history }) => {
+  const handleClick = () => history.push(`/tickers/${ticker.id}`);
 
-  const { name, current_price, image, price_change_percentage_24h, market_cap_rank} = props.ticker;
+  const { name, current_price, image, price_change_percentage_24h, market_cap_rank} = ticker;
   const priceChange = price_change_percentage_24h ? price_change_percentage_24h : 4.58;
   const color = priceChange > 0 ? "#1ABC9C" : "#E74C3C";
-  
+
   return (
     <div className="ticker-search-item" onMouseDown={handleClick}>
       <div className="ticker-search-left">

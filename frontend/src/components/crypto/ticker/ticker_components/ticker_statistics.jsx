@@ -1,14 +1,15 @@
 import React from 'react';
 
-const TickerStatistics = props => {
+const TickerStatistics = ({ ticker }) => {
 
     const colorPicker = inp => inp >= 0 ? "green" : "red";
 
-    const {market_data, name } = props.ticker
+    const { market_data, name } = ticker
     const athChangeColor = colorPicker(market_data.ath_change_percentage.usd.toFixed(2));
     const dayColor = colorPicker(market_data.price_change_percentage_24h.toFixed(2));
     const sevenDayColor = colorPicker(market_data.price_change_percentage_7d.toFixed(2));
     const thirtyDayColor = colorPicker(market_data.price_change_percentage_30d.toFixed(2));
+
     return (
       <div className="ticker-statistics-wrapper">
         <h1>Statistics</h1>

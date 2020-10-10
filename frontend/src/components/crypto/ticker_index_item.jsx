@@ -3,8 +3,15 @@ import { withRouter } from "react-router-dom";
 import TickerIndexItemChart from './ticker_inter_item_chart';
 const numeral = require("numeral");
 
-const TickerIndexItem = props => {
-  const { table, ticker, changeTable, user, fetchTickers, createTable } = props;
+const TickerIndexItem = ({ 
+  table, 
+  ticker, 
+  changeTable, 
+  user, 
+  fetchTickers, 
+  createTable, 
+  history 
+}) => {
 
   const deleteTicker = () => {
     const filtered = table.tickers.filter(tick => tick.id !== ticker.id)
@@ -20,10 +27,10 @@ const TickerIndexItem = props => {
         table.user = user.id;
       }
       createTable(table).then(fetchTickers());
-    } else props.history.push('/login')
+    } else history.push('/login')
   }
 
-  const handleClick = () => props.history.push(`/tickers/${ticker.id}`);
+  const handleClick = () => history.push(`/tickers/${ticker.id}`);
 
   const showAddRemoveInfo = () => {
     let hiddenText = document.getElementsByClassName(`hidden-info ${ticker.name}`)[0];

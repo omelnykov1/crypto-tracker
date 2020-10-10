@@ -14,7 +14,7 @@ const handleStepSize = num => {
     else return 0.005;
 }
 
-const TickerIndexItemChart = ({data, color}) => {
+const TickerIndexItemChart = ({ data, color }) => {
     const price = data.map(p => handlePrice(p));
     const stepS = handleStepSize(data[0]);
     const time = new Array (price.length);

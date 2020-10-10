@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import ParticlesSession from './session_particles';
 
-const LoginForm = props => {
+const LoginForm = ({ login, demoUser, clearSessionErrors, errors }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,9 +11,8 @@ const LoginForm = props => {
     clearSessionErrors();
     const eles = document.getElementsByClassName("login-yes-errors-input");
     Array.from(eles).forEach(ele => ele.className = "login-no-errors-input")
-  }, []);
+  },[]);
 
-  const { login, demoUser, clearSessionErrors, errors } = props;
   const handleDemo = () => login(demoUser);
 
   const handleSubmit = (e) => {

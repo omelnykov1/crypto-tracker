@@ -1,17 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-const NavBar = props => {
-  const { loggedIn, currentUser } = props;
-
-  const handleMain = () =>  props.history.push("/");
-  const handleTable = () => props.history.push(`/tables/user/${currentUser.id}`);
-  const handleLogin = () => props.history.push('/login');
-  const handleSignup = () => props.history.push('/signup');
+const NavBar = ({ loggedIn, currentUser, history, logout }) => {
+  const handleMain = () =>  history.push("/");
+  const handleTable = () => history.push(`/tables/user/${currentUser.id}`);
+  const handleLogin = () => history.push('/login');
+  const handleSignup = () => history.push('/signup');
 
   const loginToggle = loggedIn ? (
     <div className="right-nav">
-      <div className="left-right-nav" onClick={props.logout}>
+      <div className="left-right-nav" onClick={logout}>
         <button className="logout">Logout</button>
       </div>
       <div className="right-right-nav" onClick={handleTable}>
@@ -45,6 +43,5 @@ const NavBar = props => {
     </header>
   );
 }
-
 
 export default withRouter(NavBar);

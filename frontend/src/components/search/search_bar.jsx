@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import SearchItem from './search_item';
 import { withRouter } from 'react-router-dom';
 
-const SearchBar = (props) => {
+const SearchBar = ({ tickers }) => {
   const [focus, setFocus] = useState(false);
   const [searchStr, setSearchStr] = useState("");
 
   const renderSearchResult = () => {
-    if (props.tickers.length) {
-      const filt = props.tickers.filter((ticker) => {
+    if (tickers.length) {
+      const filt = tickers.filter((ticker) => {
         if ( 
           (ticker.name.toLowerCase().includes(searchStr) || 
           ticker.name.toUpperCase().includes(searchStr) || 

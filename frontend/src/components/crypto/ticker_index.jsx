@@ -3,15 +3,21 @@ import TickerIndexItem from './ticker_index_item';
 import Pagination from "./pagination";
 import { Loader } from '../util/loader';
 
-const TickerIndex = props => {
+const TickerIndex = ({ 
+  fetchTickers, 
+  currentUser, 
+  fetchTable, 
+  fetchTickerData, 
+  createTable, 
+  table, 
+  changeTable 
+}) => {
   const [tickers, setTickers] = useState([]);
   const [toggle, setToggle] = useState(true);
-  const [clicked, setClicked] = useState(false);
+  const [_, setClicked] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [tickersPerPage, setTickersPerPage] = useState(20);
+  const [tickersPerPage] = useState(20);
   const [loading, setLoading] = useState(true);
-
-  const { fetchTickers, currentUser, fetchTable, fetchTickerData, createTable, table, changeTable } = props;
 
   useEffect(() => {
     const getTickers = async () => {
@@ -25,11 +31,11 @@ const TickerIndex = props => {
   const sort = (input) => {
     setClicked(true);
     setToggle(!toggle);
-    const tickers = toggle ? 
+    const ticks = toggle ? 
       tickers.sort((a, b) => b[input] - a[input]) 
       : 
       tickers.sort((a, b) => a[input] - b[input]);
-    setTickers(tickers);
+    setTickers(ticks);
   }
   
   const paginate = (n) => setCurrentPage(n);

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TickerLinks = props => {
-    const {links, image, name} = props.ticker;
+const TickerLinks = ({ ticker }) => {
+    const {links, image, name} = ticker;
     return (
       <div className="ticker-links-wrapper">
         <h1>Useful Links</h1>

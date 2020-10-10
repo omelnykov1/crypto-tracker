@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import SearchBar from '../search/search_bar';
 
-const MainPage = props => {
+const MainPage = ({ tickers, history, fetchTickers}) => {
 
   useEffect(() => {
-    props.fetchTickers();
-  },[]);
-  console.log(props)
+    fetchTickers();
+  });
 
   return (
     <div className="main">
@@ -19,13 +18,13 @@ const MainPage = props => {
             it easy to quickly navigate to the coins you have an interest in.
           </p>
           <div className="all-tickers">
-            <button className="tickers-btn" onClick={() => props.history.push('/tickers')}>All Tickers</button>
+            <button className="tickers-btn" onClick={() => history.push('/tickers')}>All Tickers</button>
           </div>
         </div>
       </div>
       <div className="main-right">
         <img src={ "/images/not-main.png" } alt="" />
-        <SearchBar tickers={props.tickers} />
+        <SearchBar tickers={tickers} />
       </div>
     </div>
   );

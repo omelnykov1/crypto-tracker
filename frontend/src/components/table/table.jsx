@@ -1,82 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TableItem from './table_item';
 import { withRouter } from 'react-router-dom';
 import { Loader } from '../util/loader';
 import TableParticles from './table_particles';
 
-class Table extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            user: this.props.currentUser.id,
-            tickers: [],
-            loading: true,
-            onPage: true
-        }
-        this.destroyTable = this.destroyTable.bind(this);
-    }
+const Table = ({ currentUser, fetchTable, table, changeTable }) => {
 
-    componentDidMount() {
-        this.props.fetchTable(this.props.currentUser.id)
-        this.getIcons()
-    }
+  const [user] = useState(currentUser.id);
+  const [loading, setLoading] = useState(true);
 
-    destroyTable() {
-        this.props.deleteTable(this.props.table._id)
-            .then(this.handleTickers());
-    }
+  useEffect(() => {
+    fetchTable(user);
+  }, []);
 
-    update(field) {
-        return e => this.setState({[field]: e.target.value});
-    }
+  const renderTickers = () => {
+    if (table.tickers) {
+      return table.tickers.map(ticker => (
+        <TableItem 
+          ticker={ticker} 
+          key={ticker.id} 
+          table={table}
+          changeTable={changeTable}
+        />
+      ));
+    } 
+  }
 
-    renderTickers() {
-        let tickers;
-        if (this.props.table.tickers) {
-            tickers = (!this.props.table.tickers) ? null :
-                this.props.table.tickers.map(ticker => (
-                    <TableItem 
-                        ticker={ticker} 
-                        key={ticker.id} 
-                        table={this.props.table}
-                        changeTable={this.props.changeTable}
-                    />
-            ));
-        } 
-        return tickers;
+  const getIcons = () => {
+    if (table.tickers) {
+      const images = table.tickers.map(ticker => ticker.image)
+      const image = images[Math.floor(Math.random() * images.length)];
+      return image;
     }
-
-    getIcons() {
-        if (this.props.table.tickers) {
-            const images = this.props.table.tickers.map(ticker => ticker.image)
-            return images[Math.floor(Math.random() * images.length)];
-        }
-    }
+  }
 
 
-    render() {
-        setTimeout(() => this.setState({loading: false}), 1700)
-        return this.state.loading ? < Loader loading={this.state.loading} /> : (
-            <div className="table-container">
-                < TableParticles image={this.getIcons} />
-                <div className="table-wrapper">
-                    <h1>Favorite Tickers</h1>
-                    <div className="table-labels">
-                        <div className="table-labels-left">
-                            <span>Name</span>
-                        </div>
-                        <div className="table-labels-right">
-                            <span>Current Price</span>
-                            <span>#</span>
-                            <span>Total ROI</span>
-                            <span>All Time High</span>
-                        </div>
-                    </div>
-                    {this.renderTickers()}
-                </div>
-            </div>
-        )
-    }
+  setTimeout(() => setLoading(false), 1700);
+
+  return loading ? < Loader loading={loading} /> : (
+    <div className="table-container">
+      < TableParticles image={getIcons()} />
+      <div className="table-wrapper">
+        <h1>Favorite Tickers</h1>
+        <div className="table-labels">
+          <div className="table-labels-left">
+            <span>Name</span>
+          </div>
+          <div className="table-labels-right">
+            <span>Current Price</span>
+            <span>#</span>
+            <span>Total ROI</span>
+            <span>All Time High</span>
+          </div>
+        </div>
+        {renderTickers()}
+      </div>
+    </div>
+  )
 }
 
 export default withRouter(Table);

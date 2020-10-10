@@ -2,19 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PartcilesSession from './session_particles'
 
-const SignupForm = props => {
+const SignupForm = ({ clearSessionErrors, signup, errors }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [password2, setPassword2] = useState("");
-  
-  const { clearSessionErrors, signup, errors } = props;
 
   useEffect(() => {
     clearSessionErrors();
     const inputs = document.getElementsByClassName("signup-yes-errors-input");
     Array.from(inputs).forEach(input => input.className = "signup-no-errors-input");
-  }, [])
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault();

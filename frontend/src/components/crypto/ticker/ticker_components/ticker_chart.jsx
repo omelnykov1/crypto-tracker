@@ -21,7 +21,7 @@ const handleStepSize = num => {
   }
 }
 
-const TickerChart = ({data , color}) => {
+const TickerChart = ({ data , color }) => {
     const p = data.map(arr => handlePrice(arr[1]));
     const stepS = handleStepSize(data[0][1]);
     const t = data.map((arr) => {

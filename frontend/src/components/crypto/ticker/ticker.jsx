@@ -7,8 +7,7 @@ import TickerChart from './ticker_components/ticker_chart';
 import ReactHtmlParser from "react-html-parser";
 import TickerParticles from './ticker_components/ticker_particles';
 
-const Ticker = props => {
-  const { 
+const Ticker = ({ 
     fetchTicker, 
     fetchTickerData, 
     createTable,
@@ -17,14 +16,16 @@ const Ticker = props => {
     table, 
     currentUser, 
     ticker, 
-    data 
-  } = props;
+    data,
+    match,
+    history 
+  }) => {
 
   useEffect(() => {
-    fetchTicker(props.match.params.tickerId);
-    fetchTickerData(props.match.params.tickerId);
+    fetchTicker(match.params.tickerId);
+    fetchTickerData(match.params.tickerId);
     if (currentUser.id) fetchTable(currentUser.id);
-  }, []);
+  });
 
   const deleteTicker = () => {
     const filtered = table.tickers.filter(tick => tick.id !== ticker.id)
@@ -42,7 +43,7 @@ const Ticker = props => {
         table.user = currentUser.id;
         createTable(table)
       }
-    } else props.history.push('/login')
+    } else history.push('/login')
   }
 
   const handleButton = () => {
