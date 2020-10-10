@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TickerStatistics = ({ ticker }) => {
-
     const colorPicker = inp => inp >= 0 ? "green" : "red";
 
     const { market_data, name } = ticker

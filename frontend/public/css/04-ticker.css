@@ -687,7 +687,7 @@ and (-webkit-device-pixel-ratio : 3) {
     }
 
     .ticker-statistics-table-right div a:visited{
-    color:#5e57df;
+        color:#5e57df;
     }
 
     .ticker-statistics-table-left div i {
@@ -1013,3 +1013,80 @@ and (-webkit-device-pixel-ratio : 3) {
         animation-play-state: running;
     }
 }
+
+/* dropdown button */
+
+.dropdown {
+  left: 30%;
+  display: flex;
+  position: absolute;
+  max-width: 10%;
+}
+
+.dd-button {
+font-size: 20px;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px 30px 10px 20px;
+  background-color: #7872e7;
+  cursor: pointer;
+  color: white;
+  white-space: nowrap;
+}
+
+.dd-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+}
+
+.dd-button:hover {
+  background-color: #5e57df;
+}
+
+
+.dd-input {
+  display: none;
+}
+
+.dd-menu {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.dd-input + .dd-menu {
+  display: none;
+} 
+
+.dd-input:checked + .dd-menu {
+  display: block;
+} 
+
+.dd-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 17px;
+}
+
+.dd-menu li:hover {
+  background-color: #908ce9;
+  color: white;
+}
+

@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
     "chart.js": "^2.9.3",
+    "coingecko-api": "^1.0.10",
     "color": "^3.1.2",
     "d3": "^5.16.0",
     "jwt-decode": "^2.2.0",
