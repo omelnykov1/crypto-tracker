@@ -1,7 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import TickerIndexItemChart from './ticker_inter_item_chart';
-const numeral = require("numeral");
+import numeral from "numeral";
+import { useHistory } from 'react-router-dom';
 
 const TickerIndexItem = ({ 
   table, 
@@ -10,8 +11,8 @@ const TickerIndexItem = ({
   user, 
   fetchTickers, 
   createTable, 
-  history 
 }) => {
+  const history = useHistory();
 
   const deleteTicker = () => {
     const filtered = table.tickers.filter(tick => tick.id !== ticker.id)

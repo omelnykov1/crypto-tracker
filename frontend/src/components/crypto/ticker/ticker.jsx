@@ -6,7 +6,7 @@ import TickerLinks from './ticker_components/ticker_links';
 import ReactHtmlParser from "react-html-parser";
 import TickerParticles from './ticker_components/ticker_particles';
 import TickerChart from './ticker_components/ticker_charts/ticker_chart';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 const Ticker = ({ 
     fetchTicker, 
@@ -18,10 +18,9 @@ const Ticker = ({
     currentUser, 
     ticker, 
     data,
-    match,
-    history 
   }) => {
-  
+  const history = useHistory();
+  const match = useRouteMatch();
   const [chartNum, setChartNum] = useState(1);
   const [title, setTitle] = useState('1 Day Chart');
 

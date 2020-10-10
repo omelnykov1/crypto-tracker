@@ -1,7 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-const SearchItem = ({ ticker, history }) => {
+const SearchItem = ({ ticker }) => {
+  const history = useHistory();
   const handleClick = () => history.push(`/tickers/${ticker.id}`);
 
   const { name, current_price, image, price_change_percentage_24h, market_cap_rank} = ticker;
@@ -23,4 +24,4 @@ const SearchItem = ({ ticker, history }) => {
   )
 }
 
-export default withRouter(SearchItem);
+export default SearchItem;

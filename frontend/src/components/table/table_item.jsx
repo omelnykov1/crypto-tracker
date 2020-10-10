@@ -1,12 +1,15 @@
 import React from 'react';
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const TableItem = ({ table, changeTable, ticker, history }) => {
+const TableItem = ({ table, changeTable, ticker }) => {
+  const history = useHistory();
+
   const deleteTicker = () => {
     const filtered = table.tickers.filter(tick => tick.id !== ticker.id)
     table.tickers = filtered
     filtered.length ? changeTable(table) : changeTable(table).then(history.push('/tickers'));
   };
+  
   const handleClick = () => history.push(`/tickers/${ticker.id}`);
 
   const {ath, current_price,name,image, market_cap_rank, atl_change_percentage} = ticker;
@@ -34,4 +37,4 @@ const TableItem = ({ table, changeTable, ticker, history }) => {
   );
 }
 
-export default withRouter(TableItem);
+export default TableItem;

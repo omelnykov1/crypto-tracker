@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import SearchBar from '../search/search_bar';
+import { useHistory } from 'react-router-dom';
 
-const MainPage = ({ tickers, history, fetchTickers}) => {
-
+const MainPage = ({ tickers, fetchTickers}) => {
+  const history = useHistory();
+  
   useEffect(() => {
     fetchTickers();
   });

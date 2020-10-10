@@ -39,6 +39,7 @@ const TickerIndex = ({
   }
   
   const paginate = (n) => setCurrentPage(n);
+  console.log(currentPage)
 
   setTimeout(() => setLoading(false), 1600);
   const indexOfLastTicker = currentPage * tickersPerPage;

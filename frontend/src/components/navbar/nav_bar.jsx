@@ -1,7 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
-const NavBar = ({ loggedIn, currentUser, history, logout }) => {
+const NavBar = ({ loggedIn, currentUser, logout }) => {
+  const history = useHistory();
   const handleMain = () =>  history.push("/");
   const handleTable = () => history.push(`/tables/user/${currentUser.id}`);
   const handleLogin = () => history.push('/login');
