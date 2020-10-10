@@ -3,7 +3,6 @@ import { Line } from 'react-chartjs-2';
 import { handlePrice, handleStepSize, getTime } from './ticker_util';
 
 const TickerChartOneDay = ({ data , color }) => {
-  if (!data) return;
   const oneDayData = data.map(arr => handlePrice(arr[1]));
   const stepOne = handleStepSize(data[0][1]);
   const timeOne = getTime(data);
