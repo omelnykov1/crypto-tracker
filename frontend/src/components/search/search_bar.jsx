@@ -8,7 +8,7 @@ const SearchBar = ({ tickers }) => {
 
   const renderSearchResult = () => {
     if (tickers.length) {
-      const filt = tickers.filter((ticker) => {
+      const filt =tickers.filter((ticker) => {
         if ( 
           (ticker.name.toLowerCase().includes(searchStr) || 
           ticker.name.toUpperCase().includes(searchStr) || 

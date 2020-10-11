@@ -7,7 +7,7 @@ const MainPage = ({ tickers, fetchTickers}) => {
   
   useEffect(() => {
     fetchTickers();
-  });
+  },[]);
 
   return (
     <div className="main">

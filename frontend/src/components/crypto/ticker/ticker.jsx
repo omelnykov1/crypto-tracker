@@ -28,7 +28,7 @@ const Ticker = ({
     fetchTicker(match.params.tickerId);
     fetchTickerData(match.params.tickerId);
     if (currentUser && currentUser.id) fetchTable(currentUser.id);
-  }, []);
+  },[]);
 
   const deleteTicker = () => {
     const filtered = table.tickers.filter(tick => tick.id !== ticker.id)
@@ -46,7 +46,7 @@ const Ticker = ({
         table.user = currentUser.id;
         createTable(table)
       }
-    } else history.push('/login')
+    } else history.push('/login');
   }
 
   const handleButton = () => {

@@ -36,21 +36,22 @@ router.get("/user/:userId", (req, res) => {
 
 router.post("/",
   passport.authenticate("jwt", { session: false }),
-  (req, res) => {
+  async (req, res) => {
+  try {
     const { errors, isValid } = table_validation(req.body);
 
     if (!isValid) return res.status(400).json(errors);
+
     const newTable = new Table({
       user: req.body.user,
       tickers: req.body.tickers,
     });
-
-    newTable
-      .save()
-      .then((table) => res.json(table))
-      .catch((err) => console.log(err));
+    const table = await newTable.save();
+    res.json(table);
+  } catch (error) {
+    throw (error);
   }
-);
+});
 
 router.patch("/", passport.authenticate("jwt", { session: false }), (req, res) => {
   const table = Table.findOneAndUpdate(

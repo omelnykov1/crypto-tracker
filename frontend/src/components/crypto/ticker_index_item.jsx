@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 import TickerIndexItemChart from './ticker_inter_item_chart';
 import numeral from "numeral";
 import { useHistory } from 'react-router-dom';
@@ -87,4 +86,4 @@ const TickerIndexItem = ({
     );
 }
 
-export default withRouter(TickerIndexItem)
+export default TickerIndexItem;

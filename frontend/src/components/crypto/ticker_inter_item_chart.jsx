@@ -1,18 +1,6 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-
-const handlePrice = num => {
-    if (num >= 1) return num.toFixed(2);
-    else if (num >= 0.1) return num.toFixed(4);
-    else return num.toFixed(7);
-}
-
-const handleStepSize = num => {
-    if (num > 4) return 1;
-    else if (num > 1) return 0.3;
-    else if (num > 0.1) return 0.05;
-    else return 0.005;
-}
+import { handlePrice, handleStepSize } from './ticker/ticker_components/ticker_charts/ticker_util'
 
 const TickerIndexItemChart = ({ data, color }) => {
     const price = data.map(p => handlePrice(p));
