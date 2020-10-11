@@ -17,7 +17,7 @@
 .ticker-index {
     font-size: 17px;
     display: grid;
-    grid-template-columns: 25% 10% 65%;
+    grid-template-columns: 33% 7% 60%;
     width: 100%;
 }
 
@@ -109,6 +109,7 @@
     font-size: 20px;
     cursor: pointer;
 }
+
 
 .ticker-image img {
     margin-top: 1rem;
@@ -278,16 +279,6 @@ and (-webkit-device-pixel-ratio : 3) {
         font-size: 8px !important;
         text-align: right;
         width: 100%;
-    }
-
-    .ticker-name {
-        display: flex;
-        text-align: center;
-        min-height: fit-content;
-        margin-left: 2vw;
-        margin-top: 1.3rem;
-        font-size: 8px;
-        cursor: pointer;
     }
 
     .ticker-image img {

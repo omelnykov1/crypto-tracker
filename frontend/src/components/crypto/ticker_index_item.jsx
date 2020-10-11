@@ -73,7 +73,7 @@ const TickerIndexItem = ({
           <div className="ticker-name" onClick={e => handleClick()} >{name}</div>
         </div>
         <div className="ticker-index-center">
-          <div className="ticker-symbol">{symbol}</div>
+          <div className="ticker-symbol">{symbol.slice(0,6)}</div>
         </div>
         <div className="ticker-index-right">
           <div className="ticker-price"> ${current_price.toFixed(2)} </div>
