@@ -50,34 +50,29 @@ const Ticker = ({
   }
 
   const handleButton = () => {
-    let toggle;
-    if (table.tickers && ticker) {
-      table.tickers.forEach((tick) => {
-        if (ticker.name === tick.name) toggle = true;
-      });
-    }
+    const isFavorite = table ? table.tickers.some((tick) => (ticker.name === tick.name)) : null;
 
-  const button = toggle ? (
-    <div className="wrapper" onClick={e => deleteTicker()}>
-      <button>
-        Remove from Favorites
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  ) : (
-    <div className="add-wrapper" onClick={e => handleAddTicker()}>
-      <button>
-        Add to Favorites
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  );
+    const button = isFavorite ? (
+      <div className="wrapper" onClick={e => deleteTicker()}>
+        <button>
+          Remove from Favorites
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    ) : (
+      <div className="add-wrapper" onClick={e => handleAddTicker()}>
+        <button>
+          Add to Favorites
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    );
 
     return button;
   }
@@ -86,8 +81,8 @@ const Ticker = ({
   const oneDayColor = ticker ? getPriceColor(ticker.market_data.price_change_percentage_24h) : null;
   const sevenDayColor = ticker ? getPriceColor(ticker.market_data.price_change_percentage_7d) : null;
   const thirtyDayColor = ticker ? getPriceColor(ticker.market_data.price_change_percentage_30d) : null;
-
   const colors = { oneDayColor, sevenDayColor, thirtyDayColor};
+
   if (ticker && data) {
     return (
       <div className="main-ticker-wrapper">

@@ -21,9 +21,7 @@ router.get('/current', passport.authenticate("jwt", { session: false }),(req, re
 router.post('/register', (req, res) => {
   const { errors, isValid } = register_validations(req.body);
 
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
+  if (!isValid) return res.status(400).json(errors);
 
   User.findOne({ email: req.body.email.toLowerCase() }).then((user) => {
     if (user) {

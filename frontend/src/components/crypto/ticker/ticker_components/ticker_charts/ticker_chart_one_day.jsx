@@ -14,7 +14,8 @@ const TickerChartOneDay = ({ data , color }) => {
       fontColor: "#323130",
       fontSize:  20
     }
-  }
+  };
+
   const d = {
     labels: timeOne,
     datasets: [
@@ -32,6 +33,7 @@ const TickerChartOneDay = ({ data , color }) => {
       },
     ],
   };
+  
   const options = {
     responsive: true,
     intersect: true,

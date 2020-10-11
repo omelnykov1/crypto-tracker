@@ -21,7 +21,7 @@ const SignupForm = ({ clearSessionErrors, signup, errors }) => {
   }
 
   const handleEmailErr = () => {
-    let field = document.getElementById("signup-email");
+    const field = document.getElementById("signup-email");
     if (!field) return;
 
     if (errors.email) {
@@ -31,7 +31,7 @@ const SignupForm = ({ clearSessionErrors, signup, errors }) => {
   }
 
   const handleNameErr = () => {
-    let field = document.getElementById("signup-name");
+    const field = document.getElementById("signup-name");
     if (!field) return;
 
     if (errors.name) {
@@ -41,7 +41,7 @@ const SignupForm = ({ clearSessionErrors, signup, errors }) => {
   }
 
   const handlePasswordErr = () => {
-    let field = document.getElementById("signup-password-1");
+    const field = document.getElementById("signup-password-1");
     if (!field) return;
 
     if (errors.password) {
@@ -51,7 +51,7 @@ const SignupForm = ({ clearSessionErrors, signup, errors }) => {
   }
 
   const handlePassword2Err = () => {
-    let field = document.getElementById("signup-password-2");
+    const field = document.getElementById("signup-password-2");
     if (!field) return;
     if (errors.password2) {
       field.className = "signup-yes-errors-input";

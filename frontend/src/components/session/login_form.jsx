@@ -22,7 +22,7 @@ const LoginForm = ({ login, demoUser, clearSessionErrors, errors }) => {
   }
 
   const handleEmailErr = () => {
-    let field = document.getElementById("login-email");
+    const field = document.getElementById("login-email");
     if (!field) return;
 
     if (errors.email) {
@@ -32,8 +32,8 @@ const LoginForm = ({ login, demoUser, clearSessionErrors, errors }) => {
   }
 
   const handlePasswordErr = () => {
-    let field = document.getElementById("login-password");
-    if (field === null) return;
+    const field = document.getElementById("login-password");
+    if (!field) return;
 
     if (errors.password) {
       field.className = "login-yes-errors-input1";

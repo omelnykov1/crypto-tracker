@@ -43,9 +43,7 @@ const Table = ({ currentUser, fetchTable, table, changeTable }) => {
       <div className="table-wrapper">
         <h1>Favorite Tickers</h1>
         <div className="table-labels">
-          <div className="table-labels-left">
-            <span>Name</span>
-          </div>
+          <div className="table-labels-left"><span>Name</span></div>
           <div className="table-labels-right">
             <span>Current Price</span>
             <span>#</span>

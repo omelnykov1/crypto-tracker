@@ -24,14 +24,9 @@ const TableItem = ({ table, changeTable, ticker }) => {
       <div className="table-item-right">
         <div className="table-current-price">${price}</div>
         <div className="table-market-cap-rank">{market_cap_rank}</div>
-        <div className="table-roi">
-          {atl_change_percentage.toFixed(2)}%
-        </div>
+        <div className="table-roi">{atl_change_percentage.toFixed(2)}%</div>
         <div className="table-ath">${ath.toFixed(2)}</div>
-        <i
-          onClick={() => deleteTicker()}
-          className="fas fa-star"
-        />
+        <i onClick={() => deleteTicker()} className="fas fa-star"/>
       </div>
     </div>
   );

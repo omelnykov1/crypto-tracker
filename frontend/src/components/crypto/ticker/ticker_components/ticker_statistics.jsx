@@ -1,13 +1,18 @@
 import React from 'react';
 
 const TickerStatistics = ({ ticker }) => {
-    const colorPicker = inp => inp >= 0 ? "green" : "red";
-
-    const { market_data, name } = ticker
-    const athChangeColor = colorPicker(market_data.ath_change_percentage.usd.toFixed(2));
-    const dayColor = colorPicker(market_data.price_change_percentage_24h.toFixed(2));
-    const sevenDayColor = colorPicker(market_data.price_change_percentage_7d.toFixed(2));
-    const thirtyDayColor = colorPicker(market_data.price_change_percentage_30d.toFixed(2));
+    const { market_data, name } = ticker;
+    const { 
+      ath_change_percentage, 
+      price_change_percentage_24h, 
+      price_change_percentage_7d, 
+      price_change_percentage_30d 
+    } = market_data;
+    const colorPicker = price => price >= 0 ? "green" : "red";
+    const athChangeColor = colorPicker(ath_change_percentage.usd);
+    const dayColor = colorPicker(price_change_percentage_24h);
+    const sevenDayColor = colorPicker(price_change_percentage_7d);
+    const thirtyDayColor = colorPicker(price_change_percentage_30d);
 
     return (
       <div className="ticker-statistics-wrapper">
@@ -26,18 +31,10 @@ const TickerStatistics = ({ ticker }) => {
             <div>${market_data.current_price.usd.toFixed(2)}</div>
             <div>${market_data.ath.usd.toFixed(2)}</div>
             <div>${market_data.atl.usd.toFixed(2)}</div>
-            <div style={{ color: athChangeColor }}>
-              {market_data.ath_change_percentage.usd.toFixed(2)}%
-            </div>
-            <div style={{ color: dayColor }}>
-              {market_data.price_change_percentage_24h.toFixed(2)}%
-            </div>
-            <div style={{ color: sevenDayColor }}>
-              {market_data.price_change_percentage_7d.toFixed(2)}%
-            </div>
-            <div style={{ color: thirtyDayColor }}>
-              {market_data.price_change_percentage_30d.toFixed(2)}%
-            </div>
+            <div style={{ color: athChangeColor }}>{ath_change_percentage.usd.toFixed(2)}%</div>
+            <div style={{ color: dayColor }}>{price_change_percentage_24h.toFixed(2)}%</div>
+            <div style={{ color: sevenDayColor }}>{price_change_percentage_7d.toFixed(2)}%</div>
+            <div style={{ color: thirtyDayColor }}>{price_change_percentage_30d.toFixed(2)}%</div>
           </div>
         </div>
       </div>

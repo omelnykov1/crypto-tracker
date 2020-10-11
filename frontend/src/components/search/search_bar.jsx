@@ -37,15 +37,12 @@ const SearchBar = ({ tickers }) => {
 
   return (
     <div className="search-bar-wrapper">
-      <label htmlFor="search-bar">
-        <i className="fa fa-search"></i>
-      </label>
+      <label htmlFor="search-bar"><i className="fa fa-search"></i></label>
       <div
         className="search-input-and-results"
         name="search-bar"
         onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-      >
+        onBlur={() => setFocus(false)} >
         <input
           size="16"
           type="text"
@@ -55,13 +52,9 @@ const SearchBar = ({ tickers }) => {
           autoComplete="none"
           onChange={e => setSearchStr(e.currentTarget.value)}
         />
-        <div className={showToggle}>
-          <ol className="search-list">{renderSearchResult()}</ol>
-        </div>
+        <div className={showToggle}><ol className="search-list">{renderSearchResult()}</ol></div>
       </div>
-      <div className="search-btn">
-        <i className="search-b">Search</i>
-      </div>
+      <div className="search-btn"><i className="search-b">Search</i></div>
     </div>
   );
 }
