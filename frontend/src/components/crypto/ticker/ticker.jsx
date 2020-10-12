@@ -7,6 +7,7 @@ import ReactHtmlParser from "react-html-parser";
 import TickerParticles from './ticker_components/ticker_particles';
 import TickerChart from './ticker_components/ticker_charts/ticker_chart';
 import { useHistory, useRouteMatch } from 'react-router-dom';
+import { removeFromFavoritesButton, addToFavoritesButton } from './ticker_util/ticker_button'
 
 const Ticker = ({ 
     fetchTicker, 
@@ -49,34 +50,8 @@ const Ticker = ({
     } else history.push('/login');
   }
 
-  const handleButton = () => {
-    const isFavorite = table ? table.tickers.some((tick) => (ticker.name === tick.name)) : null;
-
-    const button = isFavorite ? (
-      <div className="wrapper" onClick={e => deleteTicker()}>
-        <button>
-          Remove from Favorites
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    ) : (
-      <div className="add-wrapper" onClick={e => handleAddTicker()}>
-        <button>
-          Add to Favorites
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    );
-
-    return button;
-  }
-
+  const isFavorite = (table && table.tickers && ticker) ? table.tickers.some((tick) => (ticker.name === tick.name)) : null;
+  const button = isFavorite ? removeFromFavoritesButton(deleteTicker) : addToFavoritesButton(handleAddTicker);
   const getPriceColor = price => price >= 0 ? "#1ABC9C" : "#E74C3C";
   const oneDayColor = ticker ? getPriceColor(ticker.market_data.price_change_percentage_24h) : null;
   const sevenDayColor = ticker ? getPriceColor(ticker.market_data.price_change_percentage_7d) : null;
@@ -86,31 +61,29 @@ const Ticker = ({
   if (ticker && data) {
     return (
       <div className="main-ticker-wrapper">
-        < TickerParticles image={ticker.image} />
-        <div className="ticker-widget">
-          <TickerWidget ticker={ticker} />
-        </div>
+        <TickerParticles image={ticker.image} />
+        <div className="ticker-widget"><TickerWidget ticker={ticker} /></div>
         <div className="ticker-info">
           <div className="ticker-chart-wrapper">
-              <label className="dropdown">
-                <div className="dd-button">{title}</div>
-                <input type="checkbox" className="dd-input" id="test"/>
-                <ul className="dd-menu">
-                  <li onClick={() => {
-                    setChartNum(1)
-                    setTitle('1 Day Chart')
-                  }}>1 Day Chart</li>
-                  <li onClick={() => {
-                    setChartNum(7)
-                    setTitle('7 Days Chart')
-                  }}>7 Days Chart</li>
-                  <li onClick={() => {
-                    setChartNum(30)
-                    setTitle('30 Days Chart')
-                  }}>30 Days Chart</li>
-                </ul>
-                </label>
-              <TickerChart data={data} colors={colors} chartNum={chartNum}/>
+            <label className="dropdown">
+              <div className="dd-button">{title}</div>
+              <input type="checkbox" className="dd-input" id="test"/>
+              <ul className="dd-menu">
+                <li onClick={() => {
+                  setChartNum(1)
+                  setTitle('1 Day Chart')
+                }}>1 Day Chart</li>
+                <li onClick={() => {
+                  setChartNum(7)
+                  setTitle('7 Days Chart')
+                }}>7 Days Chart</li>
+                <li onClick={() => {
+                  setChartNum(30)
+                  setTitle('30 Days Chart')
+                }}>30 Days Chart</li>
+              </ul>
+            </label>
+            <TickerChart data={data} colors={colors} chartNum={chartNum}/>
           </div>
           <div className="ticker-statistics">
             <TickerStatistics ticker={ticker} />
@@ -120,7 +93,7 @@ const Ticker = ({
         <div className="ticker-about">
           <h1>About {ticker.name}</h1>
           <p>{ReactHtmlParser(ticker.description.en)}</p>
-          {handleButton()}
+         {button}
         </div>
       </div>
     );

@@ -20,7 +20,7 @@ const TickerIndexItem = ({
   }
 
   const handleAddTicker = () => {
-    if (user.id) {
+    if (user && user.id) {
       if (table.user) table.tickers.push(ticker);
       else {
         table.tickers = [ticker];
@@ -33,12 +33,12 @@ const TickerIndexItem = ({
   const handleClick = () => history.push(`/tickers/${ticker.id}`);
 
   const showAddRemoveInfo = () => {
-    let hiddenText = document.getElementsByClassName(`hidden-info ${ticker.name}`)[0];
+    const hiddenText = document.getElementsByClassName(`hidden-info ${ticker.name}`)[0];
     hiddenText.className = 'hidden-info-show';
   }
 
   const hideAddRemoveInfo = () => {
-    let hiddenText = document.getElementsByClassName('hidden-info-show')[0];
+    const hiddenText = document.getElementsByClassName('hidden-info-show')[0];
     hiddenText.className = `hidden-info ${ticker.name}`;
   }
       

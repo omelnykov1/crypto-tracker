@@ -23,7 +23,7 @@
 
 .ticker-index-labels {
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 40% 60%;
     font-size: 18px;
     padding-bottom: 1vw;
 }
@@ -45,7 +45,7 @@
 }
 
 .ticker-coin-index {
-    margin-left: 5vw;
+    margin-left: 3.7vw;
 }
 
 .ticker-index-label-chart, .ticker-index-price {
@@ -318,7 +318,7 @@ and (-webkit-device-pixel-ratio : 3) {
         margin-top: 5.2vw;
     }
 
-    .ticker-index-market-cap-rank {
+    .ticker-index-market-cap {
         margin-top: 1.3rem;
         margin-left: 1vw;
         font-size: 8px;

@@ -20,7 +20,7 @@ const MainPage = ({ tickers, fetchTickers}) => {
             it easy to quickly navigate to the coins you have an interest in.
           </p>
           <div className="all-tickers">
-            <button className="tickers-btn" onClick={() => history.push('/tickers')}>All Tickers</button>
+            <button className="tickers-btn" onClick={() => history.push('/tickers')}>All Coins</button>
           </div>
         </div>
       </div>
