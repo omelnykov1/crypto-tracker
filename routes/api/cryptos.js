@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const axios = require('axios');
 const CircularJSON = require('circular-json');
+const keys = require("../../config/keys");
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI(keys.newsAPIKey);
 
 router.get('/', async (req, res) => {
   let tick = req.query['0'];
@@ -45,8 +48,22 @@ router.get(`/tickers/chart/:tickerId`, async (req, res) => {
 
 router.get(`/tickers/news/:tickerId`, async (req, res) => {
   const { tickerId } = req.params;
+  const today = new Date();
+  const weekAgo = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate() - 7
+  );
 
-  
+  const { articles } = await newsapi.v2.everything({
+    q: `${tickerId}`,
+    from: `${weekAgo}`,
+    to: `${today}`,
+    language: "en",
+    sortBy: "publishedAt",
+    page: 1,
+  });
+  res.send(articles);
 })
 
 

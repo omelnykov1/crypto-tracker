@@ -6,12 +6,14 @@ import TickerLinks from './ticker_components/ticker_links';
 import ReactHtmlParser from "react-html-parser";
 import TickerParticles from './ticker_components/ticker_particles';
 import TickerChart from './ticker_components/ticker_charts/ticker_chart';
+import TickerNews from './ticker_components/ticker_news/ticker_news';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import { removeFromFavoritesButton, addToFavoritesButton } from './ticker_util/ticker_button'
 
 const Ticker = ({ 
     fetchTicker, 
     fetchTickerData, 
+    fetchTickerNews,
     createTable,
     fetchTable, 
     changeTable, 
@@ -19,6 +21,7 @@ const Ticker = ({
     currentUser, 
     ticker, 
     data,
+    news
   }) => {
   const history = useHistory();
   const match = useRouteMatch();
@@ -26,8 +29,10 @@ const Ticker = ({
   const [title, setTitle] = useState('1 Day Chart');
 
   useEffect(() => {
-    fetchTicker(match.params.tickerId);
-    fetchTickerData(match.params.tickerId);
+    const { tickerId } = match.params;
+    fetchTicker(tickerId);
+    fetchTickerData(tickerId);
+    fetchTickerNews(tickerId)
     if (currentUser && currentUser.id) fetchTable(currentUser.id);
   },[]);
 
@@ -58,7 +63,7 @@ const Ticker = ({
   const thirtyDayColor = ticker ? getPriceColor(ticker.market_data.price_change_percentage_30d) : null;
   const colors = { oneDayColor, sevenDayColor, thirtyDayColor};
 
-  if (ticker && data) {
+  if (ticker && data && news) {
     return (
       <div className="main-ticker-wrapper">
         <TickerParticles image={ticker.image} />
@@ -90,10 +95,15 @@ const Ticker = ({
             <TickerLinks ticker={ticker} />
           </div>
         </div>
-        <div className="ticker-about">
-          <h1>About {ticker.name}</h1>
-          <p>{ReactHtmlParser(ticker.description.en)}</p>
-         {button}
+        <div className="ticker-footer">
+          <div className="ticker-about">
+            <h1>About {ticker.name}</h1>
+            <p>{ReactHtmlParser(ticker.description.en)}</p>
+          {button}
+          </div>
+          <div className="ticker-news">
+            <TickerNews news={news} />
+          </div>
         </div>
       </div>
     );
