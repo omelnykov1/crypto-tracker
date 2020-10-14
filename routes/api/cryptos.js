@@ -29,7 +29,7 @@ router.get(`/tickers/:tickerId`, async (req,res) => {
 })
 
 router.get(`/tickers/chart/:tickerId`, async (req, res) => {
-  const tickerId = req.params.tickerId;
+  const { tickerId } = req.params;
 
   const oneDayData = await axios.get(`https://api.coingecko.com/api/v3/coins/${tickerId}/market_chart?vs_currency=usd&days=1`);
   const sevenDayData = await axios.get(`https://api.coingecko.com/api/v3/coins/${tickerId}/market_chart?vs_currency=usd&days=7`);
@@ -42,6 +42,12 @@ router.get(`/tickers/chart/:tickerId`, async (req, res) => {
   };
   res.send(data);
 });
+
+router.get(`/tickers/news/:tickerId`, async (req, res) => {
+  const { tickerId } = req.params;
+
+  
+})
 
 
 module.exports = router;
