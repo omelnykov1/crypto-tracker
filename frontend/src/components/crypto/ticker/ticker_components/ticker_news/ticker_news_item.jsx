@@ -12,7 +12,7 @@ const TickerNewsItem = ({ newsItem }) => {
                 <Item.Header>{title}</Item.Header>
                 <Item.Description>{description}</Item.Description>
                 <Item.Extra>
-                    <Button floated='left' onClick={(e) => {
+                    <Button id="news-btn" floated='left' onClick={(e) => {
                         e.preventDefault();
                         window.location.href=`${url}`
                     }}>Read More</Button>

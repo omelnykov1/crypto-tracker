@@ -1149,3 +1149,12 @@ and (-webkit-device-pixel-ratio : 3) {
     padding-top: 20px;
 }
 
+#news-btn {
+    background-color: #9793eb;
+    color: white;
+}
+
+#news-btn:hover {
+    background-color: #756fdd;
+}
+
