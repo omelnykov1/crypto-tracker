@@ -12,6 +12,8 @@
 * Chart.JS
 * Particles.JS
 * CoinGecko API
+* News API
+* Semantic UI
 * Node.JS
 * Express
 * Mongoose
