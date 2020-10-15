@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SearchItem from './search_item';
-import { withRouter } from 'react-router-dom';
 
 const SearchBar = ({ tickers }) => {
   const [focus, setFocus] = useState(false);
@@ -59,4 +58,4 @@ const SearchBar = ({ tickers }) => {
   );
 }
 
-export default withRouter(SearchBar);
+export default SearchBar;

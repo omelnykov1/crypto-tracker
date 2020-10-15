@@ -1,6 +1,5 @@
 import React from 'react';
 import TickerNewsItem from './ticker_news_item';
-import { Header } from 'semantic-ui-react'
 
 const TickerNews = ({ news }) => {
   return(
