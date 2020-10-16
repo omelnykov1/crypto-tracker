@@ -8,10 +8,11 @@ const LoginForm = ({ login, demoUser, clearSessionErrors, errors }) => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    clearSessionErrors();
     const eles = document.getElementsByClassName("login-yes-errors-input");
-    Array.from(eles).forEach(ele => ele.className = "login-no-errors-input")
-  },[]);
+    Array.from(eles).forEach(ele => ele.className = "login-no-errors-input");
+
+    return () => clearSessionErrors();
+  },[clearSessionErrors]);
 
   const handleDemo = () => login(demoUser);
 

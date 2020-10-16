@@ -13,7 +13,7 @@
 * Particles.JS
 * CoinGecko API
 * News API
-* Semantic UI
+* Material UI
 * Node.JS
 * Express
 * Mongoose

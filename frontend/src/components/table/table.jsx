@@ -11,7 +11,7 @@ const Table = ({ currentUser, fetchTable, table, changeTable }) => {
 
   useEffect(() => {
     fetchTable(user);
-  }, []);
+  }, [user, fetchTable]);
 
   const renderTickers = () => {
     if (table.tickers) {

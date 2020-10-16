@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { withRouter } from 'react-router';
 import TickerWidget from './ticker_components/ticker_widget';
 import TickerStatistics from './ticker_components/ticker_statistics';
 import TickerLinks from './ticker_components/ticker_links';
@@ -34,7 +33,7 @@ const Ticker = ({
     fetchTickerData(tickerId);
     fetchTickerNews(tickerId)
     if (currentUser && currentUser.id) fetchTable(currentUser.id);
-  },[]);
+  },[currentUser, fetchTicker, fetchTable, fetchTickerData, fetchTickerNews, match.params]);
 
   const deleteTicker = () => {
     const filtered = table.tickers.filter(tick => tick.id !== ticker.id)
@@ -110,4 +109,4 @@ const Ticker = ({
   } else return null;
 }
 
-export default withRouter(Ticker);
+export default Ticker;

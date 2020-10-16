@@ -11,6 +11,8 @@ const TickerChart = ({ data, colors: { oneDayColor, sevenDayColor, thirtyDayColo
       return <TickerChartSevenDay data={data.sevenDay} color={sevenDayColor}/>;
     case 30: 
       return <TickerChartThirtyDay data={data.thirtyDay} color={thirtyDayColor}/>;
+    default: 
+      return null;
   }
 };
 

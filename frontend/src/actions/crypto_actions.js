@@ -27,19 +27,17 @@ export const receiveTickerNews = data => ({
 
 
 export const fetchTicker = tickerId => dispatch => (
-    APIUtil.fetchTicker(tickerId).then(ticker => (
-        dispatch(receiveTicker(ticker.data)))),
-    err => (console.log(err))
+    APIUtil.fetchTicker(tickerId)
+        .then(ticker => (dispatch(receiveTicker(ticker.data))))
+        .catch(err => (console.log(err)))
 );
 
-export const fetchTableTicker = tickerId => dispatch => {
-    return APIUtil.fetchTableTicker(tickerId).then(ticker => {
-        return ticker.data
-    })
-}
+export const fetchTableTicker = tickerId => dispatch => ( 
+    APIUtil.fetchTableTicker(tickerId).then(ticker => ticker.data)
+)
 
 export const fetchTickers = () => (dispatch) =>
-         APIUtil.fetchTickers().then((tickers) => dispatch(receiveAllTickers(tickers.data))
+    APIUtil.fetchTickers().then((tickers) => dispatch(receiveAllTickers(tickers.data))
 );
 
 export const fetchTickerData = tickerId => dispatch => (

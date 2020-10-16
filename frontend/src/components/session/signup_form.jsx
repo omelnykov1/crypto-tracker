@@ -9,10 +9,11 @@ const SignupForm = ({ clearSessionErrors, signup, errors }) => {
   const [password2, setPassword2] = useState("");
 
   useEffect(() => {
-    clearSessionErrors();
     const inputs = document.getElementsByClassName("signup-yes-errors-input");
     Array.from(inputs).forEach(input => input.className = "signup-no-errors-input");
-  },[])
+
+    return () => clearSessionErrors();
+  },[clearSessionErrors])
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -95,6 +95,7 @@
     text-align: center;
     background: #ffffff;
     opacity: 0.8;
+    align-items: center;
 }
 
 .ticker-about h1 {
@@ -130,13 +131,12 @@
     min-height: fit-content;
     box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
     border-radius: 10px;
-    margin-top: 3vw;
     margin-bottom: 2vw;
+    text-align: center;
 }
 
 .ticker-statistics-wrapper h1 {
     font-size: 25px;
-    margin-left: 36%;
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
 }
@@ -198,6 +198,7 @@
 /* ticker links */
 
 .ticker-links-wrapper {
+    text-align: center;
     background: #ffffff;
     opacity: 0.8;
     width: 68%;
@@ -209,7 +210,6 @@
 
 .ticker-links-wrapper h1 {
     font-size: 25px;
-    margin-left: 32%;
     padding-bottom: 34px;
     padding-top: 20px;
 }
@@ -388,7 +388,6 @@
 }
 
 .add-wrapper button{
-    margin-left: 25vw;
     margin-bottom: 2vw;
     width:200px;
     height:53px;
@@ -1098,7 +1097,13 @@ and (-webkit-device-pixel-ratio : 3) {
 
 /* ticker news */
 
+.ticker-news {
+    margin-top: 4vw;
+    height: 100%;
+}
+
 .ticker-footer {
+    min-height: fit-content;
     display: grid;
     grid-template-columns: 60% 40%;
 }
@@ -1108,12 +1113,13 @@ and (-webkit-device-pixel-ratio : 3) {
     margin-left: 7vw;
     background: #ffffff;
     width: 68%;
+    height: 80%;
     box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
     background-color: rgb(255, 255, 255) !important;
     overflow-y: auto !important;
     overflow-x: none !important;
     min-height: fit-content !important;
-    max-height: 28vw !important;
+    max-height: 33vw !important;
     position: relative !important;
     padding: 2px;
 }
@@ -1141,10 +1147,13 @@ and (-webkit-device-pixel-ratio : 3) {
     grid-template-rows: 20% 55% 25%;
 }
 
+.ticker-news-header {
+    text-align: center;
+}
+
 .ticker-news-header h1 {
     color: rgb(73, 70, 70) !important;
     font-size: 25px;
-    margin-left: 32%;
     padding-bottom: 34px;
     padding-top: 20px;
 }
