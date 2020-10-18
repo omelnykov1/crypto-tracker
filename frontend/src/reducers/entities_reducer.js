@@ -6,11 +6,11 @@ import chartDataReducer from './chart_data_reducer';
 import tickerNewsReducer from './crypto_news_reducer';
 
 const entitiesReducer = combineReducers({
-    users: usersReducer,
-    cryptos: cryptoReducer,
-    table: tableReducer,
-    chartData: chartDataReducer,
-    tickerNews: tickerNewsReducer,
+  users: usersReducer,
+  cryptos: cryptoReducer,
+  table: tableReducer,
+  chartData: chartDataReducer,
+  tickerNews: tickerNewsReducer,
 });
 
 export default entitiesReducer;

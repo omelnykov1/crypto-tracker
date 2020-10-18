@@ -4,11 +4,11 @@ import { fetchTable, changeTable, createTable } from '../../../actions/table_act
 import Ticker from './ticker';
 
 const mSTP = (state, ownProps) => ({
-    ticker: state.entities.cryptos[ownProps.match.params.tickerId],
-    currentUser: state.session.user,
-    data: state.entities.chartData.data,
-    news: state.entities.tickerNews.data,
-    table: state.entities.table[Object.keys(state.entities.table)[0]] ? state.entities.table[Object.keys(state.entities.table)[0]] : {},
+  ticker: state.entities.cryptos[ownProps.match.params.tickerId],
+  currentUser: state.session.user,
+  data: state.entities.chartData.data,
+  news: state.entities.tickerNews.data,
+  table: state.entities.table[Object.keys(state.entities.table)[0]] ? state.entities.table[Object.keys(state.entities.table)[0]] : {},
 });
 
 const mDTP = (dispatch) => ({
