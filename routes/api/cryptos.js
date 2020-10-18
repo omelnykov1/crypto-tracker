@@ -7,13 +7,13 @@ const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI(keys.newsAPIKey);
 
 router.get('/', async (req, res) => {
-  let tick = req.query['0'];
+  const tick = req.query['0'];
   try {
     const data = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${tick}&order=market_cap_desc&per_page=100&page=1&sparkline=false`);
     res.send(data.data[0])
   } catch (error) {
     res.status(404)
-  }
+  };
 });
 
 router.get('/tickers', async (req,res) => {
