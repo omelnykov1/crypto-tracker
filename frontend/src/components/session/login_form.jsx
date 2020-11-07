@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { login, clearSessionErrors } from "../../actions/session_actions";
 import ParticlesSession from './session_particles';
+import { useDispatch, useSelector } from 'react-redux';
 
-const LoginForm = ({ login, demoUser, clearSessionErrors, errors }) => {
+const LoginForm = () => {
+  const errors = useSelector(state => state.errors.session);
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
+  const demoUser = {
+    email: "crypto@crypto.com",
+    password: "demo123",
+  };
 
   useEffect(() => {
     const eles = document.getElementsByClassName("login-yes-errors-input");
     Array.from(eles).forEach(ele => ele.className = "login-no-errors-input");
 
-    return () => clearSessionErrors();
-  },[clearSessionErrors]);
+    return () => dispatch(clearSessionErrors());
+  },[]);
 
-  const handleDemo = () => login(demoUser);
+  const handleDemo = () => dispatch(login(demoUser));
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = { email, password };
-    login(user);
+    dispatch(login(user));
   }
 
   const handleEmailErr = () => {
@@ -77,4 +86,4 @@ const LoginForm = ({ login, demoUser, clearSessionErrors, errors }) => {
   );
 }
 
-export default withRouter(LoginForm);
+export default LoginForm;

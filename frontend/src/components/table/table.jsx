@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import TableItem from './table_item';
 import { withRouter } from 'react-router-dom';
 import { Loader } from '../util/loader';
 import TableParticles from './table_particles';
 
-const Table = ({ currentUser, fetchTable, table, changeTable }) => {
+const Table = ({ fetchTable,changeTable }) => {
+  const currentUser = useSelector(state => state.session.user);
+  const table = useSelector(state => state.entities.table[Object.keys(state.entities.table)[0]] ? state.entities.table[Object.keys(state.entities.table)[0]] : {});
 
   const [user] = useState(currentUser.id);
   const [loading, setLoading] = useState(true);

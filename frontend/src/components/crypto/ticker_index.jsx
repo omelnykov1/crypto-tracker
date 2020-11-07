@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import TickerIndexItem from './ticker_index_item';
 import Pagination from "./pagination";
 import { Loader } from '../util/loader';
 
 const TickerIndex = ({ 
   fetchTickers, 
-  currentUser, 
   fetchTable, 
   fetchTickerData, 
   createTable, 
-  table, 
   changeTable 
 }) => {
+  const currentUser = useSelector(state => state.session.user);
+  const table = useSelector(state => state.entities.table[Object.keys(state.entities.table)[0]] ? state.entities.table[Object.keys(state.entities.table)[0]] : {});
+  
   const [tickers, setTickers] = useState([]);
   const [toggle, setToggle] = useState(true);
   const [_, setClicked] = useState(false);

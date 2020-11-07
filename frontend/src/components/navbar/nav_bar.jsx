@@ -1,9 +1,15 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { logout } from "../../actions/session_actions";
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-const NavBar = ({ loggedIn, currentUser, logout }) => {
+const NavBar = () => {
   const history = useHistory();
+  // mSTP && mDTP
+  const dispatch = useDispatch();
+  const loggedIn = useSelector(state => state.session.isAuthenticated);
+  const currentUser = useSelector(state => state.session.user);
+  // eventHandlers
   const handleMain = () =>  history.push("/");
   const handleTable = () => history.push(`/tables/user/${currentUser.id}`);
   const handleLogin = () => history.push('/login');
@@ -11,7 +17,7 @@ const NavBar = ({ loggedIn, currentUser, logout }) => {
 
   const loginToggle = loggedIn ? (
     <div className="right-nav">
-      <div className="left-right-nav" onClick={logout}>
+      <div className="left-right-nav" onClick={() => dispatch(logout())}>
         <button className="logout">Logout</button>
       </div>
       <div className="right-right-nav" onClick={handleTable}>
@@ -46,4 +52,4 @@ const NavBar = ({ loggedIn, currentUser, logout }) => {
   );
 }
 
-export default withRouter(NavBar);
+export default NavBar;

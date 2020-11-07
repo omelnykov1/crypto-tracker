@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PartcilesSession from './session_particles'
+import PartcilesSession from './session_particles';
+import { signup, clearSessionErrors } from "../../actions/session_actions";
+import { useDispatch, useSelector } from 'react-redux';
 
-const SignupForm = ({ clearSessionErrors, signup, errors }) => {
+const SignupForm = () => {
+  // passing props
+  const errors = useSelector(state => state.errors.session);
+  const dispatch = useDispatch();
+  // initializing state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -12,13 +18,13 @@ const SignupForm = ({ clearSessionErrors, signup, errors }) => {
     const inputs = document.getElementsByClassName("signup-yes-errors-input");
     Array.from(inputs).forEach(input => input.className = "signup-no-errors-input");
 
-    return () => clearSessionErrors();
-  },[clearSessionErrors])
+    return () => dispatch(clearSessionErrors());
+  },[]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = { email, name, password, password2 };
-    signup(user);
+    dispatch(signup(user));
   }
 
   const handleEmailErr = () => {

@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import SearchBar from '../search/search_bar';
 import { useHistory } from 'react-router-dom';
+import { fetchTickers } from '../../actions/crypto_actions'
+import { useSelector, useDispatch } from 'react-redux'
 
-const MainPage = ({ tickers, fetchTickers}) => {
+const MainPage = () => {
   const history = useHistory();
-  
+  const tickers = useSelector(state => state.entities.cryptos);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchTickers();
-  },[fetchTickers]);
+    dispatch(fetchTickers());
+  },[]);
 
   return (
     <div className="main">
